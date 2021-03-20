@@ -17,3 +17,4 @@ Le regole vanno rispettate senza eccezioni
 - Commentare il codice in modo sintetico ma esplicativo
 - Rispettare nomenclatura consigliata da Microsoft (namespace, classi, metodi e proprietà in PascalCase; variabili in camelCase; eventi in snake_case)
 - I namespace e le classi devono rispettare i nomi delle cartelle e dei file
+- Utilizzare TODO e FIXME per denominare parti Work-In-Progress (WIP)
