@@ -8,7 +8,7 @@ TODO
 
 # Regole
 Le regole vanno rispettate senza eccezioni
-## Routine
+### Routine
 - Ogni settimana un giorno è riservato per code review di gruppo (giorno non specificato)
 ### Regole Generali
 - Consultare prima di implentare cose non previste dalla documentazione
