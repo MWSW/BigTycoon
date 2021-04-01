@@ -1,5 +1,5 @@
 ﻿using System;
-using BigTycoon.Celle.Magazzino
+using BigTycoon.Celle.Magazzino;
 
 namespace BigTycoon.Celle.Edifici
 {

@@ -2,11 +2,9 @@
 
 namespace BigTycoon.Generale
 {
-	public class Portafoglio
+	public struct Portafoglio
 	{
-		public Portafoglio()
-		{
-
-		}
+		public int Soldi;
+		public int Debito;	     //però esiste la classe banca ~Emanuele
 	}
 }

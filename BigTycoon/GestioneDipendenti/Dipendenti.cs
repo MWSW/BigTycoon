@@ -2,11 +2,12 @@
 
 namespace BigTycoon.GestioneDipendenti
 {
-	public class Dipendenti
+	public struct Dipendenti
 	{
-		public Dipendenti()
-		{
-
-		}
+		public int Quantita { get; set; }
+		public int Minimo { get; set; }
+		public int Massimo { get; set; }
+		public double Stipendi { get; set; }
+		public int StipendioBase { get; set; }
 	}
 }
