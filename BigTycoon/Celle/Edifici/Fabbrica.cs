@@ -4,7 +4,7 @@ using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
 {
-	public class Fabbrica
+	public class Fabbrica : Edificio
 	{
 		public MagazzinoProdotti SlotProdotti { get; set; }
 		public MagazzinoMateriali SlotMateriali { get; set; }
