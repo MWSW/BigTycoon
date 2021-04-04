@@ -16,5 +16,17 @@ namespace BigTycoon
         {
             InitializeComponent();
         }
+
+        #region IconaPlus_AggiungiEdificio
+        private void OnMouseEnter(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).BackgroundImage = Properties.Resources.plus;
+        }
+
+        private void OnMouseLeave(object sender, EventArgs e)
+        {
+            ((PictureBox)sender).BackgroundImage = Properties.Resources.cella_vuota;
+        }
+        #endregion
     }
 }
