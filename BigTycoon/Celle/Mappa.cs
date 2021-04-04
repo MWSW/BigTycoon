@@ -7,14 +7,17 @@ namespace BigTycoon.Celle
     public class Mappa
     {
         public Edificio[,] CelleEdifici { get; set; }
-        public String[] CelleMateriali { get; set; }
-        public String[] CelleNomi { get; set; }
+        public String[,] CelleMateriali { get; set; }
+        public String[,] CelleNomi { get; set; }
         public int Dimensione { get; set; }
+        public int Righe { get; set; }
+        public int Colon { get; set; }
 
-        public Mappa(String[] celleMateriali, String[] nomiCelle)
+        public Mappa(String[,] celleMateriali, String[,] nomiCelle)
         {
-            Dimensione = celleMateriali.Length;
-            CelleEdifici = new Edificio[Dimensione];
+            Righe = CelleMateriali.GetLength(0);
+            Colon = CelleMateriali.GetLength(1);
+            CelleEdifici = new Edificio[Dimensione, Dimensione];
             CelleMateriali = celleMateriali;
             CelleNomi = nomiCelle;
         }
@@ -43,10 +46,10 @@ namespace BigTycoon.Celle
                     tmp = new Negozio();
                     break;
             }
-            CelleEdifici[x , y] = tmp;
+            CelleEdifici[x, y] = tmp;
         }
 
-        /*public void RimuoviEdificio()
+        /*public void RimuoviEdificio() //??
         {
 
         }*/
