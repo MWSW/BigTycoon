@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BigTycoon.Celle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BigTycoon
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -28,5 +30,10 @@ namespace BigTycoon
             ((PictureBox)sender).BackgroundImage = Properties.Resources.cella_vuota;
         }
         #endregion
+
+        private void AggiungiEdificio(object sender, EventArgs e)
+        {
+            Console.WriteLine("Crea edificio su: " + ((PictureBox)sender).Name);
+        }
     }
 }
