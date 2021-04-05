@@ -1,5 +1,6 @@
 ﻿using System;
 using BigTycoon.Celle.Magazzino;
+using BigTycoon.Generale;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -25,5 +26,37 @@ namespace BigTycoon.Celle.Edifici
 		{
 
 		}
-	}
+
+        protected override void Produci(Giocatore gio)
+        {
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComune.Nome))
+            {
+                SlotProdotti.ProdottoComune.Quantita++;
+            }
+            else
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoRaro.Nome))
+            {
+                SlotProdotti.ProdottoRaro.Quantita++;
+            }
+            else
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoPrezioso.Nome))
+            {
+                SlotProdotti.ProdottoPrezioso.Quantita++;
+            }
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComuneRaro.Nome))
+            {
+                SlotProdotti.ProdottoComuneRaro.Quantita++;
+            }
+            else
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComunePrezioso.Nome))
+            {
+                SlotProdotti.ProdottoComunePrezioso.Quantita++;
+            }
+            else
+            if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoRaroPrezioso.Nome))
+            {
+                SlotProdotti.ProdottoRaroPrezioso.Quantita++;
+            }
+        }
+    }
 }

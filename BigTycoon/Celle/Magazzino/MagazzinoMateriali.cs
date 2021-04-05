@@ -8,6 +8,5 @@ namespace BigTycoon.Celle.Magazzino
 		public Oggetto MaterialeComune { get; set; }
 		public Oggetto MaterialeRaro { get; set; }
 		public Oggetto MaterialePrezioso { get; set; }
-
 	}
 }
