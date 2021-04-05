@@ -93,6 +93,16 @@ namespace BigTycoon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap comuni {
+            get {
+                object obj = ResourceManager.GetObject("comuni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap felicita {
             get {
                 object obj = ResourceManager.GetObject("felicita", resourceCulture);
@@ -106,6 +116,26 @@ namespace BigTycoon.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prezioso {
+            get {
+                object obj = ResourceManager.GetObject("prezioso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rari {
+            get {
+                object obj = ResourceManager.GetObject("rari", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

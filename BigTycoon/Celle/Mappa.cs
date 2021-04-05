@@ -15,11 +15,12 @@ namespace BigTycoon.Celle
 
         public Mappa(String[,] celleMateriali, String[,] nomiCelle)
         {
-            Righe = CelleMateriali.GetLength(0);
-            Colon = CelleMateriali.GetLength(1);
             CelleEdifici = new Edificio[Dimensione, Dimensione];
             CelleMateriali = celleMateriali;
             CelleNomi = nomiCelle;
+
+            Righe = CelleMateriali.GetLength(0);
+            Colon = CelleMateriali.GetLength(1);
         }
 
         /// <summary>

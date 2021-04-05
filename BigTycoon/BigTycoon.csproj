@@ -125,5 +125,41 @@
   <ItemGroup>
     <None Include="Resources\treno.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comune.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prezioso.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raro.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preziosi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comuni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preziosi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comuni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comuni1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preziosi %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preziosi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rari.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
