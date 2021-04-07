@@ -28,6 +28,9 @@ namespace BigTycoon
         int tipo;
         Image iconaSelezionata;
 
+        //gestione edifici
+        Edificio edificioSelezionato;
+
 
         public Form1(Mappa mappa)
         {
@@ -98,6 +101,32 @@ namespace BigTycoon
 
             return mappa.CelleEdifici[r,c] == null;
         }
+
+        void Reset()
+        {
+            //icone base
+            industria_bottone.Image = Properties.Resources.industria_BN;
+            fabbrica_bottone.Image = Properties.Resources.fabbrica_BN;
+            negozio_bottone.Image = Properties.Resources.negozio_BN;
+
+            //nascondi bottoni
+            costruisci_bottone.Visible = false;
+
+            //nascondo i pannelli
+            crea_edificio_panel.Visible = false;
+            gestioneEdificio_panel.Visible = false;
+        }
+
+        void InfoGrafiche()
+        {
+            indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
+            indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
+
+            stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
+
+            guadagnoEdificio.Text = "GUADAGNO " + edificioSelezionato.Bilancio + "$";
+            lordoEdificio.Text = "LORDO " + edificioSelezionato.Reddito + "$";
+        }
         #endregion
 
         #region IconaPlus_AggiungiEdificio
@@ -120,6 +149,28 @@ namespace BigTycoon
             }
         }
         #endregion
+
+
+        private void incDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            //TODO
+
+            InfoGrafiche();
+        }
+        private void incStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(10);
+
+            InfoGrafiche();
+        }
+
+        private void dimStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(-10);
+
+            InfoGrafiche();
+        }
+
 
         private void industria_bottone_Click(object sender, EventArgs e)
         {
@@ -160,26 +211,53 @@ namespace BigTycoon
 
         private void SelezionaCella(object sender, EventArgs e)
         {
-           
+            Reset();
+
             PictureBox cellaSelezionata = (PictureBox)sender;
+
+            //estraggo il numero della cella
+            int indice = int.Parse(cellaSelezionata.Name.Substring(4));
+            indice--; //perchè i nomi sono conteggiati partendo da 1
+
+            //calcolo le coordinate
+            c_selezionato = indice % mappa.Colon;
+            r_selezionato = (indice - c_selezionato) / mappa.Colon;
 
             if (CellaVuota(cellaSelezionata))
             {
-                //rendi visibile
+                //rendi visibile il pannello
                 crea_edificio_panel.Visible = true;
-
-                //estraggo il numero della cella
-                int indice = int.Parse(cellaSelezionata.Name.Substring(4));
-                indice--; //perchè i nomi sono conteggiati partendo da 1
-
-                //calcolo le coordinate
-                c_selezionato = indice % mappa.Colon;
-                r_selezionato = (indice - c_selezionato) / mappa.Colon;
 
                 cellaSelezionata_label.Text = "CELLA SELEZIONATA: " + mappa.CelleNomi[r_selezionato, c_selezionato];
             }
-        }
+            else
+            {
+                //rendi visibile il pannello
+                gestioneEdificio_panel.Visible = true;
 
+                edificioSelezionato_label.Text = "";
+
+                //Tipo di edificio
+                edificioSelezionato = mappa.CelleEdifici[r_selezionato, c_selezionato];
+                if (edificioSelezionato.GetType() == typeof(Industria))
+                {
+                    edificioSelezionato_label.Text += "Industria di ";
+                }
+                else if (edificioSelezionato.GetType() == typeof(Fabbrica))
+                {
+                    edificioSelezionato_label.Text += "Fabbrica di ";
+                }
+                else if (edificioSelezionato.GetType() == typeof(Negozio))
+                {
+                    edificioSelezionato_label.Text += "Negozio di ";
+                }
+
+                //Nome edificio
+                edificioSelezionato_label.Text += mappa.CelleNomi[r_selezionato, c_selezionato];
+
+                InfoGrafiche();
+            }
+        }
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
             mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore.portafogli);
@@ -205,14 +283,7 @@ namespace BigTycoon
                 griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
             }
 
-            //reset
-            costruisci_bottone.Visible = false;
-
-            industria_bottone.Image = Properties.Resources.industria_BN;
-            fabbrica_bottone.Image = Properties.Resources.fabbrica_BN;
-            negozio_bottone.Image = Properties.Resources.negozio_BN;
-
-            crea_edificio_panel.Visible = false;
+            Reset();
         }
     }
 }

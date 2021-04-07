@@ -188,5 +188,14 @@
   <ItemGroup>
     <None Include="Resources\industria_rari.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\faccia_felice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soldi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ingranaggio.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

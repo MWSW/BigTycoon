@@ -4,23 +4,37 @@ using System.Windows.Forms;
 
 namespace BigTycoon.GestioneDipendenti
 {
-	public struct Dipendenti
+	public class Dipendenti
 	{
 		public int Quantita { get; private set; }
-		public int Minimo { get; set; }
-		public int Massimo { get; set; }
-		public double Stipendi { get; private set; }
+		public int MinimoDipendenti { get; set; }
+		public int MassimoDipendenti { get; set; }
+		public int StipendiPerc { get; private set; }
 		public int StipendioBase { get; set; }
         public int Felicita { get; private set; }
 
-        public void ModStipendi(double percentuale)
+        public Dipendenti(int minimoDipendenti, int massimoDipendenti, int stipendioBase)
         {
-            if (!((Stipendi < Minimo) || (Stipendi > Massimo) || (percentuale < 0.5) || (percentuale > 2.0)))
+            Quantita = 0;
+            MinimoDipendenti = minimoDipendenti;
+            MassimoDipendenti = massimoDipendenti;
+            StipendiPerc = 100;
+            StipendioBase = stipendioBase;
+            Felicita = 0;
+        }
+
+        public void ModStipendi(int mod)
+        {
+            StipendiPerc += mod;
+
+            if ((StipendiPerc < 50))
             {
-                Trace.WriteLine($"Percentuale non corretta ({percentuale}) o stipendio massimo/minimo raggiunto ({Minimo}/{Stipendi}/{Massimo})");
-                return;
+                StipendiPerc = 50;
             }
-            Stipendi *= percentuale;
+            else if((StipendiPerc > 200))
+            {
+                StipendiPerc = 200;
+            }
         }
 
         public void AumentaFelicita(int n)

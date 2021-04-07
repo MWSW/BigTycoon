@@ -8,13 +8,13 @@ namespace BigTycoon.Celle.Edifici
     public abstract class Edificio
     {
 
-        protected double Bilancio { get; set; }
-        protected double Reddito { get; set; }
+        public double Bilancio { get; protected set; }
+        public double Reddito { get; protected set; }
         protected int Produzione { get; set; }
         protected double Produttivita { get; set; }
-        protected Dipendenti Dipendenti { get; set; }
+        public Dipendenti Dipendenti { get; protected set; }
         protected bool EdificioAttivo { get; set; }
-        protected int ColoreFelicita { get; set; }
+        public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
         public Edificio()
@@ -24,10 +24,11 @@ namespace BigTycoon.Celle.Edifici
             Produzione = 0;
             Produttivita = 0;
             EdificioAttivo = false;
-            ColoreFelicita = 0;
+            PuntiFelicita = 0;
             ColoreEdificio = 0;
 
-            Dipendenti = new Dipendenti { };
+            Dipendenti = new Dipendenti(0, 4, 20);
+
         }
 
         public virtual void Update(Giocatore giocatore)

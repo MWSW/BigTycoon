@@ -121,11 +121,14 @@
   <data name="fabbrica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fabbrica.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="faccia_felice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\faccia_felice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="comuni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comuni1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fabbrica_BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fabbrica_BN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="diminuisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diminuisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="negozio_BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\negozio_BN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,11 +136,14 @@
   <data name="banca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rari" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preziosi1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bordo_cella" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bordo_cella.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="treno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\treno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="incrementa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\incrementa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cella_vuota" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cella_vuota.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,17 +151,26 @@
   <data name="preziosi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bordo_cella" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bordo_cella.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="negozio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\negozio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="industria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="negozio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\negozio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dipendenti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dipendenti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preziosi1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fabbrica_BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fabbrica_BN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="industria_rari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\industria_preziosi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="industria_BN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria_BN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,10 +181,13 @@
   <data name="industria_comuni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria_comuni.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="industria_rari" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\industria_preziosi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="soldi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soldi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="industria_preziosi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria_rari.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingranaggio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingranaggio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
