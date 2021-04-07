@@ -179,5 +179,14 @@
   <ItemGroup>
     <None Include="Resources\negozio_BN.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\industria_comuni.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\industria_preziosi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\industria_rari.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

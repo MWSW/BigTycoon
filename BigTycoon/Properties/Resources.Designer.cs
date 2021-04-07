@@ -153,6 +153,36 @@ namespace BigTycoon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap industria_comuni {
+            get {
+                object obj = ResourceManager.GetObject("industria_comuni", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap industria_preziosi {
+            get {
+                object obj = ResourceManager.GetObject("industria_preziosi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap industria_rari {
+            get {
+                object obj = ResourceManager.GetObject("industria_rari", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap negozio {
             get {
                 object obj = ResourceManager.GetObject("negozio", resourceCulture);

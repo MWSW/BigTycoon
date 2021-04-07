@@ -1,4 +1,5 @@
 ﻿using BigTycoon.Celle;
+using BigTycoon.Celle.Edifici;
 using BigTycoon.Generale;
 using System;
 using System.Collections.Generic;
@@ -50,9 +51,9 @@ namespace BigTycoon
                                        { luogo11, luogo12, luogo13, luogo14, luogo15}};
 
             //Materiale sottostante
-            for (int i = 0; i < griglia.GetLength(0); i++)
+            for (int j = 0; j < griglia.GetLength(1); j++)
             {
-                for (int j = 0; j < griglia.GetLength(1); j++)
+                for (int i = 0; i < griglia.GetLength(0); i++)
                 {
                     if (mappa.CelleMateriali[i, j] == "COMUNI")
                     {
@@ -93,7 +94,7 @@ namespace BigTycoon
 
             //calcolo le coordinate
             int c = indice % mappa.Colon;
-            int r = (indice - c_selezionato) / mappa.Colon;
+            int r = (indice - c) / mappa.Colon;
 
             return mappa.CelleEdifici[r,c] == null;
         }
@@ -183,7 +184,26 @@ namespace BigTycoon
         {
             mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore.portafogli);
 
-            griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
+            //immagine
+            if (tipo == 0) //tipo industria
+            {
+                if(mappa.CelleMateriali[r_selezionato,c_selezionato] == "COMUNI")
+                {
+                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_comuni;
+                }
+                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "RARI")
+                {
+                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_rari;
+                }
+                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "PREZIOSI")
+                {
+                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_preziosi;
+                }
+            }
+            else
+            {
+                griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
+            }
 
             //reset
             costruisci_bottone.Visible = false;

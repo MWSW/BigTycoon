@@ -36,14 +36,14 @@ namespace BigTycoon
             Random rng = new Random();
 
             //Materiali
-            for(int i = 0; i < materiali.GetLength(0); i++)
-                for (int j = 0; j < materiali.GetLength(1); j++)
+            for (int j = 0; j < materiali.GetLength(1); j++)
+                for (int i = 0; i < materiali.GetLength(0); i++)
                     materiali[i, j] = listaMateriali[rng.Next() % listaMateriali.Length];
 
             //Nomi
-            for (int i = 0; i < nomi.GetLength(0); i++)
+            for (int j = 0; j < nomi.GetLength(1); j++)
             {
-                for (int j = 0; j < nomi.GetLength(1); j++)
+                for (int i = 0; i < nomi.GetLength(0); i++)
                 {
                     int indice = 0;
                     do
