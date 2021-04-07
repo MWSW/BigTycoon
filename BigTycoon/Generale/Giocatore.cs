@@ -11,6 +11,7 @@ namespace BigTycoon.Generale
 		public Giocatore(int soldiIniziali, int famaIniziale, int dipendentiDisponibili)
 		{
 			portafogli.Soldi = soldiIniziali;
+            portafogli.Debito = 0;
 			FamaAziendale = famaIniziale;
 			DipendentiDisponibili = dipendentiDisponibili;
 		}
