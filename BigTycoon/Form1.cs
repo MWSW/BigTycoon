@@ -22,6 +22,12 @@ namespace BigTycoon
 
         Image materialeTemp = null;
 
+        //crea edificio
+        int r_selezionato, c_selezionato; //coordinate nella griglia
+        int tipo;
+        Image iconaSelezionata;
+
+
         public Form1(Mappa mappa)
         {
             InitializeComponent();
@@ -54,7 +60,7 @@ namespace BigTycoon
                     }
                     else if (mappa.CelleMateriali[i, j] == "PREZIOSI")
                     {
-                        griglia[i, j].BackgroundImage = Properties.Resources.prezioso;
+                        griglia[i, j].BackgroundImage = Properties.Resources.preziosi;
                     }
                     else if (mappa.CelleMateriali[i, j] == "RARI")
                     {
@@ -74,22 +80,119 @@ namespace BigTycoon
             #endregion
         }
 
+        #region MetodiVari
+        bool CellaVuota(PictureBox immagine)
+        {
+            //estraggo il numero della cella
+            int indice = int.Parse(immagine.Name.Substring(4));
+            indice--; //perchè i nomi sono conteggiati partendo da 1
+
+            //partendo dalla formula
+            //[width*y]+x = indice
+            //y = (indice - x) / width
+
+            //calcolo le coordinate
+            int c = indice % mappa.Colon;
+            int r = (indice - c_selezionato) / mappa.Colon;
+
+            return mappa.CelleEdifici[r,c] == null;
+        }
+        #endregion
+
         #region IconaPlus_AggiungiEdificio
         private void OnMouseEnter(object sender, EventArgs e)
         {
-            materialeTemp = ((PictureBox)sender).BackgroundImage;
-            ((PictureBox)sender).BackgroundImage = Properties.Resources.plus;
+            //solo se la cella è vuota
+            if (CellaVuota((PictureBox)sender))
+            {
+                materialeTemp = ((PictureBox)sender).BackgroundImage;
+                ((PictureBox)sender).BackgroundImage = Properties.Resources.plus;
+            }
         }
 
         private void OnMouseLeave(object sender, EventArgs e)
         {
-            ((PictureBox)sender).BackgroundImage = materialeTemp;
+            //solo se la cella è vuota
+            if (CellaVuota((PictureBox)sender))
+            {
+                ((PictureBox)sender).BackgroundImage = materialeTemp;
+            }
         }
         #endregion
 
-        private void AggiungiEdificio(object sender, EventArgs e)
+        private void industria_bottone_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Crea edificio su: " + ((PictureBox)sender).Name);
+            tipo = 0;
+            costruisci_bottone.Visible = true;
+
+            industria_bottone.Image = Properties.Resources.industria;
+            fabbrica_bottone.Image = Properties.Resources.fabbrica_BN;
+            negozio_bottone.Image = Properties.Resources.negozio_BN;
+
+            iconaSelezionata = Properties.Resources.industria;
+
+        }
+
+        private void fabbrica_bottone_Click(object sender, EventArgs e)
+        {
+            tipo = 1;
+            costruisci_bottone.Visible = true;
+
+            industria_bottone.Image = Properties.Resources.industria_BN;
+            fabbrica_bottone.Image = Properties.Resources.fabbrica;
+            negozio_bottone.Image = Properties.Resources.negozio_BN;
+
+            iconaSelezionata = Properties.Resources.fabbrica;
+        }
+
+        private void negozio_bottone_Click(object sender, EventArgs e)
+        {
+            tipo = 2;
+            costruisci_bottone.Visible = true;
+
+            industria_bottone.Image = Properties.Resources.industria_BN;
+            fabbrica_bottone.Image = Properties.Resources.fabbrica_BN;
+            negozio_bottone.Image = Properties.Resources.negozio;
+
+            iconaSelezionata = Properties.Resources.negozio;
+        }
+
+        private void SelezionaCella(object sender, EventArgs e)
+        {
+           
+            PictureBox cellaSelezionata = (PictureBox)sender;
+
+            if (CellaVuota(cellaSelezionata))
+            {
+                //rendi visibile
+                crea_edificio_panel.Visible = true;
+
+                //estraggo il numero della cella
+                int indice = int.Parse(cellaSelezionata.Name.Substring(4));
+                indice--; //perchè i nomi sono conteggiati partendo da 1
+
+                //calcolo le coordinate
+                c_selezionato = indice % mappa.Colon;
+                r_selezionato = (indice - c_selezionato) / mappa.Colon;
+
+                cellaSelezionata_label.Text = "CELLA SELEZIONATA: " + mappa.CelleNomi[r_selezionato, c_selezionato];
+            }
+        }
+
+        private void costruisci_bottone_Click(object sender, EventArgs e)
+        {
+            mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore.portafogli);
+
+            griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
+
+            //reset
+            costruisci_bottone.Visible = false;
+
+            industria_bottone.Image = Properties.Resources.industria_BN;
+            fabbrica_bottone.Image = Properties.Resources.fabbrica_BN;
+            negozio_bottone.Image = Properties.Resources.negozio_BN;
+
+            crea_edificio_panel.Visible = false;
         }
     }
 }

@@ -103,9 +103,69 @@ namespace BigTycoon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fabbrica {
+            get {
+                object obj = ResourceManager.GetObject("fabbrica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fabbrica_BN {
+            get {
+                object obj = ResourceManager.GetObject("fabbrica_BN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap felicita {
             get {
                 object obj = ResourceManager.GetObject("felicita", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap industria {
+            get {
+                object obj = ResourceManager.GetObject("industria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap industria_BN {
+            get {
+                object obj = ResourceManager.GetObject("industria_BN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap negozio {
+            get {
+                object obj = ResourceManager.GetObject("negozio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap negozio_BN {
+            get {
+                object obj = ResourceManager.GetObject("negozio_BN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +183,9 @@ namespace BigTycoon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap prezioso {
+        internal static System.Drawing.Bitmap preziosi {
             get {
-                object obj = ResourceManager.GetObject("prezioso", resourceCulture);
+                object obj = ResourceManager.GetObject("preziosi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

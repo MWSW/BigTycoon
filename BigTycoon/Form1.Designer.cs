@@ -32,101 +32,111 @@ namespace BigTycoon
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.griglia_flow_layout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cell1 = new System.Windows.Forms.PictureBox();
             this.luogo1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cell2 = new System.Windows.Forms.PictureBox();
             this.luogo2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cell3 = new System.Windows.Forms.PictureBox();
             this.luogo3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cell4 = new System.Windows.Forms.PictureBox();
             this.luogo4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cell5 = new System.Windows.Forms.PictureBox();
             this.luogo5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.cell6 = new System.Windows.Forms.PictureBox();
             this.luogo6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.cell7 = new System.Windows.Forms.PictureBox();
             this.luogo7 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.cell8 = new System.Windows.Forms.PictureBox();
             this.luogo8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.cell9 = new System.Windows.Forms.PictureBox();
             this.luogo9 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cell10 = new System.Windows.Forms.PictureBox();
             this.luogo10 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.cell11 = new System.Windows.Forms.PictureBox();
             this.luogo11 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.cell12 = new System.Windows.Forms.PictureBox();
             this.luogo12 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.cell13 = new System.Windows.Forms.PictureBox();
             this.luogo13 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.cell14 = new System.Windows.Forms.PictureBox();
             this.luogo14 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.cell15 = new System.Windows.Forms.PictureBox();
             this.luogo15 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.richiesteLavoro_label = new System.Windows.Forms.Label();
-            this.immagineAzienda_label = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.crea_edificio_panel = new System.Windows.Forms.Panel();
+            this.costruisci_bottone = new System.Windows.Forms.Button();
+            this.negozio_bottone = new System.Windows.Forms.PictureBox();
+            this.fabbrica_bottone = new System.Windows.Forms.PictureBox();
+            this.industria_bottone = new System.Windows.Forms.PictureBox();
+            this.cellaSelezionata_label = new System.Windows.Forms.Label();
             this.felicita_pics = new System.Windows.Forms.PictureBox();
             this.trasporti_pics = new System.Windows.Forms.PictureBox();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.banca_pics = new System.Windows.Forms.PictureBox();
-            this.cell1 = new System.Windows.Forms.PictureBox();
-            this.cell2 = new System.Windows.Forms.PictureBox();
-            this.cell3 = new System.Windows.Forms.PictureBox();
-            this.cell4 = new System.Windows.Forms.PictureBox();
-            this.cell5 = new System.Windows.Forms.PictureBox();
-            this.cell6 = new System.Windows.Forms.PictureBox();
-            this.cell7 = new System.Windows.Forms.PictureBox();
-            this.cell8 = new System.Windows.Forms.PictureBox();
-            this.cell9 = new System.Windows.Forms.PictureBox();
-            this.cell10 = new System.Windows.Forms.PictureBox();
-            this.cell11 = new System.Windows.Forms.PictureBox();
-            this.cell12 = new System.Windows.Forms.PictureBox();
-            this.cell13 = new System.Windows.Forms.PictureBox();
-            this.cell14 = new System.Windows.Forms.PictureBox();
-            this.cell15 = new System.Windows.Forms.PictureBox();
+            this.richiesteLavoro_label = new System.Windows.Forms.Label();
+            this.immagineAzienda_label = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.portafoglio_label = new System.Windows.Forms.Label();
             this.griglia_flow_layout.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell2)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell3)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell4)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell5)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell6)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell7)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell8)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell9)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell10)).BeginInit();
             this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell11)).BeginInit();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell12)).BeginInit();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell13)).BeginInit();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell14)).BeginInit();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell15)).BeginInit();
             this.panel25.SuspendLayout();
+            this.crea_edificio_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.felicita_pics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasporti_pics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banca_pics)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell15)).BeginInit();
             this.SuspendLayout();
             // 
             // griglia_flow_layout
@@ -160,6 +170,22 @@ namespace BigTycoon
             this.panel1.Size = new System.Drawing.Size(200, 218);
             this.panel1.TabIndex = 1;
             // 
+            // cell1
+            // 
+            this.cell1.BackColor = System.Drawing.Color.Transparent;
+            this.cell1.BackgroundImage = global::BigTycoon.Properties.Resources.rari;
+            this.cell1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell1.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell1.Location = new System.Drawing.Point(24, 17);
+            this.cell1.Name = "cell1";
+            this.cell1.Size = new System.Drawing.Size(150, 150);
+            this.cell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell1.TabIndex = 3;
+            this.cell1.TabStop = false;
+            this.cell1.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell1.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell1.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo1
             // 
             this.luogo1.AutoSize = true;
@@ -179,6 +205,22 @@ namespace BigTycoon
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 218);
             this.panel2.TabIndex = 4;
+            // 
+            // cell2
+            // 
+            this.cell2.BackColor = System.Drawing.Color.Transparent;
+            this.cell2.BackgroundImage = global::BigTycoon.Properties.Resources.preziosi;
+            this.cell2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell2.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell2.Location = new System.Drawing.Point(24, 17);
+            this.cell2.Name = "cell2";
+            this.cell2.Size = new System.Drawing.Size(150, 150);
+            this.cell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell2.TabIndex = 3;
+            this.cell2.TabStop = false;
+            this.cell2.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell2.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell2.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo2
             // 
@@ -200,6 +242,22 @@ namespace BigTycoon
             this.panel4.Size = new System.Drawing.Size(200, 218);
             this.panel4.TabIndex = 6;
             // 
+            // cell3
+            // 
+            this.cell3.BackColor = System.Drawing.Color.Transparent;
+            this.cell3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cell3.BackgroundImage")));
+            this.cell3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell3.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell3.Location = new System.Drawing.Point(24, 17);
+            this.cell3.Name = "cell3";
+            this.cell3.Size = new System.Drawing.Size(150, 150);
+            this.cell3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell3.TabIndex = 3;
+            this.cell3.TabStop = false;
+            this.cell3.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo3
             // 
             this.luogo3.AutoSize = true;
@@ -219,6 +277,22 @@ namespace BigTycoon
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 218);
             this.panel3.TabIndex = 5;
+            // 
+            // cell4
+            // 
+            this.cell4.BackColor = System.Drawing.Color.Transparent;
+            this.cell4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cell4.BackgroundImage")));
+            this.cell4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell4.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell4.Location = new System.Drawing.Point(24, 17);
+            this.cell4.Name = "cell4";
+            this.cell4.Size = new System.Drawing.Size(150, 150);
+            this.cell4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell4.TabIndex = 3;
+            this.cell4.TabStop = false;
+            this.cell4.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell4.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell4.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo4
             // 
@@ -240,6 +314,22 @@ namespace BigTycoon
             this.panel5.Size = new System.Drawing.Size(200, 218);
             this.panel5.TabIndex = 6;
             // 
+            // cell5
+            // 
+            this.cell5.BackColor = System.Drawing.Color.Transparent;
+            this.cell5.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell5.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell5.Location = new System.Drawing.Point(24, 17);
+            this.cell5.Name = "cell5";
+            this.cell5.Size = new System.Drawing.Size(150, 150);
+            this.cell5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell5.TabIndex = 3;
+            this.cell5.TabStop = false;
+            this.cell5.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell5.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell5.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo5
             // 
             this.luogo5.AutoSize = true;
@@ -259,6 +349,22 @@ namespace BigTycoon
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 218);
             this.panel8.TabIndex = 10;
+            // 
+            // cell6
+            // 
+            this.cell6.BackColor = System.Drawing.Color.Transparent;
+            this.cell6.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell6.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell6.Location = new System.Drawing.Point(24, 17);
+            this.cell6.Name = "cell6";
+            this.cell6.Size = new System.Drawing.Size(150, 150);
+            this.cell6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell6.TabIndex = 3;
+            this.cell6.TabStop = false;
+            this.cell6.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell6.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell6.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo6
             // 
@@ -280,6 +386,22 @@ namespace BigTycoon
             this.panel10.Size = new System.Drawing.Size(200, 218);
             this.panel10.TabIndex = 11;
             // 
+            // cell7
+            // 
+            this.cell7.BackColor = System.Drawing.Color.Transparent;
+            this.cell7.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell7.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell7.Location = new System.Drawing.Point(24, 17);
+            this.cell7.Name = "cell7";
+            this.cell7.Size = new System.Drawing.Size(150, 150);
+            this.cell7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell7.TabIndex = 3;
+            this.cell7.TabStop = false;
+            this.cell7.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell7.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell7.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo7
             // 
             this.luogo7.AutoSize = true;
@@ -299,6 +421,22 @@ namespace BigTycoon
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 218);
             this.panel9.TabIndex = 9;
+            // 
+            // cell8
+            // 
+            this.cell8.BackColor = System.Drawing.Color.Transparent;
+            this.cell8.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell8.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell8.Location = new System.Drawing.Point(24, 17);
+            this.cell8.Name = "cell8";
+            this.cell8.Size = new System.Drawing.Size(150, 150);
+            this.cell8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell8.TabIndex = 3;
+            this.cell8.TabStop = false;
+            this.cell8.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell8.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell8.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo8
             // 
@@ -320,6 +458,22 @@ namespace BigTycoon
             this.panel7.Size = new System.Drawing.Size(200, 218);
             this.panel7.TabIndex = 8;
             // 
+            // cell9
+            // 
+            this.cell9.BackColor = System.Drawing.Color.Transparent;
+            this.cell9.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell9.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell9.Location = new System.Drawing.Point(24, 17);
+            this.cell9.Name = "cell9";
+            this.cell9.Size = new System.Drawing.Size(150, 150);
+            this.cell9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell9.TabIndex = 3;
+            this.cell9.TabStop = false;
+            this.cell9.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell9.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell9.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo9
             // 
             this.luogo9.AutoSize = true;
@@ -339,6 +493,22 @@ namespace BigTycoon
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 218);
             this.panel6.TabIndex = 7;
+            // 
+            // cell10
+            // 
+            this.cell10.BackColor = System.Drawing.Color.Transparent;
+            this.cell10.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell10.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell10.Location = new System.Drawing.Point(24, 17);
+            this.cell10.Name = "cell10";
+            this.cell10.Size = new System.Drawing.Size(150, 150);
+            this.cell10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell10.TabIndex = 3;
+            this.cell10.TabStop = false;
+            this.cell10.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell10.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell10.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo10
             // 
@@ -360,6 +530,22 @@ namespace BigTycoon
             this.panel14.Size = new System.Drawing.Size(200, 218);
             this.panel14.TabIndex = 13;
             // 
+            // cell11
+            // 
+            this.cell11.BackColor = System.Drawing.Color.Transparent;
+            this.cell11.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell11.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell11.Location = new System.Drawing.Point(24, 17);
+            this.cell11.Name = "cell11";
+            this.cell11.Size = new System.Drawing.Size(150, 150);
+            this.cell11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell11.TabIndex = 3;
+            this.cell11.TabStop = false;
+            this.cell11.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell11.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell11.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo11
             // 
             this.luogo11.AutoSize = true;
@@ -379,6 +565,22 @@ namespace BigTycoon
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(200, 218);
             this.panel15.TabIndex = 12;
+            // 
+            // cell12
+            // 
+            this.cell12.BackColor = System.Drawing.Color.Transparent;
+            this.cell12.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell12.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell12.Location = new System.Drawing.Point(24, 17);
+            this.cell12.Name = "cell12";
+            this.cell12.Size = new System.Drawing.Size(150, 150);
+            this.cell12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell12.TabIndex = 3;
+            this.cell12.TabStop = false;
+            this.cell12.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell12.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell12.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo12
             // 
@@ -400,6 +602,22 @@ namespace BigTycoon
             this.panel13.Size = new System.Drawing.Size(200, 218);
             this.panel13.TabIndex = 14;
             // 
+            // cell13
+            // 
+            this.cell13.BackColor = System.Drawing.Color.Transparent;
+            this.cell13.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell13.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell13.Location = new System.Drawing.Point(24, 17);
+            this.cell13.Name = "cell13";
+            this.cell13.Size = new System.Drawing.Size(150, 150);
+            this.cell13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell13.TabIndex = 3;
+            this.cell13.TabStop = false;
+            this.cell13.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell13.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell13.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo13
             // 
             this.luogo13.AutoSize = true;
@@ -419,7 +637,23 @@ namespace BigTycoon
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(200, 218);
             this.panel12.TabIndex = 16;
-            this.panel12.Click += new System.EventHandler(this.AggiungiEdificio);
+            this.panel12.Click += new System.EventHandler(this.SelezionaCella);
+            // 
+            // cell14
+            // 
+            this.cell14.BackColor = System.Drawing.Color.Transparent;
+            this.cell14.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell14.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell14.Location = new System.Drawing.Point(24, 17);
+            this.cell14.Name = "cell14";
+            this.cell14.Size = new System.Drawing.Size(150, 150);
+            this.cell14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell14.TabIndex = 3;
+            this.cell14.TabStop = false;
+            this.cell14.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell14.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell14.MouseLeave += new System.EventHandler(this.OnMouseLeave);
             // 
             // luogo14
             // 
@@ -441,11 +675,27 @@ namespace BigTycoon
             this.panel11.Size = new System.Drawing.Size(200, 218);
             this.panel11.TabIndex = 15;
             // 
+            // cell15
+            // 
+            this.cell15.BackColor = System.Drawing.Color.Transparent;
+            this.cell15.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
+            this.cell15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cell15.Image = global::BigTycoon.Properties.Resources.bordo_cella;
+            this.cell15.Location = new System.Drawing.Point(24, 17);
+            this.cell15.Name = "cell15";
+            this.cell15.Size = new System.Drawing.Size(150, 150);
+            this.cell15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cell15.TabIndex = 3;
+            this.cell15.TabStop = false;
+            this.cell15.Click += new System.EventHandler(this.SelezionaCella);
+            this.cell15.MouseEnter += new System.EventHandler(this.OnMouseEnter);
+            this.cell15.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            // 
             // luogo15
             // 
             this.luogo15.AutoSize = true;
             this.luogo15.Font = new System.Drawing.Font("Agency FB", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.luogo15.Location = new System.Drawing.Point(62, 170);
+            this.luogo15.Location = new System.Drawing.Point(18, 170);
             this.luogo15.Name = "luogo15";
             this.luogo15.Size = new System.Drawing.Size(77, 36);
             this.luogo15.TabIndex = 2;
@@ -456,6 +706,7 @@ namespace BigTycoon
             // 
             this.panel25.BackColor = System.Drawing.Color.DarkGray;
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel25.Controls.Add(this.crea_edificio_panel);
             this.panel25.Controls.Add(this.felicita_pics);
             this.panel25.Controls.Add(this.trasporti_pics);
             this.panel25.Controls.Add(this.pictureBox29);
@@ -472,60 +723,74 @@ namespace BigTycoon
             this.panel25.Size = new System.Drawing.Size(591, 778);
             this.panel25.TabIndex = 1;
             // 
-            // richiesteLavoro_label
+            // crea_edificio_panel
             // 
-            this.richiesteLavoro_label.AutoSize = true;
-            this.richiesteLavoro_label.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richiesteLavoro_label.ForeColor = System.Drawing.Color.Black;
-            this.richiesteLavoro_label.Location = new System.Drawing.Point(362, 136);
-            this.richiesteLavoro_label.Name = "richiesteLavoro_label";
-            this.richiesteLavoro_label.Size = new System.Drawing.Size(186, 35);
-            this.richiesteLavoro_label.TabIndex = 6;
-            this.richiesteLavoro_label.Text = "Richieste lavoro: 5";
+            this.crea_edificio_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crea_edificio_panel.Controls.Add(this.costruisci_bottone);
+            this.crea_edificio_panel.Controls.Add(this.negozio_bottone);
+            this.crea_edificio_panel.Controls.Add(this.fabbrica_bottone);
+            this.crea_edificio_panel.Controls.Add(this.industria_bottone);
+            this.crea_edificio_panel.Controls.Add(this.cellaSelezionata_label);
+            this.crea_edificio_panel.Location = new System.Drawing.Point(29, 430);
+            this.crea_edificio_panel.Name = "crea_edificio_panel";
+            this.crea_edificio_panel.Size = new System.Drawing.Size(529, 318);
+            this.crea_edificio_panel.TabIndex = 15;
+            this.crea_edificio_panel.Visible = false;
             // 
-            // immagineAzienda_label
+            // costruisci_bottone
             // 
-            this.immagineAzienda_label.AutoSize = true;
-            this.immagineAzienda_label.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.immagineAzienda_label.ForeColor = System.Drawing.Color.Black;
-            this.immagineAzienda_label.Location = new System.Drawing.Point(16, 136);
-            this.immagineAzienda_label.Name = "immagineAzienda_label";
-            this.immagineAzienda_label.Size = new System.Drawing.Size(253, 35);
-            this.immagineAzienda_label.TabIndex = 5;
-            this.immagineAzienda_label.Text = "Immagine azienda: 90/100";
+            this.costruisci_bottone.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costruisci_bottone.Location = new System.Drawing.Point(188, 236);
+            this.costruisci_bottone.Name = "costruisci_bottone";
+            this.costruisci_bottone.Size = new System.Drawing.Size(168, 53);
+            this.costruisci_bottone.TabIndex = 4;
+            this.costruisci_bottone.Text = "COSTRUISCI";
+            this.costruisci_bottone.UseVisualStyleBackColor = true;
+            this.costruisci_bottone.Visible = false;
+            this.costruisci_bottone.Click += new System.EventHandler(this.costruisci_bottone_Click);
             // 
-            // label27
+            // negozio_bottone
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(16, 19);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(124, 35);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Lordo: 200$";
+            this.negozio_bottone.Image = global::BigTycoon.Properties.Resources.negozio_BN;
+            this.negozio_bottone.Location = new System.Drawing.Point(392, 68);
+            this.negozio_bottone.Name = "negozio_bottone";
+            this.negozio_bottone.Size = new System.Drawing.Size(100, 100);
+            this.negozio_bottone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.negozio_bottone.TabIndex = 3;
+            this.negozio_bottone.TabStop = false;
+            this.negozio_bottone.Click += new System.EventHandler(this.negozio_bottone_Click);
             // 
-            // label26
+            // fabbrica_bottone
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(362, 19);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(117, 35);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Spese: 50$";
+            this.fabbrica_bottone.Image = global::BigTycoon.Properties.Resources.fabbrica_BN;
+            this.fabbrica_bottone.Location = new System.Drawing.Point(213, 68);
+            this.fabbrica_bottone.Name = "fabbrica_bottone";
+            this.fabbrica_bottone.Size = new System.Drawing.Size(100, 100);
+            this.fabbrica_bottone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.fabbrica_bottone.TabIndex = 2;
+            this.fabbrica_bottone.TabStop = false;
+            this.fabbrica_bottone.Click += new System.EventHandler(this.fabbrica_bottone_Click);
             // 
-            // label25
+            // industria_bottone
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(16, 63);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(262, 35);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Guadagno giornaliero: 150$";
+            this.industria_bottone.Image = global::BigTycoon.Properties.Resources.industria_BN;
+            this.industria_bottone.Location = new System.Drawing.Point(38, 68);
+            this.industria_bottone.Name = "industria_bottone";
+            this.industria_bottone.Size = new System.Drawing.Size(100, 100);
+            this.industria_bottone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.industria_bottone.TabIndex = 1;
+            this.industria_bottone.TabStop = false;
+            this.industria_bottone.Click += new System.EventHandler(this.industria_bottone_Click);
+            // 
+            // cellaSelezionata_label
+            // 
+            this.cellaSelezionata_label.AutoSize = true;
+            this.cellaSelezionata_label.Font = new System.Drawing.Font("Agency FB", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cellaSelezionata_label.Location = new System.Drawing.Point(30, 0);
+            this.cellaSelezionata_label.Name = "cellaSelezionata_label";
+            this.cellaSelezionata_label.Size = new System.Drawing.Size(248, 46);
+            this.cellaSelezionata_label.TabIndex = 0;
+            this.cellaSelezionata_label.Text = "CELLA SELEZIONATA";
             // 
             // felicita_pics
             // 
@@ -590,244 +855,60 @@ namespace BigTycoon
             this.banca_pics.TabIndex = 7;
             this.banca_pics.TabStop = false;
             // 
-            // cell1
+            // richiesteLavoro_label
             // 
-            this.cell1.BackColor = System.Drawing.Color.Transparent;
-            this.cell1.BackgroundImage = global::BigTycoon.Properties.Resources.rari;
-            this.cell1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell1.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell1.Location = new System.Drawing.Point(24, 17);
-            this.cell1.Name = "cell1";
-            this.cell1.Size = new System.Drawing.Size(150, 150);
-            this.cell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell1.TabIndex = 3;
-            this.cell1.TabStop = false;
-            this.cell1.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell1.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell1.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.richiesteLavoro_label.AutoSize = true;
+            this.richiesteLavoro_label.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richiesteLavoro_label.ForeColor = System.Drawing.Color.Black;
+            this.richiesteLavoro_label.Location = new System.Drawing.Point(362, 136);
+            this.richiesteLavoro_label.Name = "richiesteLavoro_label";
+            this.richiesteLavoro_label.Size = new System.Drawing.Size(186, 35);
+            this.richiesteLavoro_label.TabIndex = 6;
+            this.richiesteLavoro_label.Text = "Richieste lavoro: 5";
             // 
-            // cell2
+            // immagineAzienda_label
             // 
-            this.cell2.BackColor = System.Drawing.Color.Transparent;
-            this.cell2.BackgroundImage = global::BigTycoon.Properties.Resources.prezioso;
-            this.cell2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell2.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell2.Location = new System.Drawing.Point(24, 17);
-            this.cell2.Name = "cell2";
-            this.cell2.Size = new System.Drawing.Size(150, 150);
-            this.cell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell2.TabIndex = 3;
-            this.cell2.TabStop = false;
-            this.cell2.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell2.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell2.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.immagineAzienda_label.AutoSize = true;
+            this.immagineAzienda_label.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.immagineAzienda_label.ForeColor = System.Drawing.Color.Black;
+            this.immagineAzienda_label.Location = new System.Drawing.Point(16, 136);
+            this.immagineAzienda_label.Name = "immagineAzienda_label";
+            this.immagineAzienda_label.Size = new System.Drawing.Size(253, 35);
+            this.immagineAzienda_label.TabIndex = 5;
+            this.immagineAzienda_label.Text = "Immagine azienda: 90/100";
             // 
-            // cell3
+            // label27
             // 
-            this.cell3.BackColor = System.Drawing.Color.Transparent;
-            this.cell3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cell3.BackgroundImage")));
-            this.cell3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell3.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell3.Location = new System.Drawing.Point(24, 17);
-            this.cell3.Name = "cell3";
-            this.cell3.Size = new System.Drawing.Size(150, 150);
-            this.cell3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell3.TabIndex = 3;
-            this.cell3.TabStop = false;
-            this.cell3.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell3.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell3.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(16, 19);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(124, 35);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Lordo: 200$";
             // 
-            // cell4
+            // label26
             // 
-            this.cell4.BackColor = System.Drawing.Color.Transparent;
-            this.cell4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cell4.BackgroundImage")));
-            this.cell4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell4.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell4.Location = new System.Drawing.Point(24, 17);
-            this.cell4.Name = "cell4";
-            this.cell4.Size = new System.Drawing.Size(150, 150);
-            this.cell4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell4.TabIndex = 3;
-            this.cell4.TabStop = false;
-            this.cell4.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell4.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell4.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(362, 19);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(117, 35);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Spese: 50$";
             // 
-            // cell5
+            // label25
             // 
-            this.cell5.BackColor = System.Drawing.Color.Transparent;
-            this.cell5.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell5.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell5.Location = new System.Drawing.Point(24, 17);
-            this.cell5.Name = "cell5";
-            this.cell5.Size = new System.Drawing.Size(150, 150);
-            this.cell5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell5.TabIndex = 3;
-            this.cell5.TabStop = false;
-            this.cell5.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell5.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell5.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell6
-            // 
-            this.cell6.BackColor = System.Drawing.Color.Transparent;
-            this.cell6.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell6.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell6.Location = new System.Drawing.Point(24, 17);
-            this.cell6.Name = "cell6";
-            this.cell6.Size = new System.Drawing.Size(150, 150);
-            this.cell6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell6.TabIndex = 3;
-            this.cell6.TabStop = false;
-            this.cell6.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell6.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell6.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell7
-            // 
-            this.cell7.BackColor = System.Drawing.Color.Transparent;
-            this.cell7.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell7.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell7.Location = new System.Drawing.Point(24, 17);
-            this.cell7.Name = "cell7";
-            this.cell7.Size = new System.Drawing.Size(150, 150);
-            this.cell7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell7.TabIndex = 3;
-            this.cell7.TabStop = false;
-            this.cell7.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell7.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell7.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell8
-            // 
-            this.cell8.BackColor = System.Drawing.Color.Transparent;
-            this.cell8.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell8.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell8.Location = new System.Drawing.Point(24, 17);
-            this.cell8.Name = "cell8";
-            this.cell8.Size = new System.Drawing.Size(150, 150);
-            this.cell8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell8.TabIndex = 3;
-            this.cell8.TabStop = false;
-            this.cell8.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell8.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell8.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell9
-            // 
-            this.cell9.BackColor = System.Drawing.Color.Transparent;
-            this.cell9.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell9.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell9.Location = new System.Drawing.Point(24, 17);
-            this.cell9.Name = "cell9";
-            this.cell9.Size = new System.Drawing.Size(150, 150);
-            this.cell9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell9.TabIndex = 3;
-            this.cell9.TabStop = false;
-            this.cell9.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell9.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell9.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell10
-            // 
-            this.cell10.BackColor = System.Drawing.Color.Transparent;
-            this.cell10.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell10.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell10.Location = new System.Drawing.Point(24, 17);
-            this.cell10.Name = "cell10";
-            this.cell10.Size = new System.Drawing.Size(150, 150);
-            this.cell10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell10.TabIndex = 3;
-            this.cell10.TabStop = false;
-            this.cell10.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell10.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell10.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell11
-            // 
-            this.cell11.BackColor = System.Drawing.Color.Transparent;
-            this.cell11.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell11.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell11.Location = new System.Drawing.Point(24, 17);
-            this.cell11.Name = "cell11";
-            this.cell11.Size = new System.Drawing.Size(150, 150);
-            this.cell11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell11.TabIndex = 3;
-            this.cell11.TabStop = false;
-            this.cell11.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell11.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell11.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell12
-            // 
-            this.cell12.BackColor = System.Drawing.Color.Transparent;
-            this.cell12.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell12.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell12.Location = new System.Drawing.Point(24, 17);
-            this.cell12.Name = "cell12";
-            this.cell12.Size = new System.Drawing.Size(150, 150);
-            this.cell12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell12.TabIndex = 3;
-            this.cell12.TabStop = false;
-            this.cell12.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell12.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell12.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell13
-            // 
-            this.cell13.BackColor = System.Drawing.Color.Transparent;
-            this.cell13.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell13.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell13.Location = new System.Drawing.Point(24, 17);
-            this.cell13.Name = "cell13";
-            this.cell13.Size = new System.Drawing.Size(150, 150);
-            this.cell13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell13.TabIndex = 3;
-            this.cell13.TabStop = false;
-            this.cell13.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell13.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell13.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell14
-            // 
-            this.cell14.BackColor = System.Drawing.Color.Transparent;
-            this.cell14.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell14.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell14.Location = new System.Drawing.Point(24, 17);
-            this.cell14.Name = "cell14";
-            this.cell14.Size = new System.Drawing.Size(150, 150);
-            this.cell14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell14.TabIndex = 3;
-            this.cell14.TabStop = false;
-            this.cell14.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell14.MouseLeave += new System.EventHandler(this.OnMouseLeave);
-            // 
-            // cell15
-            // 
-            this.cell15.BackColor = System.Drawing.Color.Transparent;
-            this.cell15.BackgroundImage = global::BigTycoon.Properties.Resources.cella_vuota;
-            this.cell15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cell15.Image = global::BigTycoon.Properties.Resources.bordo_cella;
-            this.cell15.Location = new System.Drawing.Point(24, 17);
-            this.cell15.Name = "cell15";
-            this.cell15.Size = new System.Drawing.Size(150, 150);
-            this.cell15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cell15.TabIndex = 3;
-            this.cell15.TabStop = false;
-            this.cell15.Click += new System.EventHandler(this.AggiungiEdificio);
-            this.cell15.MouseEnter += new System.EventHandler(this.OnMouseEnter);
-            this.cell15.MouseLeave += new System.EventHandler(this.OnMouseLeave);
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Agency FB", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(16, 63);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(262, 35);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Guadagno giornaliero: 150$";
             // 
             // portafoglio_label
             // 
@@ -855,57 +936,62 @@ namespace BigTycoon
             this.griglia_flow_layout.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell4)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell5)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell6)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell7)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell8)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell9)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell10)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell11)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell12)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell13)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell14)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cell15)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
+            this.crea_edificio_panel.ResumeLayout(false);
+            this.crea_edificio_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.felicita_pics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasporti_pics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.banca_pics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cell15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,6 +1058,12 @@ namespace BigTycoon
         private System.Windows.Forms.PictureBox cell15;
         private System.Windows.Forms.Label luogo15;
         private System.Windows.Forms.Label portafoglio_label;
+        private System.Windows.Forms.Panel crea_edificio_panel;
+        private System.Windows.Forms.PictureBox negozio_bottone;
+        private System.Windows.Forms.PictureBox fabbrica_bottone;
+        private System.Windows.Forms.PictureBox industria_bottone;
+        private System.Windows.Forms.Label cellaSelezionata_label;
+        private System.Windows.Forms.Button costruisci_bottone;
     }
 }
 
