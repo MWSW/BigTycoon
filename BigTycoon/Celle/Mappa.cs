@@ -38,7 +38,7 @@ namespace BigTycoon.Celle
             {
                 default:
                 case 0:
-                    tmp = new Industria();
+                    tmp = new Industria(CelleMateriali[row,col]);
                     break;
                 case 1:
                     tmp = new Fabbrica();

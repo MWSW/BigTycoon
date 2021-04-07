@@ -30,9 +30,9 @@ namespace BigTycoon.Celle.Edifici
             Dipendenti = new Dipendenti { };
         }
 
-        public virtual void Update()
+        public virtual void Update(Giocatore giocatore)
         {
-            Produci();
+            Produci(giocatore);
         }
 
         protected abstract void Produci(Giocatore gio);
