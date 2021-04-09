@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using BigTycoon.Generale;
 
 namespace BigTycoon.GestioneDipendenti
 {
@@ -23,15 +24,27 @@ namespace BigTycoon.GestioneDipendenti
             Felicita = 0;
         }
 
+        public void AggiungiDipendenti(Giocatore gio)
+        {
+            gio.DipendentiDisponibili--;
+            Quantita++;
+        }
+
+        public void RimuoviDipendenti(Giocatore gio)
+        {
+            Quantita--;
+            gio.DipendentiDisponibili++;
+        }
+
         public void ModStipendi(int mod)
         {
             StipendiPerc += mod;
 
-            if ((StipendiPerc < 50))
+            if (StipendiPerc < 50)
             {
                 StipendiPerc = 50;
             }
-            else if((StipendiPerc > 200))
+            else if(StipendiPerc > 200)
             {
                 StipendiPerc = 200;
             }
