@@ -58,15 +58,15 @@ namespace BigTycoon
             {
                 for (int i = 0; i < griglia.GetLength(0); i++)
                 {
-                    if (mappa.CelleMateriali[i, j] == "COMUNI")
+                    if (mappa.CelleMateriali[i, j] == "MaterialeComune")
                     {
                         griglia[i, j].BackgroundImage = Properties.Resources.comuni;
                     }
-                    else if (mappa.CelleMateriali[i, j] == "PREZIOSI")
+                    else if (mappa.CelleMateriali[i, j] == "MaterialePrezioso")
                     {
                         griglia[i, j].BackgroundImage = Properties.Resources.preziosi;
                     }
-                    else if (mappa.CelleMateriali[i, j] == "RARI")
+                    else if (mappa.CelleMateriali[i, j] == "MaterialeRaro")
                     {
                         griglia[i, j].BackgroundImage = Properties.Resources.rari;
                     }
@@ -117,10 +117,12 @@ namespace BigTycoon
             gestioneEdificio_panel.Visible = false;
         }
 
-        void InfoGrafiche()
+        void AggiornaInfoGrafiche()
         {
             indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
             indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
+
+            richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
             stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
 
@@ -150,28 +152,40 @@ namespace BigTycoon
         }
         #endregion
 
-
+        //Numero dipendenti/////////////////
         private void incDipendenti_bottone_Click(object sender, EventArgs e)
         {
-            //TODO
+            edificioSelezionato.Dipendenti.AggiungiDipendenti(giocatore);
 
-            InfoGrafiche();
+            AggiornaInfoGrafiche();
         }
+
+        private void dimDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.RimuoviDipendenti(giocatore);
+
+            AggiornaInfoGrafiche();
+        }
+        ////////////////////////////////////
+        
+
+        //Gestione stipendi ////////////////
         private void incStipendi_button_Click(object sender, EventArgs e)
         {
             edificioSelezionato.Dipendenti.ModStipendi(10);
 
-            InfoGrafiche();
+            AggiornaInfoGrafiche();
         }
 
         private void dimStipendi_button_Click(object sender, EventArgs e)
         {
             edificioSelezionato.Dipendenti.ModStipendi(-10);
 
-            InfoGrafiche();
+            AggiornaInfoGrafiche();
         }
+        //////////////////////////////////
 
-
+        #region CreaEdificio
         private void industria_bottone_Click(object sender, EventArgs e)
         {
             tipo = 0;
@@ -255,8 +269,13 @@ namespace BigTycoon
                 //Nome edificio
                 edificioSelezionato_label.Text += mappa.CelleNomi[r_selezionato, c_selezionato];
 
-                InfoGrafiche();
+                AggiornaInfoGrafiche();
             }
+        }
+
+        private void EdificiUpdate(object sender, EventArgs e)
+        {
+            mappa.UpdateAll(giocatore);
         }
 
         private void costruisci_bottone_Click(object sender, EventArgs e)
@@ -266,15 +285,15 @@ namespace BigTycoon
             //immagine
             if (tipo == 0) //tipo industria
             {
-                if(mappa.CelleMateriali[r_selezionato,c_selezionato] == "COMUNI")
+                if(mappa.CelleMateriali[r_selezionato,c_selezionato] == "MaterialeComune")
                 {
                     griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_comuni;
                 }
-                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "RARI")
+                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialeRaro")
                 {
                     griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_rari;
                 }
-                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "PREZIOSI")
+                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialePrezioso")
                 {
                     griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_preziosi;
                 }
@@ -287,4 +306,5 @@ namespace BigTycoon
             Reset();
         }
     }
+    #endregion
 }

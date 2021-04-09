@@ -10,6 +10,13 @@ namespace BigTycoon.Celle.Magazzino
 		public Oggetto MaterialeRaro { get; set; }
 		public Oggetto MaterialePrezioso { get; set; }
 
+		public MagazzinoMateriali()
+        {
+			MaterialeComune = new Oggetto("MaterialeComune", 1);
+			MaterialeRaro = new Oggetto("MaterialeRaro", 1);
+			MaterialePrezioso = new Oggetto("MaterialePrezioso", 1);
+		}
+
         public Dictionary<string, Oggetto> DizionarioMateriali { get; private set; } = ListaOggetti.DizionarioMateriali;
     }
 }

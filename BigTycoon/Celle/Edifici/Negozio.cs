@@ -20,7 +20,7 @@ namespace BigTycoon.Celle.Edifici
 
 		}
 
-        protected override void Produci(Giocatore gio)
+        protected override void Produci()
         {
             return;
         }

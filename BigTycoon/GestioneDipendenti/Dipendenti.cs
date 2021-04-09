@@ -26,14 +26,20 @@ namespace BigTycoon.GestioneDipendenti
 
         public void AggiungiDipendenti(Giocatore gio)
         {
-            gio.DipendentiDisponibili--;
-            Quantita++;
+            if (gio.DipendentiDisponibili > 0 && Quantita < MassimoDipendenti)
+            {
+                gio.DipendentiDisponibili--;
+                Quantita++;
+            }
         }
 
         public void RimuoviDipendenti(Giocatore gio)
         {
-            Quantita--;
-            gio.DipendentiDisponibili++;
+            if (Quantita > 0)
+            {
+                Quantita--;
+                gio.DipendentiDisponibili++;
+            }
         }
 
         public void ModStipendi(int mod)

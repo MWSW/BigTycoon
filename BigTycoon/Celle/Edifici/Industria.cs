@@ -16,27 +16,28 @@ namespace BigTycoon.Celle.Edifici
             risorsaTerreno = ogg;
         }
 
-        private void CreaMateriale()
+        protected override void Produci()
         {
-            //
-        }
-
-        protected override void Produci(Giocatore gio)
-        {
+            //Crea materiale
             if (risorsaTerreno.Equals(SlotMateriali.MaterialeComune.Nome))
             {
                 SlotMateriali.MaterialeComune.Quantita++;
+                Console.WriteLine("Comune");
             }
             else
             if (risorsaTerreno.Equals(SlotMateriali.MaterialeRaro.Nome))
             {
                 SlotMateriali.MaterialeRaro.Quantita++;
+                Console.WriteLine("Raro");
             }
             else
             if (risorsaTerreno.Equals(SlotMateriali.MaterialePrezioso.Nome))
             {
                 SlotMateriali.MaterialePrezioso.Quantita++;
+                Console.WriteLine("Prezioso");
             }
+
+            
         }
     }
 }

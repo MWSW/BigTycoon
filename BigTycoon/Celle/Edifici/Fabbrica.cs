@@ -16,12 +16,6 @@ namespace BigTycoon.Celle.Edifici
             SlotMateriali = new MagazzinoMateriali();
         }
 
-        public override void Update(Giocatore giocatore)
-        {
-            base.Update(giocatore);
-            CreaCapitale();
-        }
-
         public void CambiaProduzione(string nome)
         {
             foreach (var ogg in ListaOggetti.DizionarioProdotti)
@@ -33,56 +27,19 @@ namespace BigTycoon.Celle.Edifici
             }
         }
 
-        private void CreaCapitale()
+        protected override void Produci()
         {
-            foreach (var ogg in ListaOggetti.DizionarioProdotti)
+            //Crea capitale
+            if (ProdottoCorrente != null)
             {
-                if (ProdottoCorrente.Nome == ogg.Key)
+                foreach (var ogg in ListaOggetti.DizionarioProdotti)
                 {
-                    ProdottoCorrente.Quantita++;
+                    if (ProdottoCorrente.Nome == ogg.Key)
+                    {
+                        ProdottoCorrente.Quantita++;
+                    }
                 }
             }
-        }
-
-        protected override void Produci(Giocatore gio)
-        {
-            foreach (var ogg in MagazzinoProdotti.DizionarioProdotti)
-            {
-                if (ProdottoCorrente.Nome.Equals(ogg.Value.Nome))
-                {
-                    ogg.Value.Quantita++;
-                }
-            }
-
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComune.Nome))
-            //{
-            //    SlotProdotti.ProdottoComune.Quantita++;
-            //}
-            //else
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoRaro.Nome))
-            //{
-            //    SlotProdotti.ProdottoRaro.Quantita++;
-            //}
-            //else
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoPrezioso.Nome))
-            //{
-            //    SlotProdotti.ProdottoPrezioso.Quantita++;
-            //}
-            //else
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComuneRaro.Nome))
-            //{
-            //    SlotProdotti.ProdottoComuneRaro.Quantita++;
-            //}
-            //else
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoComunePrezioso.Nome))
-            //{
-            //    SlotProdotti.ProdottoComunePrezioso.Quantita++;
-            //}
-            //else
-            //if (ProdottoCorrente.Nome.Equals(SlotProdotti.ProdottoRaroPrezioso.Nome))
-            //{
-            //    SlotProdotti.ProdottoRaroPrezioso.Quantita++;
-            //}
         }
     }
 }

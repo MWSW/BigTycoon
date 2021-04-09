@@ -29,6 +29,7 @@ namespace BigTycoon
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.griglia_flow_layout = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -115,6 +116,7 @@ namespace BigTycoon
             this.label27 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerEdifici = new System.Windows.Forms.Timer(this.components);
             this.griglia_flow_layout.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cell1)).BeginInit();
@@ -741,8 +743,8 @@ namespace BigTycoon
             this.panel25.Controls.Add(this.label25);
             this.panel25.Controls.Add(this.immagineAzienda_label);
             this.panel25.Controls.Add(this.label26);
-            this.panel25.Controls.Add(this.crea_edificio_panel);
             this.panel25.Controls.Add(this.gestioneEdificio_panel);
+            this.panel25.Controls.Add(this.crea_edificio_panel);
             this.panel25.Location = new System.Drawing.Point(1094, 12);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(591, 814);
@@ -1099,6 +1101,7 @@ namespace BigTycoon
             this.dimDipendenti_bottone.Size = new System.Drawing.Size(50, 50);
             this.dimDipendenti_bottone.TabIndex = 3;
             this.dimDipendenti_bottone.UseVisualStyleBackColor = true;
+            this.dimDipendenti_bottone.Click += new System.EventHandler(this.dimDipendenti_bottone_Click);
             // 
             // edificioSelezionato_label
             // 
@@ -1164,6 +1167,12 @@ namespace BigTycoon
             this.pictureBox1.Size = new System.Drawing.Size(590, 10);
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
+            // 
+            // timerEdifici
+            // 
+            this.timerEdifici.Enabled = true;
+            this.timerEdifici.Interval = 3000;
+            this.timerEdifici.Tick += new System.EventHandler(this.EdificiUpdate);
             // 
             // Form1
             // 
@@ -1338,6 +1347,7 @@ namespace BigTycoon
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timerEdifici;
     }
 }
 

@@ -26,7 +26,7 @@ namespace BigTycoon
             string[,] materiali = new string[RIGHE, COLONNE];
             string[,] nomi = new string[RIGHE, COLONNE];
 
-            string[] listaMateriali = { "COMUNI", "RARI", "PREZIOSI" };
+            string[] listaMateriali = { "MaterialeComune", "MaterialeRaro", "MaterialePrezioso" };
             string[] listaNomi = {"Cuneo", "Abbiategrasso", "Abbiatelardo", "Taranto",
                                   "Scampia", "Bolzano", "Ghiffa", "Palermo",
                                   "Miazzina", "Catanzaro", "Luino", "Alba", "Calascibetta",

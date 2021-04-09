@@ -33,9 +33,9 @@ namespace BigTycoon.Celle.Edifici
 
         public virtual void Update(Giocatore giocatore)
         {
-            Produci(giocatore);
+            Produci();
         }
 
-        protected abstract void Produci(Giocatore gio);
+        protected abstract void Produci();
     }
 }

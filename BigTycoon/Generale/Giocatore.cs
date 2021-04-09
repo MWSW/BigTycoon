@@ -21,16 +21,6 @@ namespace BigTycoon.Generale
 			return portafogli;
         }
 
-		public void AssegnaDipendente()		//non dovrebbe essere nell'edificio? ~Emanuele
-        {
-
-        }
-
-		public void RimuoviDipendente()		// ==
-        {
-
-        }
-
 		private void CalcolaBilancio()
         {
 

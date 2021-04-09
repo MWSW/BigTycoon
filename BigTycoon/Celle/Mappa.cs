@@ -50,6 +50,16 @@ namespace BigTycoon.Celle
             }
             CelleEdifici[row, col] = tmp;
         }
+        public void UpdateAll(Giocatore giocatore)
+        {
+            foreach(Edificio e in CelleEdifici)
+            {
+                if(e != null)
+                {
+                    e.Update(giocatore);
+                }
+            }
+        }
 
         /*public void RimuoviEdificio() //??
         {
