@@ -40,11 +40,11 @@ namespace BigTycoon.GestioneDipendenti
         {
             StipendiPerc += mod;
 
-            if ((StipendiPerc < 50))
+            if (StipendiPerc < 50)
             {
                 StipendiPerc = 50;
             }
-            else if((StipendiPerc > 200))
+            else if(StipendiPerc > 200)
             {
                 StipendiPerc = 200;
             }

@@ -5,13 +5,14 @@ namespace BigTycoon.Oggetti
 	public class Oggetto
 	{
 		public String Nome { get; set; }
-		public String Tipo { get; set; }
 		public int Quantita { get; set; }
-		public int Valore { get; set; }
+		public double Valore { get; set; }
 
-		public Oggetto()
+		public Oggetto(string nome,double valore)
 		{
-            //
+            Nome = nome;
+            Valore = valore;
+            Quantita = 0;
 		}
 	}
 }
