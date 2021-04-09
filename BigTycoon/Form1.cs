@@ -258,6 +258,7 @@ namespace BigTycoon
                 InfoGrafiche();
             }
         }
+
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
             mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore.portafogli);
