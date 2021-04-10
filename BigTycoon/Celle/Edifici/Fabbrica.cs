@@ -30,16 +30,16 @@ namespace BigTycoon.Celle.Edifici
         protected override void Produci()
         {
             //Crea capitale
-            if (ProdottoCorrente != null)
+            if (ProdottoCorrente == null) return;
+
+            foreach (var ogg in ListaOggetti.DizionarioProdotti)
             {
-                foreach (var ogg in ListaOggetti.DizionarioProdotti)
+                if (ProdottoCorrente == ogg.Key)
                 {
-                    if (ProdottoCorrente == ogg.Key)
-                    {
-                        ogg.Value.Quantita++;
-                    }
+                    ogg.Value.Quantita++;
                 }
             }
+
         }
     }
 }

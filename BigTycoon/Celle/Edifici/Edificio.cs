@@ -13,7 +13,9 @@ namespace BigTycoon.Celle.Edifici
         protected int Produzione { get; set; }
         protected double Produttivita { get; set; }
         public Dipendenti Dipendenti { get; protected set; }
-        protected bool EdificioAttivo { get; set; }
+
+        private bool edificioAttivo;
+        protected bool EdificioAttivo { get => edificioAttivo; set => IsEdificioAttivo(); }
         public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
@@ -27,13 +29,23 @@ namespace BigTycoon.Celle.Edifici
             EdificioAttivo = false;
             PuntiFelicita = 0;
             ColoreEdificio = 0;
-
             Dipendenti = new Dipendenti(0, 4, 20);
         }
 
         public virtual void Update()
         {
             Produci();
+        }
+
+        private void CalcolaBilancio()
+        {
+            //
+        }
+
+        protected bool IsEdificioAttivo()
+        {
+            //
+            return true;
         }
 
         protected abstract void Produci();
