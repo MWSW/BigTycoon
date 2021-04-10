@@ -10,7 +10,7 @@ namespace BigTycoon.Celle.Edifici
         public MagazzinoMateriali SlotMateriali { get; set; }
         private string risorsaTerreno;
 
-        public Industria(string ogg)
+        public Industria(Giocatore gio, string ogg) : base(gio)
         {
             SlotMateriali = new MagazzinoMateriali();
             risorsaTerreno = ogg;
@@ -19,25 +19,13 @@ namespace BigTycoon.Celle.Edifici
         protected override void Produci()
         {
             //Crea materiale
-            if (risorsaTerreno.Equals(SlotMateriali.MaterialeComune.Nome))
+            foreach (var ogg in SlotMateriali.DizionarioMateriali)
             {
-                SlotMateriali.MaterialeComune.Quantita++;
-                Console.WriteLine("Comune");
+                if (ogg.Key == risorsaTerreno)
+                {
+                    ogg.Value.Quantita++;
+                }
             }
-            else
-            if (risorsaTerreno.Equals(SlotMateriali.MaterialeRaro.Nome))
-            {
-                SlotMateriali.MaterialeRaro.Quantita++;
-                Console.WriteLine("Raro");
-            }
-            else
-            if (risorsaTerreno.Equals(SlotMateriali.MaterialePrezioso.Nome))
-            {
-                SlotMateriali.MaterialePrezioso.Quantita++;
-                Console.WriteLine("Prezioso");
-            }
-
-            
         }
     }
 }

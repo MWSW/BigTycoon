@@ -7,7 +7,7 @@ namespace BigTycoon.Celle.Edifici
 {
     public abstract class Edificio
     {
-
+        protected Giocatore Possessore { get; set; }
         public double Bilancio { get; protected set; }
         public double Reddito { get; protected set; }
         protected int Produzione { get; set; }
@@ -17,8 +17,9 @@ namespace BigTycoon.Celle.Edifici
         public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
-        public Edificio()
+        public Edificio(Giocatore gio)
         {//valori di prova
+            Possessore = gio;
             Bilancio = 0;
             Reddito = 0;
             Produzione = 0;
@@ -28,10 +29,9 @@ namespace BigTycoon.Celle.Edifici
             ColoreEdificio = 0;
 
             Dipendenti = new Dipendenti(0, 4, 20);
-
         }
 
-        public virtual void Update(Giocatore giocatore)
+        public virtual void Update()
         {
             Produci();
         }

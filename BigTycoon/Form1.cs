@@ -280,7 +280,7 @@ namespace BigTycoon
 
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
-            mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore.portafogli);
+            mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore);
 
             //immagine
             if (tipo == 0) //tipo industria

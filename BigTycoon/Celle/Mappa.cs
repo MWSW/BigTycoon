@@ -32,20 +32,20 @@ namespace BigTycoon.Celle
         /// <param name="y">Coordinata y</param>
         /// <param name="tipo">Tipo dell'edificio</param>
         /// <param name="fenoglioIlPortafoglio">Portafoglio del giocatore che crea l'edificio</param>
-		public void AggiungiEdificio(int row, int col, int tipo, Portafoglio fenoglioIlPortafoglio)
+		public void AggiungiEdificio(int row, int col, int tipo, Giocatore gio)
         {
             Edificio tmp;
             switch (tipo)
             {
                 default:
                 case 0:
-                    tmp = new Industria(CelleMateriali[row,col]);
+                    tmp = new Industria(gio, CelleMateriali[row,col]);
                     break;
                 case 1:
-                    tmp = new Fabbrica();
+                    tmp = new Fabbrica(gio);
                     break;
                 case 2:
-                    tmp = new Negozio();
+                    tmp = new Negozio(gio);
                     break;
             }
             CelleEdifici[row, col] = tmp;
@@ -56,7 +56,7 @@ namespace BigTycoon.Celle
             {
                 if(e != null)
                 {
-                    e.Update(giocatore);
+                    e.Update();
                 }
             }
         }

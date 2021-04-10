@@ -8,9 +8,9 @@ namespace BigTycoon.Celle.Edifici
     {
         public MagazzinoProdotti SlotProdotti { get; set; }
         public MagazzinoMateriali SlotMateriali { get; set; }
-        public Oggetto ProdottoCorrente { get; set; }
+        public string ProdottoCorrente { get; set; }
 
-        public Fabbrica()
+        public Fabbrica(Giocatore gio) : base(gio)
         {
             SlotProdotti = new MagazzinoProdotti();
             SlotMateriali = new MagazzinoMateriali();
@@ -22,7 +22,7 @@ namespace BigTycoon.Celle.Edifici
             {
                 if (nome == ogg.Key)
                 {
-                    ProdottoCorrente = ogg.Value;
+                    ProdottoCorrente = ogg.Key;
                 }
             }
         }
@@ -34,9 +34,9 @@ namespace BigTycoon.Celle.Edifici
             {
                 foreach (var ogg in ListaOggetti.DizionarioProdotti)
                 {
-                    if (ProdottoCorrente.Nome == ogg.Key)
+                    if (ProdottoCorrente == ogg.Key)
                     {
-                        ProdottoCorrente.Quantita++;
+                        ogg.Value.Quantita++;
                     }
                 }
             }
