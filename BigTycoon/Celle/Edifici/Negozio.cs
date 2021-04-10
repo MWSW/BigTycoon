@@ -26,7 +26,7 @@ namespace BigTycoon.Celle.Edifici
             {
                 if (ogg.Key == ProdottoInVendita)
                 {
-                    //Possessore.Portafoglio.Soldi += ogg.Value.Valore;
+                    Possessore.portafogli.Soldi += ogg.Value.Valore;
                 }
             }
         }
