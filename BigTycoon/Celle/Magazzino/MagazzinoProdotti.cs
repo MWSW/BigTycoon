@@ -10,7 +10,7 @@ namespace BigTycoon.Celle.Magazzino
 
         public MagazzinoProdotti()
         {
-            DizionarioProdotti = ListaOggetti.DizionarioProdotti;
+            DizionarioProdotti = ListaOggetti.ClonaDizionarioProdotti();
         }
     }
 }

@@ -30,5 +30,30 @@ namespace BigTycoon.Oggetti
             ["ProdottoComunePrezioso"] = new Oggetto("ProdottoComunePrezioso", 0 ),
             ["ProdottoRaroPrezioso"] = new Oggetto("ProdottoRaroPrezioso", 0 )
         };
+
+        //--------Clonazione
+
+        /// <summary>
+        /// Metodo che clona il DizionarioMateriali
+        /// </summary>
+        public static Dictionary<string, Oggetto> ClonaDizionarioMateriali() => new Dictionary<string, Oggetto>
+        {
+            ["MaterialeComune"] = new Oggetto("MaterialeComune", 1),
+            ["MaterialeRaro"] = new Oggetto("MaterialeRaro", 1),
+            ["MaterialePrezioso"] = new Oggetto("MaterialePrezioso", 1),
+        };
+
+        /// <summary>
+        /// Metodo che clona il DizionarioProdotti
+        /// </summary>
+        public static Dictionary<string, Oggetto> ClonaDizionarioProdotti() => new Dictionary<string, Oggetto>
+        {
+            ["ProdottoComune"] = new Oggetto("ProdottoComune", 0),
+            ["ProdottoRaro"] = new Oggetto("ProdottoRaro", 0),
+            ["ProdottoPrezioso"] = new Oggetto("ProdottoPrezioso", 0),
+            ["ProdottoComuneRaro"] = new Oggetto("ProdottoComuneRaro", 0),
+            ["ProdottoComunePrezioso"] = new Oggetto("ProdottoComunePrezioso", 0),
+            ["ProdottoRaroPrezioso"] = new Oggetto("ProdottoRaroPrezioso", 0)
+        };
     }
 }

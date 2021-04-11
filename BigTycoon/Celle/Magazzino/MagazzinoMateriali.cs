@@ -10,7 +10,19 @@ namespace BigTycoon.Celle.Magazzino
 
         public MagazzinoMateriali()
         {
-            DizionarioMateriali = ListaOggetti.DizionarioMateriali;
+            DizionarioMateriali = ListaOggetti.ClonaDizionarioMateriali();
+        }
+
+        public Oggetto GetElemento(string nome)
+        {
+            Oggetto oggetto;
+            DizionarioMateriali.TryGetValue(nome, out oggetto);
+
+            if (oggetto != null)
+                return oggetto;
+            else
+                Console.WriteLine("Errore oggetto insensistente!");
+                return null;
         }
     }
 }

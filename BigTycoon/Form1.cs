@@ -1,6 +1,7 @@
 ﻿using BigTycoon.Celle;
 using BigTycoon.Celle.Edifici;
 using BigTycoon.Generale;
+using BigTycoon.Oggetti;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,6 +85,15 @@ namespace BigTycoon
             #endregion
         }
 
+        #region Timer
+        private void EdificiUpdate(object sender, EventArgs e)
+        {
+            mappa.UpdateAll();
+            AggiornaInfoGrafiche();
+        }
+        #endregion
+
+
         #region MetodiVari
         bool CellaVuota(PictureBox immagine)
         {
@@ -119,15 +129,38 @@ namespace BigTycoon
 
         void AggiornaInfoGrafiche()
         {
-            indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
-            indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
+            if (edificioSelezionato != null)
+            {
+                indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
+                indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
 
-            richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
+                richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
-            stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
+                if (gestioneEdificio_panel.Visible)
+                {
+                    stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
 
-            guadagnoEdificio.Text = "GUADAGNO " + edificioSelezionato.Bilancio + "$";
-            lordoEdificio.Text = "LORDO " + edificioSelezionato.Reddito + "$";
+                    guadagnoEdificio.Text = "GUADAGNO " + edificioSelezionato.Bilancio + "$";
+                    lordoEdificio.Text = "LORDO " + edificioSelezionato.Reddito + "$";
+
+                    //Magazzino (GUI)
+                    if (edificioSelezionato.GetType() == typeof(Industria))
+                    {
+                        Industria industria = (Industria)edificioSelezionato;
+                        comuni_numero.Text = industria.SlotMateriali.GetElemento("MaterialeComune").Quantita.ToString();
+                        rari_numero.Text = industria.SlotMateriali.GetElemento("MaterialeRaro").Quantita.ToString();
+                        preziosi_numero.Text = industria.SlotMateriali.GetElemento("MaterialePrezioso").Quantita.ToString();
+                    }
+                    else if (edificioSelezionato.GetType() == typeof(Fabbrica))
+                    {
+                        edificioSelezionato_label.Text += "Fabbrica di ";
+                    }
+                    else if (edificioSelezionato.GetType() == typeof(Negozio))
+                    {
+                        edificioSelezionato_label.Text += "Negozio di ";
+                    }
+                }
+            }
         }
         #endregion
 
@@ -271,11 +304,6 @@ namespace BigTycoon
 
                 AggiornaInfoGrafiche();
             }
-        }
-
-        private void EdificiUpdate(object sender, EventArgs e)
-        {
-            mappa.UpdateAll(giocatore);
         }
 
         private void costruisci_bottone_Click(object sender, EventArgs e)

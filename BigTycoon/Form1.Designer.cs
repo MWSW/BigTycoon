@@ -78,20 +78,19 @@ namespace BigTycoon
             this.cell15 = new System.Windows.Forms.PictureBox();
             this.luogo15 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.banca_pics = new System.Windows.Forms.PictureBox();
             this.trasporti_pics = new System.Windows.Forms.PictureBox();
             this.felicita_pics = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.richiesteLavoro_label = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.immagineAzienda_label = new System.Windows.Forms.Label();
-            this.crea_edificio_panel = new System.Windows.Forms.Panel();
-            this.costruisci_bottone = new System.Windows.Forms.Button();
-            this.negozio_bottone = new System.Windows.Forms.PictureBox();
-            this.fabbrica_bottone = new System.Windows.Forms.PictureBox();
-            this.industria_bottone = new System.Windows.Forms.PictureBox();
-            this.cellaSelezionata_label = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.gestioneEdificio_panel = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
             this.lordoEdificio = new System.Windows.Forms.Label();
             this.guadagnoEdificio = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -111,12 +110,26 @@ namespace BigTycoon
             this.incDipendenti_bottone = new System.Windows.Forms.Button();
             this.dimDipendenti_bottone = new System.Windows.Forms.Button();
             this.edificioSelezionato_label = new System.Windows.Forms.Label();
+            this.crea_edificio_panel = new System.Windows.Forms.Panel();
+            this.costruisci_bottone = new System.Windows.Forms.Button();
+            this.negozio_bottone = new System.Windows.Forms.PictureBox();
+            this.fabbrica_bottone = new System.Windows.Forms.PictureBox();
+            this.industria_bottone = new System.Windows.Forms.PictureBox();
+            this.cellaSelezionata_label = new System.Windows.Forms.Label();
             this.portafoglio_label = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerEdifici = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comuni_numero = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.rari_numero = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.preziosi_numero = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.griglia_flow_layout.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cell1)).BeginInit();
@@ -149,23 +162,30 @@ namespace BigTycoon
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cell15)).BeginInit();
             this.panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.banca_pics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasporti_pics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.felicita_pics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            this.crea_edificio_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).BeginInit();
             this.gestioneEdificio_panel.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel17.SuspendLayout();
             this.felicita_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.icona_puntiFelicita)).BeginInit();
             this.dipendenti_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenti_icona)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.crea_edificio_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // griglia_flow_layout
@@ -221,7 +241,7 @@ namespace BigTycoon
             this.luogo1.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo1.Location = new System.Drawing.Point(18, 170);
             this.luogo1.Name = "luogo1";
-            this.luogo1.Size = new System.Drawing.Size(82, 27);
+            this.luogo1.Size = new System.Drawing.Size(77, 26);
             this.luogo1.TabIndex = 2;
             this.luogo1.Text = "CUNEO";
             this.luogo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +277,7 @@ namespace BigTycoon
             this.luogo2.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo2.Location = new System.Drawing.Point(18, 170);
             this.luogo2.Name = "luogo2";
-            this.luogo2.Size = new System.Drawing.Size(82, 27);
+            this.luogo2.Size = new System.Drawing.Size(77, 26);
             this.luogo2.TabIndex = 2;
             this.luogo2.Text = "CUNEO";
             this.luogo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,7 +313,7 @@ namespace BigTycoon
             this.luogo3.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo3.Location = new System.Drawing.Point(18, 170);
             this.luogo3.Name = "luogo3";
-            this.luogo3.Size = new System.Drawing.Size(82, 27);
+            this.luogo3.Size = new System.Drawing.Size(77, 26);
             this.luogo3.TabIndex = 2;
             this.luogo3.Text = "CUNEO";
             this.luogo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,7 +349,7 @@ namespace BigTycoon
             this.luogo4.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo4.Location = new System.Drawing.Point(18, 170);
             this.luogo4.Name = "luogo4";
-            this.luogo4.Size = new System.Drawing.Size(82, 27);
+            this.luogo4.Size = new System.Drawing.Size(77, 26);
             this.luogo4.TabIndex = 2;
             this.luogo4.Text = "CUNEO";
             this.luogo4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,7 +385,7 @@ namespace BigTycoon
             this.luogo5.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo5.Location = new System.Drawing.Point(18, 170);
             this.luogo5.Name = "luogo5";
-            this.luogo5.Size = new System.Drawing.Size(82, 27);
+            this.luogo5.Size = new System.Drawing.Size(77, 26);
             this.luogo5.TabIndex = 2;
             this.luogo5.Text = "CUNEO";
             this.luogo5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -401,7 +421,7 @@ namespace BigTycoon
             this.luogo6.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo6.Location = new System.Drawing.Point(18, 170);
             this.luogo6.Name = "luogo6";
-            this.luogo6.Size = new System.Drawing.Size(82, 27);
+            this.luogo6.Size = new System.Drawing.Size(77, 26);
             this.luogo6.TabIndex = 2;
             this.luogo6.Text = "CUNEO";
             this.luogo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -437,7 +457,7 @@ namespace BigTycoon
             this.luogo7.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo7.Location = new System.Drawing.Point(18, 170);
             this.luogo7.Name = "luogo7";
-            this.luogo7.Size = new System.Drawing.Size(82, 27);
+            this.luogo7.Size = new System.Drawing.Size(77, 26);
             this.luogo7.TabIndex = 2;
             this.luogo7.Text = "CUNEO";
             this.luogo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -473,7 +493,7 @@ namespace BigTycoon
             this.luogo8.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo8.Location = new System.Drawing.Point(18, 170);
             this.luogo8.Name = "luogo8";
-            this.luogo8.Size = new System.Drawing.Size(82, 27);
+            this.luogo8.Size = new System.Drawing.Size(77, 26);
             this.luogo8.TabIndex = 2;
             this.luogo8.Text = "CUNEO";
             this.luogo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -509,7 +529,7 @@ namespace BigTycoon
             this.luogo9.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo9.Location = new System.Drawing.Point(18, 170);
             this.luogo9.Name = "luogo9";
-            this.luogo9.Size = new System.Drawing.Size(82, 27);
+            this.luogo9.Size = new System.Drawing.Size(77, 26);
             this.luogo9.TabIndex = 2;
             this.luogo9.Text = "CUNEO";
             this.luogo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -545,7 +565,7 @@ namespace BigTycoon
             this.luogo10.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo10.Location = new System.Drawing.Point(18, 170);
             this.luogo10.Name = "luogo10";
-            this.luogo10.Size = new System.Drawing.Size(82, 27);
+            this.luogo10.Size = new System.Drawing.Size(77, 26);
             this.luogo10.TabIndex = 2;
             this.luogo10.Text = "CUNEO";
             this.luogo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -581,7 +601,7 @@ namespace BigTycoon
             this.luogo11.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo11.Location = new System.Drawing.Point(18, 170);
             this.luogo11.Name = "luogo11";
-            this.luogo11.Size = new System.Drawing.Size(82, 27);
+            this.luogo11.Size = new System.Drawing.Size(77, 26);
             this.luogo11.TabIndex = 2;
             this.luogo11.Text = "CUNEO";
             this.luogo11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -617,7 +637,7 @@ namespace BigTycoon
             this.luogo12.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo12.Location = new System.Drawing.Point(18, 170);
             this.luogo12.Name = "luogo12";
-            this.luogo12.Size = new System.Drawing.Size(82, 27);
+            this.luogo12.Size = new System.Drawing.Size(77, 26);
             this.luogo12.TabIndex = 2;
             this.luogo12.Text = "CUNEO";
             this.luogo12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -653,7 +673,7 @@ namespace BigTycoon
             this.luogo13.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo13.Location = new System.Drawing.Point(18, 170);
             this.luogo13.Name = "luogo13";
-            this.luogo13.Size = new System.Drawing.Size(82, 27);
+            this.luogo13.Size = new System.Drawing.Size(77, 26);
             this.luogo13.TabIndex = 2;
             this.luogo13.Text = "CUNEO";
             this.luogo13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -690,7 +710,7 @@ namespace BigTycoon
             this.luogo14.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo14.Location = new System.Drawing.Point(18, 170);
             this.luogo14.Name = "luogo14";
-            this.luogo14.Size = new System.Drawing.Size(82, 27);
+            this.luogo14.Size = new System.Drawing.Size(77, 26);
             this.luogo14.TabIndex = 2;
             this.luogo14.Text = "CUNEO";
             this.luogo14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -726,7 +746,7 @@ namespace BigTycoon
             this.luogo15.Font = new System.Drawing.Font("Arial Narrow", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.luogo15.Location = new System.Drawing.Point(18, 170);
             this.luogo15.Name = "luogo15";
-            this.luogo15.Size = new System.Drawing.Size(82, 27);
+            this.luogo15.Size = new System.Drawing.Size(77, 26);
             this.luogo15.TabIndex = 2;
             this.luogo15.Text = "CUNEO";
             this.luogo15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -749,6 +769,15 @@ namespace BigTycoon
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(591, 814);
             this.panel25.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 103);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(590, 10);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // panel16
             // 
@@ -817,6 +846,28 @@ namespace BigTycoon
             this.richiesteLavoro_label.TabIndex = 6;
             this.richiesteLavoro_label.Text = "Richieste lavoro: 5";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(16, 10);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(146, 33);
+            this.label27.TabIndex = 4;
+            this.label27.Text = "Lordo: 200$";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(12, 54);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(319, 33);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Guadagno giornaliero: 150$";
+            // 
             // immagineAzienda_label
             // 
             this.immagineAzienda_label.AutoSize = true;
@@ -827,6 +878,252 @@ namespace BigTycoon
             this.immagineAzienda_label.Size = new System.Drawing.Size(296, 33);
             this.immagineAzienda_label.TabIndex = 5;
             this.immagineAzienda_label.Text = "Immagine azienda: 90/100";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(350, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(136, 33);
+            this.label26.TabIndex = 3;
+            this.label26.Text = "Spese: 50$";
+            // 
+            // gestioneEdificio_panel
+            // 
+            this.gestioneEdificio_panel.BackColor = System.Drawing.Color.DarkGray;
+            this.gestioneEdificio_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gestioneEdificio_panel.Controls.Add(this.panel19);
+            this.gestioneEdificio_panel.Controls.Add(this.lordoEdificio);
+            this.gestioneEdificio_panel.Controls.Add(this.guadagnoEdificio);
+            this.gestioneEdificio_panel.Controls.Add(this.panel18);
+            this.gestioneEdificio_panel.Controls.Add(this.panel17);
+            this.gestioneEdificio_panel.Controls.Add(this.felicita_panel);
+            this.gestioneEdificio_panel.Controls.Add(this.dipendenti_panel);
+            this.gestioneEdificio_panel.Controls.Add(this.edificioSelezionato_label);
+            this.gestioneEdificio_panel.Location = new System.Drawing.Point(14, 370);
+            this.gestioneEdificio_panel.Name = "gestioneEdificio_panel";
+            this.gestioneEdificio_panel.Size = new System.Drawing.Size(556, 425);
+            this.gestioneEdificio_panel.TabIndex = 16;
+            this.gestioneEdificio_panel.Visible = false;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.label6);
+            this.panel19.Controls.Add(this.pictureBox7);
+            this.panel19.Controls.Add(this.label5);
+            this.panel19.Controls.Add(this.pictureBox6);
+            this.panel19.Controls.Add(this.label3);
+            this.panel19.Controls.Add(this.pictureBox5);
+            this.panel19.Controls.Add(this.preziosi_numero);
+            this.panel19.Controls.Add(this.pictureBox4);
+            this.panel19.Controls.Add(this.rari_numero);
+            this.panel19.Controls.Add(this.pictureBox3);
+            this.panel19.Controls.Add(this.comuni_numero);
+            this.panel19.Controls.Add(this.pictureBox2);
+            this.panel19.Location = new System.Drawing.Point(29, 51);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(483, 43);
+            this.panel19.TabIndex = 10;
+            // 
+            // lordoEdificio
+            // 
+            this.lordoEdificio.AutoSize = true;
+            this.lordoEdificio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lordoEdificio.Location = new System.Drawing.Point(294, 380);
+            this.lordoEdificio.Name = "lordoEdificio";
+            this.lordoEdificio.Size = new System.Drawing.Size(145, 29);
+            this.lordoEdificio.TabIndex = 9;
+            this.lordoEdificio.Text = "LORDO:1200$";
+            // 
+            // guadagnoEdificio
+            // 
+            this.guadagnoEdificio.AutoSize = true;
+            this.guadagnoEdificio.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guadagnoEdificio.Location = new System.Drawing.Point(55, 380);
+            this.guadagnoEdificio.Name = "guadagnoEdificio";
+            this.guadagnoEdificio.Size = new System.Drawing.Size(179, 29);
+            this.guadagnoEdificio.TabIndex = 8;
+            this.guadagnoEdificio.Text = "GUADAGNO:700$";
+            // 
+            // panel18
+            // 
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel18.Controls.Add(this.button1);
+            this.panel18.Controls.Add(this.label4);
+            this.panel18.Location = new System.Drawing.Point(299, 194);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(213, 90);
+            this.panel18.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::BigTycoon.Properties.Resources.ingranaggio;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(17, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 60);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(133, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 35);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "+3";
+            // 
+            // panel17
+            // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel17.Controls.Add(this.stipendiPerc_label);
+            this.panel17.Controls.Add(this.dimStipendi_button);
+            this.panel17.Controls.Add(this.incStipendi_button);
+            this.panel17.Controls.Add(this.label2);
+            this.panel17.Location = new System.Drawing.Point(29, 290);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(483, 80);
+            this.panel17.TabIndex = 7;
+            // 
+            // stipendiPerc_label
+            // 
+            this.stipendiPerc_label.AutoSize = true;
+            this.stipendiPerc_label.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stipendiPerc_label.Location = new System.Drawing.Point(340, 16);
+            this.stipendiPerc_label.Name = "stipendiPerc_label";
+            this.stipendiPerc_label.Size = new System.Drawing.Size(99, 44);
+            this.stipendiPerc_label.TabIndex = 6;
+            this.stipendiPerc_label.Text = "200%";
+            // 
+            // dimStipendi_button
+            // 
+            this.dimStipendi_button.BackgroundImage = global::BigTycoon.Properties.Resources.diminuisci;
+            this.dimStipendi_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.dimStipendi_button.Location = new System.Drawing.Point(252, 17);
+            this.dimStipendi_button.Name = "dimStipendi_button";
+            this.dimStipendi_button.Size = new System.Drawing.Size(42, 43);
+            this.dimStipendi_button.TabIndex = 5;
+            this.dimStipendi_button.UseVisualStyleBackColor = true;
+            this.dimStipendi_button.Click += new System.EventHandler(this.dimStipendi_button_Click);
+            // 
+            // incStipendi_button
+            // 
+            this.incStipendi_button.BackgroundImage = global::BigTycoon.Properties.Resources.incrementa;
+            this.incStipendi_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.incStipendi_button.Location = new System.Drawing.Point(204, 17);
+            this.incStipendi_button.Name = "incStipendi_button";
+            this.incStipendi_button.Size = new System.Drawing.Size(42, 43);
+            this.incStipendi_button.TabIndex = 5;
+            this.incStipendi_button.UseVisualStyleBackColor = true;
+            this.incStipendi_button.Click += new System.EventHandler(this.incStipendi_button_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(16, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 44);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "STIPENDI";
+            // 
+            // felicita_panel
+            // 
+            this.felicita_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.felicita_panel.Controls.Add(this.icona_puntiFelicita);
+            this.felicita_panel.Controls.Add(this.indicatoreFelicita);
+            this.felicita_panel.Location = new System.Drawing.Point(299, 100);
+            this.felicita_panel.Name = "felicita_panel";
+            this.felicita_panel.Size = new System.Drawing.Size(213, 88);
+            this.felicita_panel.TabIndex = 6;
+            // 
+            // icona_puntiFelicita
+            // 
+            this.icona_puntiFelicita.Image = global::BigTycoon.Properties.Resources.faccia_felice;
+            this.icona_puntiFelicita.Location = new System.Drawing.Point(16, 15);
+            this.icona_puntiFelicita.Name = "icona_puntiFelicita";
+            this.icona_puntiFelicita.Size = new System.Drawing.Size(60, 60);
+            this.icona_puntiFelicita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icona_puntiFelicita.TabIndex = 5;
+            this.icona_puntiFelicita.TabStop = false;
+            // 
+            // indicatoreFelicita
+            // 
+            this.indicatoreFelicita.AutoSize = true;
+            this.indicatoreFelicita.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indicatoreFelicita.Location = new System.Drawing.Point(133, 23);
+            this.indicatoreFelicita.Name = "indicatoreFelicita";
+            this.indicatoreFelicita.Size = new System.Drawing.Size(43, 35);
+            this.indicatoreFelicita.TabIndex = 5;
+            this.indicatoreFelicita.Text = "+3";
+            // 
+            // dipendenti_panel
+            // 
+            this.dipendenti_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dipendenti_panel.Controls.Add(this.dipendenti_icona);
+            this.dipendenti_panel.Controls.Add(this.indicatoreDipendenti);
+            this.dipendenti_panel.Controls.Add(this.incDipendenti_bottone);
+            this.dipendenti_panel.Controls.Add(this.dimDipendenti_bottone);
+            this.dipendenti_panel.Location = new System.Drawing.Point(29, 100);
+            this.dipendenti_panel.Name = "dipendenti_panel";
+            this.dipendenti_panel.Size = new System.Drawing.Size(262, 184);
+            this.dipendenti_panel.TabIndex = 5;
+            // 
+            // dipendenti_icona
+            // 
+            this.dipendenti_icona.Image = global::BigTycoon.Properties.Resources.dipendenti;
+            this.dipendenti_icona.Location = new System.Drawing.Point(13, 7);
+            this.dipendenti_icona.Name = "dipendenti_icona";
+            this.dipendenti_icona.Size = new System.Drawing.Size(127, 127);
+            this.dipendenti_icona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.dipendenti_icona.TabIndex = 1;
+            this.dipendenti_icona.TabStop = false;
+            // 
+            // indicatoreDipendenti
+            // 
+            this.indicatoreDipendenti.AutoSize = true;
+            this.indicatoreDipendenti.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indicatoreDipendenti.Location = new System.Drawing.Point(49, 137);
+            this.indicatoreDipendenti.Name = "indicatoreDipendenti";
+            this.indicatoreDipendenti.Size = new System.Drawing.Size(64, 35);
+            this.indicatoreDipendenti.TabIndex = 4;
+            this.indicatoreDipendenti.Text = "4/10";
+            // 
+            // incDipendenti_bottone
+            // 
+            this.incDipendenti_bottone.BackgroundImage = global::BigTycoon.Properties.Resources.incrementa;
+            this.incDipendenti_bottone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.incDipendenti_bottone.Location = new System.Drawing.Point(179, 7);
+            this.incDipendenti_bottone.Name = "incDipendenti_bottone";
+            this.incDipendenti_bottone.Size = new System.Drawing.Size(60, 60);
+            this.incDipendenti_bottone.TabIndex = 2;
+            this.incDipendenti_bottone.UseVisualStyleBackColor = true;
+            this.incDipendenti_bottone.Click += new System.EventHandler(this.incDipendenti_bottone_Click);
+            // 
+            // dimDipendenti_bottone
+            // 
+            this.dimDipendenti_bottone.BackgroundImage = global::BigTycoon.Properties.Resources.diminuisci;
+            this.dimDipendenti_bottone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.dimDipendenti_bottone.Location = new System.Drawing.Point(179, 74);
+            this.dimDipendenti_bottone.Name = "dimDipendenti_bottone";
+            this.dimDipendenti_bottone.Size = new System.Drawing.Size(60, 60);
+            this.dimDipendenti_bottone.TabIndex = 3;
+            this.dimDipendenti_bottone.UseVisualStyleBackColor = true;
+            this.dimDipendenti_bottone.Click += new System.EventHandler(this.dimDipendenti_bottone_Click);
+            // 
+            // edificioSelezionato_label
+            // 
+            this.edificioSelezionato_label.AutoSize = true;
+            this.edificioSelezionato_label.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edificioSelezionato_label.Location = new System.Drawing.Point(24, 13);
+            this.edificioSelezionato_label.Name = "edificioSelezionato_label";
+            this.edificioSelezionato_label.Size = new System.Drawing.Size(220, 29);
+            this.edificioSelezionato_label.TabIndex = 0;
+            this.edificioSelezionato_label.Text = "CELLA SELEZIONATA";
             // 
             // crea_edificio_panel
             // 
@@ -898,221 +1195,6 @@ namespace BigTycoon
             this.cellaSelezionata_label.TabIndex = 0;
             this.cellaSelezionata_label.Text = "CELLA SELEZIONATA";
             // 
-            // gestioneEdificio_panel
-            // 
-            this.gestioneEdificio_panel.BackColor = System.Drawing.Color.DarkGray;
-            this.gestioneEdificio_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gestioneEdificio_panel.Controls.Add(this.lordoEdificio);
-            this.gestioneEdificio_panel.Controls.Add(this.guadagnoEdificio);
-            this.gestioneEdificio_panel.Controls.Add(this.panel18);
-            this.gestioneEdificio_panel.Controls.Add(this.panel17);
-            this.gestioneEdificio_panel.Controls.Add(this.felicita_panel);
-            this.gestioneEdificio_panel.Controls.Add(this.dipendenti_panel);
-            this.gestioneEdificio_panel.Controls.Add(this.edificioSelezionato_label);
-            this.gestioneEdificio_panel.Location = new System.Drawing.Point(14, 384);
-            this.gestioneEdificio_panel.Name = "gestioneEdificio_panel";
-            this.gestioneEdificio_panel.Size = new System.Drawing.Size(556, 396);
-            this.gestioneEdificio_panel.TabIndex = 16;
-            this.gestioneEdificio_panel.Visible = false;
-            // 
-            // lordoEdificio
-            // 
-            this.lordoEdificio.AutoSize = true;
-            this.lordoEdificio.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lordoEdificio.Location = new System.Drawing.Point(282, 334);
-            this.lordoEdificio.Name = "lordoEdificio";
-            this.lordoEdificio.Size = new System.Drawing.Size(182, 35);
-            this.lordoEdificio.TabIndex = 9;
-            this.lordoEdificio.Text = "LORDO:1200$";
-            // 
-            // guadagnoEdificio
-            // 
-            this.guadagnoEdificio.AutoSize = true;
-            this.guadagnoEdificio.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guadagnoEdificio.Location = new System.Drawing.Point(43, 334);
-            this.guadagnoEdificio.Name = "guadagnoEdificio";
-            this.guadagnoEdificio.Size = new System.Drawing.Size(226, 35);
-            this.guadagnoEdificio.TabIndex = 8;
-            this.guadagnoEdificio.Text = "GUADAGNO:700$";
-            // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Controls.Add(this.button1);
-            this.panel18.Controls.Add(this.label4);
-            this.panel18.Location = new System.Drawing.Point(288, 143);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(220, 90);
-            this.panel18.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::BigTycoon.Properties.Resources.ingranaggio;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(17, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 60);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(133, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 35);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "+3";
-            // 
-            // panel17
-            // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.stipendiPerc_label);
-            this.panel17.Controls.Add(this.dimStipendi_button);
-            this.panel17.Controls.Add(this.incStipendi_button);
-            this.panel17.Controls.Add(this.label2);
-            this.panel17.Location = new System.Drawing.Point(35, 239);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(473, 80);
-            this.panel17.TabIndex = 7;
-            // 
-            // stipendiPerc_label
-            // 
-            this.stipendiPerc_label.AutoSize = true;
-            this.stipendiPerc_label.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stipendiPerc_label.Location = new System.Drawing.Point(340, 16);
-            this.stipendiPerc_label.Name = "stipendiPerc_label";
-            this.stipendiPerc_label.Size = new System.Drawing.Size(99, 44);
-            this.stipendiPerc_label.TabIndex = 6;
-            this.stipendiPerc_label.Text = "200%";
-            // 
-            // dimStipendi_button
-            // 
-            this.dimStipendi_button.BackgroundImage = global::BigTycoon.Properties.Resources.diminuisci;
-            this.dimStipendi_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dimStipendi_button.Location = new System.Drawing.Point(252, 17);
-            this.dimStipendi_button.Name = "dimStipendi_button";
-            this.dimStipendi_button.Size = new System.Drawing.Size(42, 43);
-            this.dimStipendi_button.TabIndex = 5;
-            this.dimStipendi_button.UseVisualStyleBackColor = true;
-            this.dimStipendi_button.Click += new System.EventHandler(this.dimStipendi_button_Click);
-            // 
-            // incStipendi_button
-            // 
-            this.incStipendi_button.BackgroundImage = global::BigTycoon.Properties.Resources.incrementa;
-            this.incStipendi_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.incStipendi_button.Location = new System.Drawing.Point(204, 17);
-            this.incStipendi_button.Name = "incStipendi_button";
-            this.incStipendi_button.Size = new System.Drawing.Size(42, 43);
-            this.incStipendi_button.TabIndex = 5;
-            this.incStipendi_button.UseVisualStyleBackColor = true;
-            this.incStipendi_button.Click += new System.EventHandler(this.incStipendi_button_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 44);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "STIPENDI";
-            // 
-            // felicita_panel
-            // 
-            this.felicita_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.felicita_panel.Controls.Add(this.icona_puntiFelicita);
-            this.felicita_panel.Controls.Add(this.indicatoreFelicita);
-            this.felicita_panel.Location = new System.Drawing.Point(288, 49);
-            this.felicita_panel.Name = "felicita_panel";
-            this.felicita_panel.Size = new System.Drawing.Size(220, 88);
-            this.felicita_panel.TabIndex = 6;
-            // 
-            // icona_puntiFelicita
-            // 
-            this.icona_puntiFelicita.Image = global::BigTycoon.Properties.Resources.faccia_felice;
-            this.icona_puntiFelicita.Location = new System.Drawing.Point(16, 15);
-            this.icona_puntiFelicita.Name = "icona_puntiFelicita";
-            this.icona_puntiFelicita.Size = new System.Drawing.Size(60, 60);
-            this.icona_puntiFelicita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.icona_puntiFelicita.TabIndex = 5;
-            this.icona_puntiFelicita.TabStop = false;
-            // 
-            // indicatoreFelicita
-            // 
-            this.indicatoreFelicita.AutoSize = true;
-            this.indicatoreFelicita.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.indicatoreFelicita.Location = new System.Drawing.Point(133, 23);
-            this.indicatoreFelicita.Name = "indicatoreFelicita";
-            this.indicatoreFelicita.Size = new System.Drawing.Size(43, 35);
-            this.indicatoreFelicita.TabIndex = 5;
-            this.indicatoreFelicita.Text = "+3";
-            // 
-            // dipendenti_panel
-            // 
-            this.dipendenti_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dipendenti_panel.Controls.Add(this.dipendenti_icona);
-            this.dipendenti_panel.Controls.Add(this.indicatoreDipendenti);
-            this.dipendenti_panel.Controls.Add(this.incDipendenti_bottone);
-            this.dipendenti_panel.Controls.Add(this.dimDipendenti_bottone);
-            this.dipendenti_panel.Location = new System.Drawing.Point(35, 49);
-            this.dipendenti_panel.Name = "dipendenti_panel";
-            this.dipendenti_panel.Size = new System.Drawing.Size(240, 184);
-            this.dipendenti_panel.TabIndex = 5;
-            // 
-            // dipendenti_icona
-            // 
-            this.dipendenti_icona.Image = global::BigTycoon.Properties.Resources.dipendenti;
-            this.dipendenti_icona.Location = new System.Drawing.Point(13, 7);
-            this.dipendenti_icona.Name = "dipendenti_icona";
-            this.dipendenti_icona.Size = new System.Drawing.Size(127, 127);
-            this.dipendenti_icona.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.dipendenti_icona.TabIndex = 1;
-            this.dipendenti_icona.TabStop = false;
-            // 
-            // indicatoreDipendenti
-            // 
-            this.indicatoreDipendenti.AutoSize = true;
-            this.indicatoreDipendenti.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.indicatoreDipendenti.Location = new System.Drawing.Point(49, 137);
-            this.indicatoreDipendenti.Name = "indicatoreDipendenti";
-            this.indicatoreDipendenti.Size = new System.Drawing.Size(64, 35);
-            this.indicatoreDipendenti.TabIndex = 4;
-            this.indicatoreDipendenti.Text = "4/10";
-            // 
-            // incDipendenti_bottone
-            // 
-            this.incDipendenti_bottone.BackgroundImage = global::BigTycoon.Properties.Resources.incrementa;
-            this.incDipendenti_bottone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.incDipendenti_bottone.Location = new System.Drawing.Point(162, 15);
-            this.incDipendenti_bottone.Name = "incDipendenti_bottone";
-            this.incDipendenti_bottone.Size = new System.Drawing.Size(50, 50);
-            this.incDipendenti_bottone.TabIndex = 2;
-            this.incDipendenti_bottone.UseVisualStyleBackColor = true;
-            this.incDipendenti_bottone.Click += new System.EventHandler(this.incDipendenti_bottone_Click);
-            // 
-            // dimDipendenti_bottone
-            // 
-            this.dimDipendenti_bottone.BackgroundImage = global::BigTycoon.Properties.Resources.diminuisci;
-            this.dimDipendenti_bottone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.dimDipendenti_bottone.Location = new System.Drawing.Point(162, 73);
-            this.dimDipendenti_bottone.Name = "dimDipendenti_bottone";
-            this.dimDipendenti_bottone.Size = new System.Drawing.Size(50, 50);
-            this.dimDipendenti_bottone.TabIndex = 3;
-            this.dimDipendenti_bottone.UseVisualStyleBackColor = true;
-            this.dimDipendenti_bottone.Click += new System.EventHandler(this.dimDipendenti_bottone_Click);
-            // 
-            // edificioSelezionato_label
-            // 
-            this.edificioSelezionato_label.AutoSize = true;
-            this.edificioSelezionato_label.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edificioSelezionato_label.Location = new System.Drawing.Point(29, 11);
-            this.edificioSelezionato_label.Name = "edificioSelezionato_label";
-            this.edificioSelezionato_label.Size = new System.Drawing.Size(277, 35);
-            this.edificioSelezionato_label.TabIndex = 0;
-            this.edificioSelezionato_label.Text = "CELLA SELEZIONATA";
-            // 
             // portafoglio_label
             // 
             this.portafoglio_label.AutoSize = true;
@@ -1126,53 +1208,131 @@ namespace BigTycoon
             this.portafoglio_label.TabIndex = 15;
             this.portafoglio_label.Text = "Portafoglio: 100$";
             // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(350, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(136, 33);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Spese: 50$";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(16, 10);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(146, 33);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Lordo: 200$";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(12, 54);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(319, 33);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Guadagno giornaliero: 150$";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 103);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(590, 10);
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
             // timerEdifici
             // 
             this.timerEdifici.Enabled = true;
             this.timerEdifici.Interval = 3000;
             this.timerEdifici.Tick += new System.EventHandler(this.EdificiUpdate);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::BigTycoon.Properties.Resources.comuni;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
+            // comuni_numero
+            // 
+            this.comuni_numero.AutoSize = true;
+            this.comuni_numero.Location = new System.Drawing.Point(44, 12);
+            this.comuni_numero.Name = "comuni_numero";
+            this.comuni_numero.Size = new System.Drawing.Size(24, 17);
+            this.comuni_numero.TabIndex = 7;
+            this.comuni_numero.Text = "99";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::BigTycoon.Properties.Resources.rari;
+            this.pictureBox3.Location = new System.Drawing.Point(79, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // rari_numero
+            // 
+            this.rari_numero.AutoSize = true;
+            this.rari_numero.Location = new System.Drawing.Point(124, 12);
+            this.rari_numero.Name = "rari_numero";
+            this.rari_numero.Size = new System.Drawing.Size(24, 17);
+            this.rari_numero.TabIndex = 9;
+            this.rari_numero.Text = "99";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Image = global::BigTycoon.Properties.Resources.preziosi;
+            this.pictureBox4.Location = new System.Drawing.Point(154, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
+            // preziosi_numero
+            // 
+            this.preziosi_numero.AutoSize = true;
+            this.preziosi_numero.Location = new System.Drawing.Point(195, 12);
+            this.preziosi_numero.Name = "preziosi_numero";
+            this.preziosi_numero.Size = new System.Drawing.Size(24, 17);
+            this.preziosi_numero.TabIndex = 11;
+            this.preziosi_numero.Text = "99";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(278, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "99";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = global::BigTycoon.Properties.Resources.rari;
+            this.pictureBox5.Location = new System.Drawing.Point(237, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(359, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "99";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Image = global::BigTycoon.Properties.Resources.rari;
+            this.pictureBox6.Location = new System.Drawing.Point(318, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(447, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "99";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Image = global::BigTycoon.Properties.Resources.rari;
+            this.pictureBox7.Location = new System.Drawing.Point(405, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 16;
+            this.pictureBox7.TabStop = false;
             // 
             // Form1
             // 
@@ -1232,18 +1392,16 @@ namespace BigTycoon
             ((System.ComponentModel.ISupportInitialize)(this.cell15)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.banca_pics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasporti_pics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.felicita_pics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            this.crea_edificio_panel.ResumeLayout(false);
-            this.crea_edificio_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).EndInit();
             this.gestioneEdificio_panel.ResumeLayout(false);
             this.gestioneEdificio_panel.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel17.ResumeLayout(false);
@@ -1254,7 +1412,17 @@ namespace BigTycoon
             this.dipendenti_panel.ResumeLayout(false);
             this.dipendenti_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dipendenti_icona)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.crea_edificio_panel.ResumeLayout(false);
+            this.crea_edificio_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.negozio_bottone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabbrica_bottone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.industria_bottone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1348,6 +1516,19 @@ namespace BigTycoon
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timerEdifici;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label rari_numero;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label comuni_numero;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label preziosi_numero;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }
 
