@@ -9,7 +9,7 @@ namespace BigTycoon.Oggetti
     /// </summary>
 	public static class ListaOggetti
     {
-        public static int DimMax { get; } = 99;
+        public static int DimMax { get; set; } = 99;
         /// <summary>
         /// Dizionario che elenca le stringhe dei tipi di materiali e le associa al loro oggetto base
         /// </summary>
