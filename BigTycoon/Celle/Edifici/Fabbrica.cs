@@ -1,6 +1,7 @@
 ﻿using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
 using BigTycoon.Oggetti;
+using System.Linq;
 
 namespace BigTycoon.Celle.Edifici
 {
@@ -18,28 +19,41 @@ namespace BigTycoon.Celle.Edifici
 
         public void CambiaProduzione(string nome)
         {
-            foreach (var ogg in ListaOggetti.DizionarioProdotti)
-            {
-                if (nome == ogg.Key)
-                {
-                    ProdottoCorrente = ogg.Key;
-                }
-            }
+            ProdottoCorrente = SlotProdotti.DizionarioProdotti.Keys
+                .Where(key => key == nome)
+                .ToString();
         }
 
         protected override void Produci()
         {
-            //Crea capitale
+            // se non ce un prodotto da produrre salta tutto
             if (ProdottoCorrente == null) return;
 
-            foreach (var ogg in ListaOggetti.DizionarioProdotti)
+            var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
+
+            bool contains = false; // flag per mantenere la conoscenza della ricerca dei materiali
+
+            // itero attraverso tutti i componenti del prod. corrente e controllo se ce ne' abbastanza nel magazzino materiali
+            foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
             {
-                if (ProdottoCorrente == ogg.Key)
-                {
-                    ogg.Value.Quantita++;
-                }
+                // se c'e' abbastanza materiale metto la flag a true altrimenti la rimetto a false
+                if (SlotMateriali.DizionarioMateriali[comp].Quantita > 0) contains = true; 
+
+                else contains = false;
             }
 
+            // se il magazzino contiene tutti i materiali necessari eseguo la produzione
+            if (contains)
+            {
+                // rimuovo i materiali usati
+                foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
+                {
+                    SlotMateriali.DizionarioMateriali[comp].Quantita--;
+                }
+                prod.Quantita++; // aggiungo il prodotto
+            }
+
+            SlotProdotti.DizionarioProdotti[ProdottoCorrente] = prod; // aggiorno il magazzino
         }
     }
 }
