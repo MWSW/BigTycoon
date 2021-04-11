@@ -26,10 +26,10 @@ namespace BigTycoon.Celle.Edifici
 
         protected override void Produci()
         {
-            // se non ce un prodotto da produrre salta tutto
-            if (ProdottoCorrente == null) return;
-
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
+
+            // se non ce un prodotto da produrre O il magazzino è al massimo salta tutto
+            if (ProdottoCorrente == null || prod.Quantita > ListaOggetti.DimMax) return;
 
             bool contains = false; // flag per mantenere la conoscenza della ricerca dei materiali
 
@@ -37,7 +37,7 @@ namespace BigTycoon.Celle.Edifici
             foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
             {
                 // se c'e' abbastanza materiale metto la flag a true altrimenti la rimetto a false
-                if (SlotMateriali.DizionarioMateriali[comp].Quantita > 0) contains = true; 
+                if (SlotMateriali.DizionarioMateriali[comp].Quantita > 0) contains = true;
 
                 else contains = false;
             }

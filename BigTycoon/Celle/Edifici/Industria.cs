@@ -18,7 +18,9 @@ namespace BigTycoon.Celle.Edifici
 
         protected override void Produci()
         {
-            if (risorsaTerreno == null) return;
+            var mater = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+
+            if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
             //Crea materiale
             foreach (var ogg in SlotMateriali.DizionarioMateriali)
             {
