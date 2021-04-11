@@ -1,6 +1,7 @@
 ﻿using System;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -14,6 +15,8 @@ namespace BigTycoon.Celle.Edifici
         {
             SlotMateriali = new MagazzinoMateriali();
             risorsaTerreno = ogg;
+
+            Dipendenti = new Dipendenti(3, 8, 20);
         }
 
         protected override void Produci()

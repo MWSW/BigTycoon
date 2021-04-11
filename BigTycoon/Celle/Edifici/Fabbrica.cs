@@ -1,5 +1,6 @@
 ﻿using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 using System.Linq;
 
@@ -15,6 +16,8 @@ namespace BigTycoon.Celle.Edifici
         {
             SlotProdotti = new MagazzinoProdotti();
             SlotMateriali = new MagazzinoMateriali();
+
+            Dipendenti = new Dipendenti(2, 6, 30);
         }
 
         public void CambiaProduzione(string nome)
@@ -26,10 +29,14 @@ namespace BigTycoon.Celle.Edifici
 
         protected override void Produci()
         {
+
+            // se non c'è un prodotto da produrre salta tutto
+            if (ProdottoCorrente == null) return;
+
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
 
-            // se non ce un prodotto da produrre O il magazzino è al massimo salta tutto
-            if (ProdottoCorrente == null || prod.Quantita > ListaOggetti.DimMax) return;
+            // se il magazzino è al massimo salta tutto
+            if (prod.Quantita > ListaOggetti.DimMax) return;
 
             bool contains = false; // flag per mantenere la conoscenza della ricerca dei materiali
 

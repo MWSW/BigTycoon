@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -13,6 +14,8 @@ namespace BigTycoon.Celle.Edifici
         public Negozio(Giocatore gio) : base(gio)
         {
             SlotProdotti = new MagazzinoProdotti();
+
+            Dipendenti = new Dipendenti(3, 3, 40);
         }
 
         public override void Update()

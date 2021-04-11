@@ -13,9 +13,6 @@ namespace BigTycoon.Celle.Edifici
         protected int Produzione { get; set; }
         protected double Produttivita { get; set; }
         public Dipendenti Dipendenti { get; protected set; }
-
-        private bool edificioAttivo;
-        protected bool EdificioAttivo { get => edificioAttivo; set => IsEdificioAttivo(); }
         public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
@@ -26,10 +23,8 @@ namespace BigTycoon.Celle.Edifici
             Reddito = 0;
             Produzione = 0;
             Produttivita = 0;
-            EdificioAttivo = false;
             PuntiFelicita = 0;
             ColoreEdificio = 0;
-            Dipendenti = new Dipendenti(0, 4, 20);
         }
 
         public virtual void Update()
@@ -42,10 +37,11 @@ namespace BigTycoon.Celle.Edifici
             //
         }
 
-        protected bool IsEdificioAttivo()
+        public bool IsEdificioAttivo()
         {
-            //
-            return true;
+            //numero minimo dipendenti 
+            //TODO: magazzino
+            return Dipendenti.Quantita >= Dipendenti.MinimoDipendenti;
         }
 
         protected abstract void Produci();

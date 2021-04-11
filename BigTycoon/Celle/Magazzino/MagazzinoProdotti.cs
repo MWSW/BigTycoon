@@ -12,5 +12,17 @@ namespace BigTycoon.Celle.Magazzino
         {
             DizionarioProdotti = ListaOggetti.ClonaDizionarioProdotti();
         }
+
+        public Oggetto GetElemento(string nome)
+        {
+            Oggetto oggetto;
+            DizionarioProdotti.TryGetValue(nome, out oggetto);
+
+            if (oggetto != null)
+                return oggetto;
+            else
+                Console.WriteLine("Errore oggetto insensistente!");
+            return null;
+        }
     }
 }
