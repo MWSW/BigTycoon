@@ -31,18 +31,15 @@ namespace BigTycoon.Celle.Edifici
         {
             if (ProdottoInVendita == null) return;
 
-            SlotProdotti.DizionarioProdotti
-                .Where(ogg => ogg.Key == ProdottoInVendita)
-                .Select(ogg => Possessore.portafogli.Soldi += ogg.Value.Valore);
+            var prod = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 
-            /*
-            foreach (var ogg in SlotProdotti.DizionarioProdotti)
+            if (prod.Quantita > 0)
             {
-                if (ogg.Key == ProdottoInVendita)
-                {
-                    Possessore.portafogli.Soldi += ogg.Value.Valore;
-                }
-            }*/
+                prod.Quantita--;
+                Possessore.portafogli.Soldi += prod.Valore;
+            }
+
+            SlotProdotti.DizionarioProdotti[ProdottoInVendita] = prod;
         }
     }
 }

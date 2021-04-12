@@ -24,6 +24,9 @@ namespace BigTycoon.Celle.Edifici
                 .ToString();
         }
 
+        /// <summary>
+        /// Metodo che aggiunge 1 ProdottoCorrente al magazzino se ci sono abbastanza materiali
+        /// </summary>
         protected override void Produci()
         {
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
@@ -31,29 +34,40 @@ namespace BigTycoon.Celle.Edifici
             // se non ce un prodotto da produrre O il magazzino è al massimo salta tutto
             if (ProdottoCorrente == null || prod.Quantita > ListaOggetti.DimMax) return;
 
-            bool contains = false; // flag per mantenere la conoscenza della ricerca dei materiali
+            // vedo se posso produrre
+            if (IsDisponibile(ProdottoCorrente)) return;
 
-            // itero attraverso tutti i componenti del prod. corrente e controllo se ce ne' abbastanza nel magazzino materiali
+            // rimuovo i materiali usati
             foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
             {
-                // se c'e' abbastanza materiale metto la flag a true altrimenti la rimetto a false
-                if (SlotMateriali.DizionarioMateriali[comp].Quantita > 0) contains = true;
-
-                else contains = false;
+                SlotMateriali.DizionarioMateriali[comp].Quantita--;
             }
+            prod.Quantita++; // aggiungo il prodotto
 
-            // se il magazzino contiene tutti i materiali necessari eseguo la produzione
-            if (contains)
-            {
-                // rimuovo i materiali usati
-                foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
-                {
-                    SlotMateriali.DizionarioMateriali[comp].Quantita--;
-                }
-                prod.Quantita++; // aggiungo il prodotto
-            }
 
             SlotProdotti.DizionarioProdotti[ProdottoCorrente] = prod; // aggiorno il magazzino
+        }
+
+        /// <summary>
+        /// Controlla se e' possibile produrre il prodotto specificato
+        /// </summary>
+        /// <param name="key">Chiave del materiale da controllare</param>
+        /// <returns></returns>
+        internal bool IsDisponibile(string key)
+        {
+            // se la chiave è sbagliata ritorna falso
+            if (!SlotProdotti.DizionarioProdotti.Keys.Contains(key)) return false;
+            // itero tutti i componenti del materiale specificato
+            foreach (var comp in SlotProdotti.DizionarioProdotti[key].Componenti)
+            {
+                // se non c'e' abbastanza materiale ritorno false
+                if (SlotMateriali.DizionarioMateriali[comp].Quantita < 1)
+                {
+                    return false;
+                }
+            }
+            // se tutti i controlli precedenti passano sono sicuro che il materiale e' nel magazzino
+            return true;
         }
     }
 }

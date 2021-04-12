@@ -22,13 +22,11 @@ namespace BigTycoon.Celle.Edifici
 
             if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
             //Crea materiale
-            foreach (var ogg in SlotMateriali.DizionarioMateriali)
+            if (mater.Nome == risorsaTerreno)
             {
-                if (ogg.Key == risorsaTerreno)
-                {
-                    ogg.Value.Quantita++;
-                }
+                mater.Quantita++;
             }
+
         }
     }
 }
