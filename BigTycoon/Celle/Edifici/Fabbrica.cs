@@ -69,5 +69,22 @@ namespace BigTycoon.Celle.Edifici
             // se tutti i controlli precedenti passano sono sicuro che il materiale e' nel magazzino
             return true;
         }
+
+        /// <summary>
+        /// sas
+        /// </summary>
+        /// <param name="ogg">Oggetto da aggiungere al magazzino</param>
+        public void AggiungiOggetto(Oggetto ogg)
+        {
+            switch (ogg.Nome.First())
+            {
+                default:
+                    break;
+                case 'M':
+                    break;
+                case 'P':
+                    break;
+            }
+        }
     }
 }

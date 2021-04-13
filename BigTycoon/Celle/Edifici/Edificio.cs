@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using BigTycoon.Oggetti;
 using BigTycoon.Generale;
 using BigTycoon.GestioneDipendenti;
 
