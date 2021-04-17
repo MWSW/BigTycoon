@@ -18,7 +18,7 @@ namespace BigTycoon.Oggetti
         }
 
         public string Nome { get => nome; set => nome = value; }
-        public int Quantita { 
+        public int Quantita {
             get => quantita; 
             set {
                 if (quantita > ListaOggetti.DimMax)

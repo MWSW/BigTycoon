@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Diagnostics;
 using System.Linq;
 using BigTycoon.Oggetti;
 using BigTycoon.Generale;
@@ -16,7 +16,7 @@ namespace BigTycoon.Celle.Edifici
         public Dipendenti Dipendenti { get; protected set; }
 
         private bool edificioAttivo;
-        protected bool EdificioAttivo { get => edificioAttivo; set => IsEdificioAttivo(); }
+        protected bool EdificioAttivo { get => IsEdificioAttivo(); set => edificioAttivo = value; }
         public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
@@ -35,20 +35,38 @@ namespace BigTycoon.Celle.Edifici
 
         public virtual void Update()
         {
+            if (!EdificioAttivo)
+            {
+                Trace.WriteLine("Edificio non attivo");
+                return;
+            }
+
             Produci();
+            CalcolaBilancio();
+            CalcolaFelicita();
         }
 
-        private void CalcolaBilancio()
-        {
-            //
-        }
-
-        protected bool IsEdificioAttivo()
-        {
-            //
-            return true;
-        }
-
+        protected abstract void CalcolaBilancio();
+        public abstract void AggiungiOggetto(Oggetto ogg);
+        protected abstract bool IsEdificioAttivo();
         protected abstract void Produci();
+
+        protected void CalcolaFelicita()
+        {
+            int max = 200;
+            int min = 50;
+            int inc = (max - min) / 10;
+            int punti = 1;
+
+            for (int i = min; i <= max; i += inc)
+            {
+                if (Dipendenti.StipendiPerc >= i && Dipendenti.StipendiPerc < i + inc)
+                {
+                    Dipendenti.Felicita = punti;
+                    return;
+                }
+                punti++;
+            }
+        }
     }
 }

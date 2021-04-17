@@ -41,5 +41,20 @@ namespace BigTycoon.Celle.Edifici
 
             SlotProdotti.DizionarioProdotti[ProdottoInVendita] = prod;
         }
+
+        protected override void CalcolaBilancio()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void AggiungiOggetto(Oggetto ogg)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override bool IsEdificioAttivo()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

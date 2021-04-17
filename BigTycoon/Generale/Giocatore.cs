@@ -5,7 +5,6 @@ namespace BigTycoon.Generale
 	public class Giocatore
 	{
         internal Portafoglio portafogli; //lo struct non può essere una proprietà
-        public Portafoglio Portafogli { get => portafogli; set => portafogli = value; } //getter / setter simil-proprietà
         public int FamaAziendale { get; set; }
 		public int DipendentiDisponibili { get; set; }
 

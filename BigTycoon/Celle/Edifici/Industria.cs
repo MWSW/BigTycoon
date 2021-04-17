@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
 using BigTycoon.Oggetti;
@@ -26,7 +26,30 @@ namespace BigTycoon.Celle.Edifici
             {
                 mater.Quantita++;
             }
+        }
 
+        protected override void CalcolaBilancio()
+        {
+            var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+
+            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
+        }
+
+        public override void AggiungiOggetto(Oggetto ogg)
+        {
+            if (!SlotMateriali.DizionarioMateriali.Keys.Contains(ogg.Nome)) return;
+
+            SlotMateriali.DizionarioMateriali[ogg.Nome].Quantita += ogg.Quantita;
+        }
+
+        protected override bool IsEdificioAttivo()
+        {
+            if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

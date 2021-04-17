@@ -74,17 +74,41 @@ namespace BigTycoon.Celle.Edifici
         /// sas
         /// </summary>
         /// <param name="ogg">Oggetto da aggiungere al magazzino</param>
-        public void AggiungiOggetto(Oggetto ogg)
+        public override void AggiungiOggetto(Oggetto ogg)
         {
-            switch (ogg.Nome.First())
+            if (SlotMateriali.DizionarioMateriali.Keys.Contains(ogg.Nome))
             {
-                default:
-                    break;
-                case 'M':
-                    break;
-                case 'P':
-                    break;
+                SlotMateriali.DizionarioMateriali[ogg.Nome].Quantita += ogg.Quantita;
             }
+            else
+            if (SlotProdotti.DizionarioProdotti.Keys.Contains(ogg.Nome))
+            {
+                SlotProdotti.DizionarioProdotti[ogg.Nome].Quantita += ogg.Quantita;
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        protected override void CalcolaBilancio()
+        {
+            foreach (var ogg in SlotProdotti.DizionarioProdotti)
+            {
+                Possessore.portafogli.Soldi += ogg.Value.Valore * ogg.Value.Quantita;
+            }
+        }
+
+        /// <summary>
+        /// Controlla se l'edificio ha abbastanza dipendenti o materiali per produrre
+        /// </summary>
+        /// <returns></returns>
+        protected override bool IsEdificioAttivo()
+        {
+            if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
+
+            if (!IsDisponibile(ProdottoCorrente)) return false;
+
+            return true;
         }
     }
 }

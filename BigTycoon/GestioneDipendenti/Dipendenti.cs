@@ -5,14 +5,19 @@ using BigTycoon.Generale;
 
 namespace BigTycoon.GestioneDipendenti
 {
-	public class Dipendenti
-	{
-		public int Quantita { get; private set; }
-		public int MinimoDipendenti { get; set; }
-		public int MassimoDipendenti { get; set; }
-		public int StipendiPerc { get; private set; }
-		public int StipendioBase { get; set; }
-        public int Felicita { get; private set; }
+    public class Dipendenti
+    {
+        public int Quantita { get; private set; }
+        public int MinimoDipendenti { get; set; }
+        public int MassimoDipendenti { get; set; }
+        private double stipendio;
+        public int StipendiPerc { get; private set; }
+        public int StipendioBase { get; set; }
+        public int Felicita { get; internal set; }
+        public double Stipendio
+        {
+            get => (StipendioBase / 100) * StipendiPerc;
+        }
 
         public Dipendenti(int minimoDipendenti, int massimoDipendenti, int stipendioBase)
         {
@@ -50,7 +55,7 @@ namespace BigTycoon.GestioneDipendenti
             {
                 StipendiPerc = 50;
             }
-            else if(StipendiPerc > 200)
+            else if (StipendiPerc > 200)
             {
                 StipendiPerc = 200;
             }
