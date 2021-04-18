@@ -9,23 +9,23 @@ namespace BigTycoon.Celle.Edifici
     public class Industria : Edificio
     {
         public MagazzinoMateriali SlotMateriali { get; set; }
-        private string risorsaTerreno;
+        public string RisorsaTerreno { get; private set; }
 
         public Industria(Giocatore gio, string ogg) : base(gio)
         {
             SlotMateriali = new MagazzinoMateriali();
-            risorsaTerreno = ogg;
+            RisorsaTerreno = ogg;
 
             Dipendenti = new Dipendenti(3, 8, 20);
         }
 
         protected override void Produci()
         {
-            var mater = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+            var mater = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
 
-            if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
+            if (RisorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
             //Crea materiale
-            if (mater.Nome == risorsaTerreno)
+            if (mater.Nome == RisorsaTerreno)
             {
                 mater.Quantita++;
             }
@@ -33,7 +33,7 @@ namespace BigTycoon.Celle.Edifici
 
         protected override void CalcolaBilancio()
         {
-            var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+            var ogg = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
 
             Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
         }

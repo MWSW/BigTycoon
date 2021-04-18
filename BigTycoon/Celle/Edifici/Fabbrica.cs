@@ -18,13 +18,23 @@ namespace BigTycoon.Celle.Edifici
             SlotMateriali = new MagazzinoMateriali();
 
             Dipendenti = new Dipendenti(2, 6, 30);
+
+            //inizializzazione
+            ProdottoCorrente = "";
+
+            //test
+            SlotMateriali.DizionarioMateriali["MaterialeComune"].Quantita = 0;
+            SlotMateriali.DizionarioMateriali["MaterialeRaro"].Quantita = 0;
+            SlotMateriali.DizionarioMateriali["MaterialePrezioso"].Quantita = 0;
         }
 
         public void CambiaProduzione(string nome)
         {
-            ProdottoCorrente = SlotProdotti.DizionarioProdotti.Keys
+            /*ProdottoCorrente = SlotProdotti.DizionarioProdotti.Keys
                 .Where(key => key == nome)
-                .ToString();
+                .ToString();*/
+
+            ProdottoCorrente = nome;
         }
 
         /// <summary>
@@ -42,7 +52,7 @@ namespace BigTycoon.Celle.Edifici
             if (prod.Quantita > ListaOggetti.DimMax) return;
 
             // vedo se posso produrre
-            if (IsDisponibile(ProdottoCorrente)) return;
+            if (!IsDisponibile(ProdottoCorrente)) return;
 
             // rimuovo i materiali usati
             foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)

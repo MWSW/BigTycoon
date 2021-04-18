@@ -16,7 +16,9 @@ namespace BigTycoon.Celle.Edifici
         public Dipendenti Dipendenti { get; protected set; }
 
         private bool edificioAttivo;
-        protected bool EdificioAttivo { get => IsEdificioAttivo(); set => edificioAttivo = value; }
+
+        //Serve renderlo accessibile all'esterno
+        public bool EdificioAttivo { get => IsEdificioAttivo(); protected set => edificioAttivo = value; }
         public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 

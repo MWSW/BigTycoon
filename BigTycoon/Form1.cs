@@ -34,10 +34,15 @@ namespace BigTycoon
         //gestione edifici
         Edificio edificioSelezionato;
 
+        //form accessori
+        SchedaProduzione formProduzione;
+
 
         public Form1(Mappa mappa)
         {
             InitializeComponent();
+
+            formProduzione = new SchedaProduzione();
 
             giocatore = new Giocatore(500, 70, 6);
 
@@ -142,6 +147,8 @@ namespace BigTycoon
 
                 richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
+                gestione_button.BackgroundImage = Properties.Resources.ingranaggio;
+
                 if (gestioneEdificio_panel.Visible)
                 {
                     stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
@@ -166,6 +173,14 @@ namespace BigTycoon
                         prodotti_comuniRari.Text = "--";
                         prodotti_comuniPreziosi.Text = "--";
                         prodotti_rariPreziosi.Text = "--";
+
+                        //BottoneProduzione
+                        if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeComune")
+                           gestione_button.BackgroundImage = Properties.Resources.comuni;
+                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeRaro")
+                           gestione_button.BackgroundImage = Properties.Resources.rari;
+                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialePrezioso")
+                           gestione_button.BackgroundImage = Properties.Resources.preziosi;
 
                     }
                     else if (edificioSelezionato.GetType() == typeof(Fabbrica))
@@ -201,19 +216,63 @@ namespace BigTycoon
                 }
             }
 
-            //Punti escalamtivi 
+            //Punti esclamativi 
             for(int r = 0; r < mappa.Righe; r++)
             {
                 for(int c = 0; c < mappa.Colon; c++)
                 {
                     if(mappa.CelleEdifici[r,c] != null)
                     {
-                        if(!mappa.CelleEdifici[r, c].IsEdificioAttivo())
+                        if(!mappa.CelleEdifici[r, c].EdificioAttivo)
                             attenzione[r, c].Visible = true;
                         else
                             attenzione[r, c].Visible = false;
                     }
                 }
+            }
+        }
+        #endregion
+
+        #region GestioneEdificio
+        //Numero dipendenti/////////////////
+        private void incDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.AggiungiDipendenti(giocatore);
+
+            AggiornaInfoGrafiche();
+        }
+
+        private void dimDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.RimuoviDipendenti(giocatore);
+
+            AggiornaInfoGrafiche();
+        }
+        ////////////////////////////////////
+
+
+        //Gestione stipendi ////////////////
+        private void incStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(10);
+
+            AggiornaInfoGrafiche();
+        }
+
+        private void dimStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(-10);
+
+            AggiornaInfoGrafiche();
+        }
+        //////////////////////////////////
+
+        private void gestione_button_Click(object sender, EventArgs e)
+        {
+            if (edificioSelezionato.GetType() == typeof(Fabbrica))
+            {
+                formProduzione.Show();
+                formProduzione.CambiaEdificio(edificioSelezionato);
             }
         }
         #endregion
@@ -238,39 +297,6 @@ namespace BigTycoon
             }
         }
         #endregion
-
-        //Numero dipendenti/////////////////
-        private void incDipendenti_bottone_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.AggiungiDipendenti(giocatore);
-
-            AggiornaInfoGrafiche();
-        }
-
-        private void dimDipendenti_bottone_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.RimuoviDipendenti(giocatore);
-
-            AggiornaInfoGrafiche();
-        }
-        ////////////////////////////////////
-        
-
-        //Gestione stipendi ////////////////
-        private void incStipendi_button_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.ModStipendi(10);
-
-            AggiornaInfoGrafiche();
-        }
-
-        private void dimStipendi_button_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.ModStipendi(-10);
-
-            AggiornaInfoGrafiche();
-        }
-        //////////////////////////////////
 
         #region CreaEdificio
         private void industria_bottone_Click(object sender, EventArgs e)
@@ -359,6 +385,7 @@ namespace BigTycoon
                 AggiornaInfoGrafiche();
             }
         }
+
 
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
