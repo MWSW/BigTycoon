@@ -105,5 +105,6 @@ namespace BigTycoon
             conferma_button.Visible = true;
             indice = 5;
         }
+
     }
 }

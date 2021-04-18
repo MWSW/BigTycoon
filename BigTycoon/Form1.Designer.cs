@@ -1407,7 +1407,7 @@ namespace BigTycoon
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 35);
             this.label4.TabIndex = 5;
-            this.label4.Text = "+3";
+            this.label4.Text = "+1";
             // 
             // panel17
             // 

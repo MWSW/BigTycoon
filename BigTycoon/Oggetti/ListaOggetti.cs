@@ -49,12 +49,12 @@ namespace BigTycoon.Oggetti
         /// </summary>
         public static Dictionary<string, Oggetto> ClonaDizionarioProdotti() => new Dictionary<string, Oggetto>
         {
-            ["ProdottoComune"] = new Oggetto("ProdottoComune", 0),
-            ["ProdottoRaro"] = new Oggetto("ProdottoRaro", 0),
-            ["ProdottoPrezioso"] = new Oggetto("ProdottoPrezioso", 0),
-            ["ProdottoComuneRaro"] = new Oggetto("ProdottoComuneRaro", 0),
-            ["ProdottoComunePrezioso"] = new Oggetto("ProdottoComunePrezioso", 0),
-            ["ProdottoRaroPrezioso"] = new Oggetto("ProdottoRaroPrezioso", 0)
+            ["ProdottoComune"] = new Oggetto("ProdottoComune", 0, "MaterialeComune"),
+            ["ProdottoRaro"] = new Oggetto("ProdottoRaro", 0, "MaterialeRaro"),
+            ["ProdottoPrezioso"] = new Oggetto("ProdottoPrezioso", 0, "MaterialePrezioso"),
+            ["ProdottoComuneRaro"] = new Oggetto("ProdottoComuneRaro", 0, "MaterialeComune", "MaterialeRaro"),
+            ["ProdottoComunePrezioso"] = new Oggetto("ProdottoComunePrezioso", 0, "MaterialeComune", "MaterialePrezioso"),
+            ["ProdottoRaroPrezioso"] = new Oggetto("ProdottoRaroPrezioso", 0, "MaterialeRaro", "MaterialePrezioso")
         };
     }
 }

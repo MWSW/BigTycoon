@@ -271,8 +271,8 @@ namespace BigTycoon
         {
             if (edificioSelezionato.GetType() == typeof(Fabbrica))
             {
-                formProduzione.Show();
                 formProduzione.CambiaEdificio(edificioSelezionato);
+                formProduzione.Show();            
             }
         }
         #endregion

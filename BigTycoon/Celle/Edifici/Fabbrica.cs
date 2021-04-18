@@ -23,9 +23,9 @@ namespace BigTycoon.Celle.Edifici
             ProdottoCorrente = "";
 
             //test
-            SlotMateriali.DizionarioMateriali["MaterialeComune"].Quantita = 0;
-            SlotMateriali.DizionarioMateriali["MaterialeRaro"].Quantita = 0;
-            SlotMateriali.DizionarioMateriali["MaterialePrezioso"].Quantita = 0;
+            SlotMateriali.DizionarioMateriali["MaterialeComune"].Quantita = 10;
+            SlotMateriali.DizionarioMateriali["MaterialeRaro"].Quantita = 10;
+            SlotMateriali.DizionarioMateriali["MaterialePrezioso"].Quantita = 10;
         }
 
         public void CambiaProduzione(string nome)
