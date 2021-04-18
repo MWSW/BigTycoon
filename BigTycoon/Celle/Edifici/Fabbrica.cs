@@ -27,6 +27,9 @@ namespace BigTycoon.Celle.Edifici
                 .ToString();
         }
 
+        /// <summary>
+        /// Metodo che aggiunge 1 ProdottoCorrente al magazzino se ci sono abbastanza materiali
+        /// </summary>
         protected override void Produci()
         {
 
@@ -38,29 +41,81 @@ namespace BigTycoon.Celle.Edifici
             // se il magazzino è al massimo salta tutto
             if (prod.Quantita > ListaOggetti.DimMax) return;
 
-            bool contains = false; // flag per mantenere la conoscenza della ricerca dei materiali
+            // vedo se posso produrre
+            if (IsDisponibile(ProdottoCorrente)) return;
 
-            // itero attraverso tutti i componenti del prod. corrente e controllo se ce ne' abbastanza nel magazzino materiali
+            // rimuovo i materiali usati
             foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
             {
-                // se c'e' abbastanza materiale metto la flag a true altrimenti la rimetto a false
-                if (SlotMateriali.DizionarioMateriali[comp].Quantita > 0) contains = true;
-
-                else contains = false;
+                SlotMateriali.DizionarioMateriali[comp].Quantita--;
             }
+            prod.Quantita++; // aggiungo il prodotto
 
-            // se il magazzino contiene tutti i materiali necessari eseguo la produzione
-            if (contains)
-            {
-                // rimuovo i materiali usati
-                foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
-                {
-                    SlotMateriali.DizionarioMateriali[comp].Quantita--;
-                }
-                prod.Quantita++; // aggiungo il prodotto
-            }
 
             SlotProdotti.DizionarioProdotti[ProdottoCorrente] = prod; // aggiorno il magazzino
+        }
+
+        /// <summary>
+        /// Controlla se e' possibile produrre il prodotto specificato
+        /// </summary>
+        /// <param name="key">Chiave del materiale da controllare</param>
+        /// <returns></returns>
+        internal bool IsDisponibile(string key)
+        {
+            // se la chiave è sbagliata ritorna falso
+            if (!SlotProdotti.DizionarioProdotti.Keys.Contains(key)) return false;
+            // itero tutti i componenti del materiale specificato
+            foreach (var comp in SlotProdotti.DizionarioProdotti[key].Componenti)
+            {
+                // se non c'e' abbastanza materiale ritorno false
+                if (SlotMateriali.DizionarioMateriali[comp].Quantita < 1)
+                {
+                    return false;
+                }
+            }
+            // se tutti i controlli precedenti passano sono sicuro che il materiale e' nel magazzino
+            return true;
+        }
+
+        /// <summary>
+        /// sas
+        /// </summary>
+        /// <param name="ogg">Oggetto da aggiungere al magazzino</param>
+        public override void AggiungiOggetto(Oggetto ogg)
+        {
+            if (SlotMateriali.DizionarioMateriali.Keys.Contains(ogg.Nome))
+            {
+                SlotMateriali.DizionarioMateriali[ogg.Nome].Quantita += ogg.Quantita;
+            }
+            else
+            if (SlotProdotti.DizionarioProdotti.Keys.Contains(ogg.Nome))
+            {
+                SlotProdotti.DizionarioProdotti[ogg.Nome].Quantita += ogg.Quantita;
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        protected override void CalcolaBilancio()
+        {
+            foreach (var ogg in SlotProdotti.DizionarioProdotti)
+            {
+                Possessore.portafogli.Soldi += ogg.Value.Valore * ogg.Value.Quantita;
+            }
+        }
+
+        /// <summary>
+        /// Controlla se l'edificio ha abbastanza dipendenti o materiali per produrre
+        /// </summary>
+        /// <returns></returns>
+        protected override bool IsEdificioAttivo()
+        {
+            if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
+
+            if (!IsDisponibile(ProdottoCorrente)) return false;
+
+            return true;
         }
     }
 }
