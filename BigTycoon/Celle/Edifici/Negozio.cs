@@ -44,17 +44,26 @@ namespace BigTycoon.Celle.Edifici
 
         protected override void CalcolaBilancio()
         {
-            throw new System.NotImplementedException();
+            var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
+
+            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
         }
 
         public override void AggiungiOggetto(Oggetto ogg)
         {
-            throw new System.NotImplementedException();
+            if (SlotProdotti.DizionarioProdotti.Keys.Contains(ogg.Nome))
+            {
+                SlotProdotti.DizionarioProdotti[ogg.Nome].Quantita += ogg.Quantita;
+            }
         }
 
         protected override bool IsEdificioAttivo()
         {
-            throw new System.NotImplementedException();
+            if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
+
+            if (SlotProdotti.DizionarioProdotti[ProdottoInVendita].Quantita < 1) return false;
+
+            return true;
         }
     }
 }

@@ -71,7 +71,7 @@ namespace BigTycoon.Celle.Edifici
         }
 
         /// <summary>
-        /// sas
+        /// Aggiunge un oggetto nel magazzino. il magazzino è rilevato automaticamente
         /// </summary>
         /// <param name="ogg">Oggetto da aggiungere al magazzino</param>
         public override void AggiungiOggetto(Oggetto ogg)
@@ -88,14 +88,13 @@ namespace BigTycoon.Celle.Edifici
         }
 
         /// <summary>
-        /// TODO
+        /// Calcola il bilancio con lo stipendio e il valore dei prodotti
         /// </summary>
         protected override void CalcolaBilancio()
         {
-            foreach (var ogg in SlotProdotti.DizionarioProdotti)
-            {
-                Possessore.portafogli.Soldi += ogg.Value.Valore * ogg.Value.Quantita;
-            }
+            var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
+
+            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
         }
 
         /// <summary>
