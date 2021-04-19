@@ -87,7 +87,7 @@ namespace BigTycoon
             // 
             // P_preziosi
             // 
-            this.P_preziosi.BackColor = System.Drawing.Color.Gold;
+            this.P_preziosi.BackColor = System.Drawing.Color.Khaki;
             this.P_preziosi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.P_preziosi.Location = new System.Drawing.Point(430, 20);
             this.P_preziosi.Margin = new System.Windows.Forms.Padding(20);
@@ -111,7 +111,7 @@ namespace BigTycoon
             // 
             // P_comunePrezioso
             // 
-            this.P_comunePrezioso.BackColor = System.Drawing.Color.Khaki;
+            this.P_comunePrezioso.BackColor = System.Drawing.Color.Olive;
             this.P_comunePrezioso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.P_comunePrezioso.Location = new System.Drawing.Point(225, 225);
             this.P_comunePrezioso.Margin = new System.Windows.Forms.Padding(20);
@@ -123,7 +123,7 @@ namespace BigTycoon
             // 
             // P_raroPrezioso
             // 
-            this.P_raroPrezioso.BackColor = System.Drawing.Color.YellowGreen;
+            this.P_raroPrezioso.BackColor = System.Drawing.Color.BlueViolet;
             this.P_raroPrezioso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.P_raroPrezioso.Location = new System.Drawing.Point(430, 225);
             this.P_raroPrezioso.Margin = new System.Windows.Forms.Padding(20);

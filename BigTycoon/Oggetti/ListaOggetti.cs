@@ -9,15 +9,15 @@ namespace BigTycoon.Oggetti
     /// </summary>
 	public static class ListaOggetti
     {
-        public static int DimMax { get; set; } = 99;
+        public static int DimMax { get; set; } = 10;
         /// <summary>
         /// Dizionario che elenca le stringhe dei tipi di materiali e le associa al loro oggetto base
         /// </summary>
         public static Dictionary<string, Oggetto> DizionarioMateriali { get; private set; } = new Dictionary<string, Oggetto>
         {
-            ["MaterialeComune"] = new Oggetto("MaterialeComune", 50),
-            ["MaterialeRaro"] = new Oggetto("MaterialeRaro", 100),
-            ["MaterialePrezioso"] = new Oggetto("MaterialePrezioso", 200),
+            ["MaterialeComune"] = new Oggetto("MaterialeComune", 20),
+            ["MaterialeRaro"] = new Oggetto("MaterialeRaro", 30),
+            ["MaterialePrezioso"] = new Oggetto("MaterialePrezioso", 40),
         };
         /// <summary>
         /// Dizionario che elenca le stringhe dei tipi di prodotti e le associa al loro oggetto base

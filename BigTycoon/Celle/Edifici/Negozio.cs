@@ -16,6 +16,10 @@ namespace BigTycoon.Celle.Edifici
             SlotProdotti = new MagazzinoProdotti();
 
             Dipendenti = new Dipendenti(3, 3, 40);
+
+            ProdottoInVendita = "";
+
+            Prezzo = 3000;
         }
 
         public void CambiaProdottiVendita(string nome)
@@ -42,7 +46,7 @@ namespace BigTycoon.Celle.Edifici
             SlotProdotti.DizionarioProdotti[ProdottoInVendita] = prod;
         }
 
-        protected override void CalcolaBilancio()
+        public override void CalcolaBilancio()
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 

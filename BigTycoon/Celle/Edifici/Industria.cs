@@ -19,6 +19,8 @@ namespace BigTycoon.Celle.Edifici
             RisorsaTerreno = ogg;
 
             Dipendenti = new Dipendenti(1, 8, 10);
+
+            Prezzo = 500;
         }
 
         protected override void Produci()
@@ -36,11 +38,12 @@ namespace BigTycoon.Celle.Edifici
             }
 
             mater.Quantita += punti;
+            PuntiProduzione = punti;
 
             SlotMateriali.DizionarioMateriali[RisorsaTerreno] = mater;
         }
 
-        protected override void CalcolaBilancio()
+        public override void CalcolaBilancio()
         {
             var ogg = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
 
@@ -87,6 +90,9 @@ namespace BigTycoon.Celle.Edifici
             {
                 return false;
             }
+
+            if (SlotMateriali.DizionarioMateriali[RisorsaTerreno].Quantita >= ListaOggetti.DimMax)
+                return false;
 
             return true;
         }

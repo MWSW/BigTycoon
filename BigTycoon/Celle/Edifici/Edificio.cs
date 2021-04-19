@@ -21,6 +21,11 @@ namespace BigTycoon.Celle.Edifici
         public bool EdificioAttivo { get => IsEdificioAttivo(); protected set => edificioAttivo = value; }
         protected int ColoreEdificio { get; set; }
 
+        public int PuntiProduzione { get; set; }
+
+        //prezzo per la costruzione dell'edificio
+        public int Prezzo { get; protected set; }
+
         public Edificio(Giocatore gio)
         {//valori di prova
             Possessore = gio;
@@ -30,6 +35,7 @@ namespace BigTycoon.Celle.Edifici
             Produttivita = 0;
             EdificioAttivo = false;
             ColoreEdificio = 0;
+            PuntiProduzione = 1;
             Dipendenti = new Dipendenti(0, 4, 20);
         }
 
@@ -49,12 +55,12 @@ namespace BigTycoon.Celle.Edifici
             CalcolaFelicita();
         }
 
-        protected abstract void CalcolaBilancio();
+        public abstract void CalcolaBilancio();
         public abstract void AggiungiOggetto(Oggetto ogg);
         protected abstract bool IsEdificioAttivo();
         protected abstract void Produci();
 
-        protected void CalcolaFelicita()
+        public void CalcolaFelicita()
         {
             int max = 200;
             int min = 50;

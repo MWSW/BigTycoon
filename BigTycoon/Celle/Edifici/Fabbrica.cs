@@ -19,6 +19,8 @@ namespace BigTycoon.Celle.Edifici
 
             Dipendenti = new Dipendenti(2, 6, 30);
 
+            Prezzo = 1000;
+
             //inizializzazione
             ProdottoCorrente = "";
 
@@ -61,6 +63,7 @@ namespace BigTycoon.Celle.Edifici
             }
 
             int punti = CalcolaProduzione();
+            PuntiProduzione = punti;
 
             prod.Quantita += punti; // aggiungo il prodotto
 
@@ -134,7 +137,7 @@ namespace BigTycoon.Celle.Edifici
         /// <summary>
         /// Calcola il bilancio con lo stipendio e il valore dei prodotti
         /// </summary>
-        protected override void CalcolaBilancio()
+        public override void CalcolaBilancio()
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
@@ -152,6 +155,9 @@ namespace BigTycoon.Celle.Edifici
             if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
 
             if (!IsDisponibile(ProdottoCorrente)) return false;
+
+            if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+                return false;
 
             return true;
         }
