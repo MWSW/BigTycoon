@@ -34,7 +34,9 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
 
-            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
+            Reddito = ogg.Valore * ogg.Quantita;
+
+            Bilancio = Reddito - Dipendenti.Stipendio;
         }
 
         public override void AggiungiOggetto(Oggetto ogg)

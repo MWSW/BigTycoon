@@ -94,7 +94,9 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
-            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
+            Reddito = ogg.Valore * ogg.Quantita;
+
+            Bilancio = Reddito - Dipendenti.Stipendio;
         }
 
         /// <summary>
