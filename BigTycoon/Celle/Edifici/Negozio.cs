@@ -18,11 +18,6 @@ namespace BigTycoon.Celle.Edifici
             Dipendenti = new Dipendenti(3, 3, 40);
         }
 
-        public override void Update()
-        {
-            base.Update();
-        }
-
         public void CambiaProdottiVendita(string nome)
         {
             ProdottoInVendita = SlotProdotti.DizionarioProdotti.Keys
@@ -49,7 +44,9 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 
-            Possessore.portafogli.Soldi += ogg.Valore * ogg.Quantita - Dipendenti.Stipendio;
+            Reddito = ogg.Valore * ogg.Quantita;
+
+            Bilancio = Reddito - Dipendenti.Stipendio;
         }
 
         public override void AggiungiOggetto(Oggetto ogg)
