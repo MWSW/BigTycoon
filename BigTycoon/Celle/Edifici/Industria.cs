@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -8,36 +9,40 @@ namespace BigTycoon.Celle.Edifici
     public class Industria : Edificio
     {
         public MagazzinoMateriali SlotMateriali { get; set; }
-        private string risorsaTerreno;
+
+        //Serve pubblico per i vari controlli del form
+        public string RisorsaTerreno { get; private set; }
 
         public Industria(Giocatore gio, string ogg) : base(gio)
         {
             SlotMateriali = new MagazzinoMateriali();
-            risorsaTerreno = ogg;
+            RisorsaTerreno = ogg;
+
+            Dipendenti = new Dipendenti(1, 8, 10);
         }
 
         protected override void Produci()
         {
-            var mater = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+            var mater = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
 
-            if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
+            if (RisorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
 
             int punti = 0;
 
             //Crea materiale
-            if (mater.Nome == risorsaTerreno)
+            if (mater.Nome == RisorsaTerreno)
             {
                 punti = CalcolaProduzione();
             }
 
             mater.Quantita += punti;
 
-            SlotMateriali.DizionarioMateriali[risorsaTerreno] = mater;
+            SlotMateriali.DizionarioMateriali[RisorsaTerreno] = mater;
         }
 
         protected override void CalcolaBilancio()
         {
-            var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
+            var ogg = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
 
             Reddito = ogg.Valore * CalcolaProduzione();
 
