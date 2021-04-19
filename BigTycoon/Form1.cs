@@ -104,7 +104,6 @@ namespace BigTycoon
         }
         #endregion
 
-
         #region MetodiVari
         bool CellaVuota(PictureBox immagine)
         {
@@ -148,6 +147,8 @@ namespace BigTycoon
                 richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
                 gestione_button.BackgroundImage = Properties.Resources.ingranaggio;
+
+                guadagnoEdificio.Text = "Bilancio: " + edificioSelezionato.Bilancio;
 
                 if (gestioneEdificio_panel.Visible)
                 {
