@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
-using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -9,38 +8,66 @@ namespace BigTycoon.Celle.Edifici
     public class Industria : Edificio
     {
         public MagazzinoMateriali SlotMateriali { get; set; }
-        public string RisorsaTerreno { get; private set; }
+        private string risorsaTerreno;
 
         public Industria(Giocatore gio, string ogg) : base(gio)
         {
             SlotMateriali = new MagazzinoMateriali();
-            RisorsaTerreno = ogg;
-
-            Dipendenti = new Dipendenti(3, 8, 20);
+            risorsaTerreno = ogg;
         }
 
         protected override void Produci()
         {
-            var mater = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
+            var mater = SlotMateriali.DizionarioMateriali[risorsaTerreno];
 
-            if (RisorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
+            if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
+
+            int punti = 0;
+
             //Crea materiale
-            if (mater.Nome == RisorsaTerreno)
+            if (mater.Nome == risorsaTerreno)
             {
-                mater.Quantita++;
+                punti = CalcolaProduzione();
             }
 
-            SlotMateriali.DizionarioMateriali[RisorsaTerreno] = mater;
+            mater.Quantita += punti;
+
+            SlotMateriali.DizionarioMateriali[risorsaTerreno] = mater;
         }
 
         protected override void CalcolaBilancio()
         {
-            var ogg = SlotMateriali.DizionarioMateriali[RisorsaTerreno];
+            var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
 
-            Reddito = ogg.Valore * ogg.Quantita;
+            Reddito = ogg.Valore * CalcolaProduzione();
 
             Bilancio = Reddito - Dipendenti.Stipendio;
         }
+
+        private int CalcolaProduzione()
+        {
+            int punti = 0;
+
+            int mid = Dipendenti.MassimoDipendenti / 2 + Dipendenti.MinimoDipendenti;
+
+            // Aggiungo un numero di prodotti in base al numero di dipendenti
+            if (Dipendenti.Quantita >= Dipendenti.MinimoDipendenti && Dipendenti.Quantita < mid)
+            {
+                punti = 1;
+            }
+            else
+            if (Dipendenti.Quantita <= Dipendenti.MassimoDipendenti && Dipendenti.Quantita > mid)
+            {
+                punti = 3;
+            }
+            else
+            {
+                punti = 2;
+            }
+
+            return punti;
+        }
+
 
         public override void AggiungiOggetto(Oggetto ogg)
         {
