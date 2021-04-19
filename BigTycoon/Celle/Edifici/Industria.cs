@@ -30,7 +30,7 @@ namespace BigTycoon.Celle.Edifici
                 mater.Quantita++;
             }
 
-            SlotMateriali.DizionarioMateriali[risorsaTerreno] = mater;
+            SlotMateriali.DizionarioMateriali[RisorsaTerreno] = mater;
         }
 
         protected override void CalcolaBilancio()
