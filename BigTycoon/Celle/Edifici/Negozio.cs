@@ -41,7 +41,7 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 
-            Reddito = ogg.Valore * ogg.Quantita;
+            Reddito = ogg.Valore;
 
             Bilancio = Reddito - Dipendenti.Stipendio;
         }
