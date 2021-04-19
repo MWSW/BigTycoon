@@ -42,7 +42,10 @@ namespace BigTycoon.Celle.Edifici
             {
                 SlotMateriali.DizionarioMateriali[comp].Quantita--;
             }
-            prod.Quantita++; // aggiungo il prodotto
+
+            int punti = CalcolaProduzione();
+
+            prod.Quantita += punti; // aggiungo il prodotto
 
 
             SlotProdotti.DizionarioProdotti[ProdottoCorrente] = prod; // aggiorno il magazzino
@@ -70,6 +73,30 @@ namespace BigTycoon.Celle.Edifici
             return true;
         }
 
+        private int CalcolaProduzione()
+        {
+            int punti = 0;
+
+            int mid = Dipendenti.MassimoDipendenti / 2 + Dipendenti.MinimoDipendenti;
+
+            // Aggiungo un numero di prodotti in base al numero di dipendenti
+            if (Dipendenti.Quantita >= Dipendenti.MinimoDipendenti && Dipendenti.Quantita < mid)
+            {
+                punti = 1;
+            }
+            else
+            if (Dipendenti.Quantita <= Dipendenti.MassimoDipendenti && Dipendenti.Quantita > mid)
+            {
+                punti = 3;
+            }
+            else
+            {
+                punti = 2;
+            }
+
+            return punti;
+        }
+
         /// <summary>
         /// Aggiunge un oggetto nel magazzino. il magazzino è rilevato automaticamente
         /// </summary>
@@ -94,7 +121,7 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
-            Reddito = ogg.Valore * ogg.Quantita;
+            Reddito = ogg.Valore * CalcolaProduzione();
 
             Bilancio = Reddito - Dipendenti.Stipendio;
         }

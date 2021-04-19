@@ -21,11 +21,16 @@ namespace BigTycoon.Celle.Edifici
             var mater = SlotMateriali.DizionarioMateriali[risorsaTerreno];
 
             if (risorsaTerreno == null || mater.Quantita > ListaOggetti.DimMax) return;
+
+            int punti = 0;
+
             //Crea materiale
             if (mater.Nome == risorsaTerreno)
             {
-                mater.Quantita++;
+                punti = CalcolaProduzione();
             }
+
+            mater.Quantita += punti;
 
             SlotMateriali.DizionarioMateriali[risorsaTerreno] = mater;
         }
@@ -34,10 +39,35 @@ namespace BigTycoon.Celle.Edifici
         {
             var ogg = SlotMateriali.DizionarioMateriali[risorsaTerreno];
 
-            Reddito = ogg.Valore * ogg.Quantita;
+            Reddito = ogg.Valore * CalcolaProduzione();
 
             Bilancio = Reddito - Dipendenti.Stipendio;
         }
+
+        private int CalcolaProduzione()
+        {
+            int punti = 0;
+
+            int mid = Dipendenti.MassimoDipendenti / 2 + Dipendenti.MinimoDipendenti;
+
+            // Aggiungo un numero di prodotti in base al numero di dipendenti
+            if (Dipendenti.Quantita >= Dipendenti.MinimoDipendenti && Dipendenti.Quantita < mid)
+            {
+                punti = 1;
+            }
+            else
+            if (Dipendenti.Quantita <= Dipendenti.MassimoDipendenti && Dipendenti.Quantita > mid)
+            {
+                punti = 3;
+            }
+            else
+            {
+                punti = 2;
+            }
+
+            return punti;
+        }
+
 
         public override void AggiungiOggetto(Oggetto ogg)
         {
