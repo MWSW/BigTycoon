@@ -8,6 +8,7 @@ namespace BigTycoon.Generale
         public int FamaAziendale { get; set; }
 		public int DipendentiDisponibili { get; set; }
 
+
         public Giocatore(int soldiIniziali, int famaIniziale, int dipendentiDisponibili)
 		{
             portafogli = new Portafoglio { Soldi = soldiIniziali, Debito = 0 };

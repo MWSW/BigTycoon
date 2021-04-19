@@ -50,7 +50,7 @@ namespace BigTycoon.Celle
             }
             CelleEdifici[row, col] = tmp;
         }
-        public void UpdateAll()
+        public void UpdateAll(Giocatore gio)
         {
             foreach(Edificio e in CelleEdifici)
             {

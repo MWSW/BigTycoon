@@ -19,7 +19,6 @@ namespace BigTycoon.Celle.Edifici
 
         //Serve renderlo accessibile all'esterno
         public bool EdificioAttivo { get => IsEdificioAttivo(); protected set => edificioAttivo = value; }
-        public int PuntiFelicita { get; protected set; }
         protected int ColoreEdificio { get; set; }
 
         public Edificio(Giocatore gio)
@@ -30,7 +29,6 @@ namespace BigTycoon.Celle.Edifici
             Produzione = 0;
             Produttivita = 0;
             EdificioAttivo = false;
-            PuntiFelicita = 0;
             ColoreEdificio = 0;
             Dipendenti = new Dipendenti(0, 4, 20);
         }
@@ -45,6 +43,9 @@ namespace BigTycoon.Celle.Edifici
 
             Produci();
             CalcolaBilancio();
+
+            //applica il bilancio
+            Possessore.portafogli.Soldi += Bilancio;
             CalcolaFelicita();
         }
 
@@ -64,11 +65,15 @@ namespace BigTycoon.Celle.Edifici
             {
                 if (Dipendenti.StipendiPerc >= i && Dipendenti.StipendiPerc < i + inc)
                 {
+                    if (punti > 10)
+                        punti = 10;
+
                     Dipendenti.Felicita = punti;
                     return;
                 }
                 punti++;
             }
+
         }
     }
 }

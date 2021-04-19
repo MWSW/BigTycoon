@@ -99,7 +99,7 @@ namespace BigTycoon
         #region Timer
         private void EdificiUpdate(object sender, EventArgs e)
         {
-            mappa.UpdateAll();
+            mappa.UpdateAll(giocatore);
             AggiornaInfoGrafiche();
         }
         #endregion
@@ -142,13 +142,15 @@ namespace BigTycoon
             if (edificioSelezionato != null)
             {
                 indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
-                indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
+                indicatoreFelicita.Text = "+" + edificioSelezionato.Dipendenti.Felicita;
+
+                portafoglio_label.Text = "Portafoglio: " + giocatore.portafogli.Soldi + "$";
+
+                immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/100";
 
                 richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
                 gestione_button.BackgroundImage = Properties.Resources.ingranaggio;
-
-                guadagnoEdificio.Text = "Bilancio: " + edificioSelezionato.Bilancio;
 
                 if (gestioneEdificio_panel.Visible)
                 {

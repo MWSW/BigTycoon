@@ -34,7 +34,9 @@ namespace BigTycoon.Celle.Edifici
             if (prod.Quantita > 0)
             {
                 prod.Quantita--;
-                Possessore.portafogli.Soldi += prod.Valore;
+
+                //Il guadagno lo applichiamo all'interno di Update
+                //Possessore.portafogli.Soldi += prod.Valore;
             }
 
             SlotProdotti.DizionarioProdotti[ProdottoInVendita] = prod;
