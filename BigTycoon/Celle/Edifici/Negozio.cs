@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 
 namespace BigTycoon.Celle.Edifici
@@ -13,6 +14,12 @@ namespace BigTycoon.Celle.Edifici
         public Negozio(Giocatore gio) : base(gio)
         {
             SlotProdotti = new MagazzinoProdotti();
+
+            Dipendenti = new Dipendenti(3, 3, 40);
+
+            ProdottoInVendita = "";
+
+            Prezzo = 3000;
         }
 
         public void CambiaProdottiVendita(string nome)
@@ -31,13 +38,15 @@ namespace BigTycoon.Celle.Edifici
             if (prod.Quantita > 0)
             {
                 prod.Quantita--;
-                Possessore.portafogli.Soldi += prod.Valore;
+
+                //Il guadagno lo applichiamo all'interno di Update
+                //Possessore.portafogli.Soldi += prod.Valore;
             }
 
             SlotProdotti.DizionarioProdotti[ProdottoInVendita] = prod;
         }
 
-        protected override void CalcolaBilancio()
+        public override void CalcolaBilancio()
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 

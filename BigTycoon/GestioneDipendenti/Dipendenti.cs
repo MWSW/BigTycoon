@@ -10,13 +10,12 @@ namespace BigTycoon.GestioneDipendenti
         public int Quantita { get; private set; }
         public int MinimoDipendenti { get; set; }
         public int MassimoDipendenti { get; set; }
-        private double stipendio;
         public int StipendiPerc { get; private set; }
         public int StipendioBase { get; set; }
         public int Felicita { get; internal set; }
         public double Stipendio
         {
-            get => (StipendioBase / 100) * StipendiPerc;
+            get => ((float)StipendioBase / 100.0f) * StipendiPerc * Quantita;
         }
 
         public Dipendenti(int minimoDipendenti, int massimoDipendenti, int stipendioBase)

@@ -32,7 +32,7 @@ namespace BigTycoon.Celle
         /// <param name="y">Coordinata y</param>
         /// <param name="tipo">Tipo dell'edificio</param>
         /// <param name="fenoglioIlPortafoglio">Portafoglio del giocatore che crea l'edificio</param>
-		public void AggiungiEdificio(int row, int col, int tipo, Giocatore gio)
+		public bool AggiungiEdificio(int row, int col, int tipo, Giocatore gio)
         {
             Edificio tmp;
             switch (tipo)
@@ -40,17 +40,36 @@ namespace BigTycoon.Celle
                 default:
                 case 0:
                     tmp = new Industria(gio, CelleMateriali[row,col]);
+
+                    if (gio.portafogli.Soldi >= tmp.Prezzo)
+                        gio.portafogli.Soldi -= tmp.Prezzo;
+                    else
+                        return false;
+
                     break;
                 case 1:
                     tmp = new Fabbrica(gio);
+
+                    if (gio.portafogli.Soldi >= tmp.Prezzo)
+                        gio.portafogli.Soldi -= tmp.Prezzo;
+                    else
+                        return false;
+
                     break;
                 case 2:
                     tmp = new Negozio(gio);
+
+                    if (gio.portafogli.Soldi >= tmp.Prezzo)
+                        gio.portafogli.Soldi -= tmp.Prezzo;
+                    else
+                        return false;
                     break;
             }
             CelleEdifici[row, col] = tmp;
+
+            return true;
         }
-        public void UpdateAll(Giocatore giocatore)
+        public void UpdateAll(Giocatore gio)
         {
             foreach(Edificio e in CelleEdifici)
             {

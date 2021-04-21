@@ -16,9 +16,15 @@ namespace BigTycoon.Celle.Edifici
         public Dipendenti Dipendenti { get; protected set; }
 
         private bool edificioAttivo;
-        protected bool EdificioAttivo { get => IsEdificioAttivo(); set => edificioAttivo = value; }
-        public int PuntiFelicita { get; protected set; }
+
+        //Serve renderlo accessibile all'esterno
+        public bool EdificioAttivo { get => IsEdificioAttivo(); protected set => edificioAttivo = value; }
         protected int ColoreEdificio { get; set; }
+
+        public int PuntiProduzione { get; set; }
+
+        //prezzo per la costruzione dell'edificio
+        public int Prezzo { get; protected set; }
 
         public Edificio(Giocatore gio)
         {//valori di prova
@@ -28,8 +34,8 @@ namespace BigTycoon.Celle.Edifici
             Produzione = 0;
             Produttivita = 0;
             EdificioAttivo = false;
-            PuntiFelicita = 0;
             ColoreEdificio = 0;
+            PuntiProduzione = 1;
             Dipendenti = new Dipendenti(0, 4, 20);
         }
 
@@ -43,15 +49,18 @@ namespace BigTycoon.Celle.Edifici
 
             Produci();
             CalcolaBilancio();
+
+            //applica il bilancio
+            Possessore.portafogli.Soldi += Bilancio;
             CalcolaFelicita();
         }
 
-        protected abstract void CalcolaBilancio();
+        public abstract void CalcolaBilancio();
         public abstract void AggiungiOggetto(Oggetto ogg);
         protected abstract bool IsEdificioAttivo();
         protected abstract void Produci();
 
-        protected void CalcolaFelicita()
+        public void CalcolaFelicita()
         {
             int max = 200;
             int min = 50;
@@ -62,11 +71,15 @@ namespace BigTycoon.Celle.Edifici
             {
                 if (Dipendenti.StipendiPerc >= i && Dipendenti.StipendiPerc < i + inc)
                 {
+                    if (punti > 10)
+                        punti = 10;
+
                     Dipendenti.Felicita = punti;
                     return;
                 }
                 punti++;
             }
+
         }
     }
 }

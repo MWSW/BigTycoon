@@ -1,5 +1,6 @@
 ﻿using BigTycoon.Celle.Magazzino;
 using BigTycoon.Generale;
+using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 using System.Linq;
 
@@ -15,13 +16,27 @@ namespace BigTycoon.Celle.Edifici
         {
             SlotProdotti = new MagazzinoProdotti();
             SlotMateriali = new MagazzinoMateriali();
+
+            Dipendenti = new Dipendenti(2, 6, 30);
+
+            Prezzo = 1000;
+
+            //inizializzazione
+            ProdottoCorrente = "";
+
+            //test
+            SlotMateriali.DizionarioMateriali["MaterialeComune"].Quantita = 10;
+            SlotMateriali.DizionarioMateriali["MaterialeRaro"].Quantita = 10;
+            SlotMateriali.DizionarioMateriali["MaterialePrezioso"].Quantita = 10;
         }
 
         public void CambiaProduzione(string nome)
         {
-            ProdottoCorrente = SlotProdotti.DizionarioProdotti.Keys
+            /*ProdottoCorrente = SlotProdotti.DizionarioProdotti.Keys
                 .Where(key => key == nome)
-                .ToString();
+                .ToString();*/
+
+            ProdottoCorrente = nome;
         }
 
         /// <summary>
@@ -29,13 +44,17 @@ namespace BigTycoon.Celle.Edifici
         /// </summary>
         protected override void Produci()
         {
+
+            // se non c'è un prodotto da produrre salta tutto
+            if (ProdottoCorrente == null) return;
+
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
 
-            // se non ce un prodotto da produrre O il magazzino è al massimo salta tutto
-            if (ProdottoCorrente == null || prod.Quantita > ListaOggetti.DimMax) return;
+            // se il magazzino è al massimo salta tutto
+            if (prod.Quantita > ListaOggetti.DimMax) return;
 
             // vedo se posso produrre
-            if (IsDisponibile(ProdottoCorrente)) return;
+            if (!IsDisponibile(ProdottoCorrente)) return;
 
             // rimuovo i materiali usati
             foreach (var comp in SlotProdotti.DizionarioProdotti[ProdottoCorrente].Componenti)
@@ -44,6 +63,7 @@ namespace BigTycoon.Celle.Edifici
             }
 
             int punti = CalcolaProduzione();
+            PuntiProduzione = punti;
 
             prod.Quantita += punti; // aggiungo il prodotto
 
@@ -117,7 +137,7 @@ namespace BigTycoon.Celle.Edifici
         /// <summary>
         /// Calcola il bilancio con lo stipendio e il valore dei prodotti
         /// </summary>
-        protected override void CalcolaBilancio()
+        public override void CalcolaBilancio()
         {
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
@@ -135,6 +155,9 @@ namespace BigTycoon.Celle.Edifici
             if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
 
             if (!IsDisponibile(ProdottoCorrente)) return false;
+
+            if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+                return false;
 
             return true;
         }

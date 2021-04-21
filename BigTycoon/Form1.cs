@@ -1,6 +1,7 @@
 ﻿using BigTycoon.Celle;
 using BigTycoon.Celle.Edifici;
 using BigTycoon.Generale;
+using BigTycoon.Oggetti;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace BigTycoon
         PictureBox[,] griglia;
         Label[,] luoghi;
 
+        PictureBox[,] attenzione;
+
         Image materialeTemp = null;
 
         //crea edificio
@@ -31,10 +34,15 @@ namespace BigTycoon
         //gestione edifici
         Edificio edificioSelezionato;
 
+        //form accessori
+        SchedaProduzione formProduzione;
+
 
         public Form1(Mappa mappa)
         {
             InitializeComponent();
+
+            formProduzione = new SchedaProduzione();
 
             giocatore = new Giocatore(500, 70, 6);
 
@@ -52,6 +60,10 @@ namespace BigTycoon
             luoghi = new Label[3, 5] { { luogo1, luogo2, luogo3, luogo4, luogo5},
                                        { luogo6, luogo7, luogo8, luogo9, luogo10},
                                        { luogo11, luogo12, luogo13, luogo14, luogo15}};
+
+            attenzione = new PictureBox[3, 5] { { attenzione1, attenzione2, attenzione3, attenzione4, attenzione5},
+                                                { attenzione6, attenzione7, attenzione8, attenzione9, attenzione10},
+                                                { attenzione11, attenzione12, attenzione13, attenzione14, attenzione15}};
 
             //Materiale sottostante
             for (int j = 0; j < griglia.GetLength(1); j++)
@@ -83,6 +95,14 @@ namespace BigTycoon
             }
             #endregion
         }
+
+        #region Timer
+        private void EdificiUpdate(object sender, EventArgs e)
+        {
+            mappa.UpdateAll(giocatore);
+            AggiornaInfoGrafiche();
+        }
+        #endregion
 
         #region MetodiVari
         bool CellaVuota(PictureBox immagine)
@@ -119,15 +139,150 @@ namespace BigTycoon
 
         void AggiornaInfoGrafiche()
         {
-            indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
-            indicatoreFelicita.Text = "+" + edificioSelezionato.PuntiFelicita;
+            portafoglio_label.Text = "Portafoglio: " + giocatore.portafogli.Soldi + "$";
+
+            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/100";
 
             richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
-            stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
+            if (edificioSelezionato != null)
+            {
+                indicatoreDipendenti.Text = edificioSelezionato.Dipendenti.Quantita + "/" + edificioSelezionato.Dipendenti.MassimoDipendenti;
+                indicatoreFelicita.Text = "+" + edificioSelezionato.Dipendenti.Felicita;
 
-            guadagnoEdificio.Text = "GUADAGNO " + edificioSelezionato.Bilancio + "$";
-            lordoEdificio.Text = "LORDO " + edificioSelezionato.Reddito + "$";
+                gestione_button.BackgroundImage = Properties.Resources.ingranaggio;
+
+                if (gestioneEdificio_panel.Visible)
+                {
+                    stipendiPerc_label.Text = edificioSelezionato.Dipendenti.StipendiPerc + "%";
+
+                    guadagnoEdificio.Text = "GUADAGNO " + edificioSelezionato.Bilancio + "$";
+                    lordoEdificio.Text = "LORDO " + edificioSelezionato.Reddito + "$";
+
+                    puntiProduzione.Text = "+" + edificioSelezionato.PuntiProduzione;
+
+                    minimoDipendenti_label.Text = "(min " + edificioSelezionato.Dipendenti.MinimoDipendenti + ")";
+
+                    //Magazzino (GUI)
+                    if (edificioSelezionato.GetType() == typeof(Industria))
+                    {
+                        Industria industria = (Industria)edificioSelezionato;
+                        materiali_comuni.Text = industria.SlotMateriali.GetElemento("MaterialeComune").Quantita.ToString();
+                        materiali_rari.Text = industria.SlotMateriali.GetElemento("MaterialeRaro").Quantita.ToString();
+                        materiali_preziosi.Text = industria.SlotMateriali.GetElemento("MaterialePrezioso").Quantita.ToString();
+
+                        prodotti_comuni.Text = "--";
+                        prodotti_rari.Text = "--";
+                        prodotti_preziosi.Text = "--";
+
+                        prodotti_comuniRari.Text = "--";
+                        prodotti_comuniPreziosi.Text = "--";
+                        prodotti_rariPreziosi.Text = "--";
+
+                        //BottoneProduzione
+                        if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeComune")
+                           gestione_button.BackgroundImage = Properties.Resources.comuni;
+                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeRaro")
+                           gestione_button.BackgroundImage = Properties.Resources.rari;
+                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialePrezioso")
+                           gestione_button.BackgroundImage = Properties.Resources.preziosi;
+
+                    }
+                    else if (edificioSelezionato.GetType() == typeof(Fabbrica))
+                    {
+                        Fabbrica fabbrica = (Fabbrica)edificioSelezionato;
+                        materiali_comuni.Text = fabbrica.SlotMateriali.GetElemento("MaterialeComune").Quantita.ToString();
+                        materiali_rari.Text = fabbrica.SlotMateriali.GetElemento("MaterialeRaro").Quantita.ToString();
+                        materiali_preziosi.Text = fabbrica.SlotMateriali.GetElemento("MaterialePrezioso").Quantita.ToString();
+
+                        prodotti_comuni.Text = fabbrica.SlotProdotti.GetElemento("ProdottoComune").Quantita.ToString();
+                        prodotti_rari.Text = fabbrica.SlotProdotti.GetElemento("ProdottoRaro").Quantita.ToString();
+                        prodotti_preziosi.Text = fabbrica.SlotProdotti.GetElemento("ProdottoPrezioso").Quantita.ToString();
+
+                        prodotti_comuniRari.Text = fabbrica.SlotProdotti.GetElemento("ProdottoComuneRaro").Quantita.ToString();
+                        prodotti_comuniPreziosi.Text = fabbrica.SlotProdotti.GetElemento("ProdottoComunePrezioso").Quantita.ToString();
+                        prodotti_rariPreziosi.Text = fabbrica.SlotProdotti.GetElemento("ProdottoRaroPrezioso").Quantita.ToString();
+                    }
+                    else if (edificioSelezionato.GetType() == typeof(Negozio))
+                    {
+                        Negozio negozio = (Negozio)edificioSelezionato;
+                        materiali_comuni.Text = "--";
+                        materiali_rari.Text = "--";
+                        materiali_preziosi.Text = "--";
+
+                        prodotti_comuni.Text = negozio.SlotProdotti.GetElemento("ProdottoComune").Quantita.ToString();
+                        prodotti_rari.Text = negozio.SlotProdotti.GetElemento("ProdottoRaro").Quantita.ToString();
+                        prodotti_preziosi.Text = negozio.SlotProdotti.GetElemento("ProdottoPrezioso").Quantita.ToString();
+
+                        prodotti_comuniRari.Text = negozio.SlotProdotti.GetElemento("ProdottoComuneRaro").Quantita.ToString();
+                        prodotti_comuniPreziosi.Text = negozio.SlotProdotti.GetElemento("ProdottoComunePrezioso").Quantita.ToString();
+                        prodotti_rariPreziosi.Text = negozio.SlotProdotti.GetElemento("ProdottoRaroPrezioso").Quantita.ToString();
+                    }
+                }
+            }
+
+            //Punti esclamativi 
+            for(int r = 0; r < mappa.Righe; r++)
+            {
+                for(int c = 0; c < mappa.Colon; c++)
+                {
+                    if(mappa.CelleEdifici[r,c] != null)
+                    {
+                        if(!mappa.CelleEdifici[r, c].EdificioAttivo)
+                            attenzione[r, c].Visible = true;
+                        else
+                            attenzione[r, c].Visible = false;
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region GestioneEdificio
+        //Numero dipendenti/////////////////
+        private void incDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.AggiungiDipendenti(giocatore);
+            edificioSelezionato.CalcolaBilancio();
+
+            AggiornaInfoGrafiche();
+        }
+
+        private void dimDipendenti_bottone_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.RimuoviDipendenti(giocatore);
+            edificioSelezionato.CalcolaBilancio();
+
+            AggiornaInfoGrafiche();
+        }
+        ////////////////////////////////////
+
+
+        //Gestione stipendi ////////////////
+        private void incStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(10);
+            edificioSelezionato.CalcolaFelicita();
+
+            AggiornaInfoGrafiche();
+        }
+
+        private void dimStipendi_button_Click(object sender, EventArgs e)
+        {
+            edificioSelezionato.Dipendenti.ModStipendi(-10);
+            edificioSelezionato.CalcolaFelicita();
+
+            AggiornaInfoGrafiche();
+        }
+        //////////////////////////////////
+
+        private void gestione_button_Click(object sender, EventArgs e)
+        {
+            if (edificioSelezionato.GetType() == typeof(Fabbrica))
+            {
+                formProduzione.CambiaEdificio(edificioSelezionato);
+                formProduzione.Show();            
+            }
         }
         #endregion
 
@@ -151,39 +306,6 @@ namespace BigTycoon
             }
         }
         #endregion
-
-        //Numero dipendenti/////////////////
-        private void incDipendenti_bottone_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.AggiungiDipendenti(giocatore);
-
-            AggiornaInfoGrafiche();
-        }
-
-        private void dimDipendenti_bottone_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.RimuoviDipendenti(giocatore);
-
-            AggiornaInfoGrafiche();
-        }
-        ////////////////////////////////////
-        
-
-        //Gestione stipendi ////////////////
-        private void incStipendi_button_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.ModStipendi(10);
-
-            AggiornaInfoGrafiche();
-        }
-
-        private void dimStipendi_button_Click(object sender, EventArgs e)
-        {
-            edificioSelezionato.Dipendenti.ModStipendi(-10);
-
-            AggiornaInfoGrafiche();
-        }
-        //////////////////////////////////
 
         #region CreaEdificio
         private void industria_bottone_Click(object sender, EventArgs e)
@@ -273,37 +395,37 @@ namespace BigTycoon
             }
         }
 
-        private void EdificiUpdate(object sender, EventArgs e)
-        {
-            mappa.UpdateAll(giocatore);
-        }
 
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
-            mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore);
-
-            //immagine
-            if (tipo == 0) //tipo industria
+            if (mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore))
             {
-                if(mappa.CelleMateriali[r_selezionato,c_selezionato] == "MaterialeComune")
-                {
-                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_comuni;
-                }
-                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialeRaro")
-                {
-                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_rari;
-                }
-                else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialePrezioso")
-                {
-                    griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_preziosi;
-                }
-            }
-            else
-            {
-                griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
-            }
 
-            Reset();
+                //immagine
+                if (tipo == 0) //tipo industria
+                {
+                    if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialeComune")
+                    {
+                        griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_comuni;
+                    }
+                    else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialeRaro")
+                    {
+                        griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_rari;
+                    }
+                    else if (mappa.CelleMateriali[r_selezionato, c_selezionato] == "MaterialePrezioso")
+                    {
+                        griglia[r_selezionato, c_selezionato].BackgroundImage = Properties.Resources.industria_preziosi;
+                    }
+                }
+                else
+                {
+                    griglia[r_selezionato, c_selezionato].BackgroundImage = iconaSelezionata;
+                }
+
+
+                AggiornaInfoGrafiche();
+                Reset();
+            }
         }
     }
     #endregion
