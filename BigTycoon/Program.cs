@@ -7,8 +7,9 @@ using System.Windows.Forms;
 
 namespace BigTycoon
 {
-    static class Program
+    public static class Program
     {
+        static internal Mappa Mappa { get; private set; }
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
         /// </summary>
@@ -57,9 +58,10 @@ namespace BigTycoon
                     listaNomi[indice] = " ";
                 }
             }
+            Mappa = new Mappa(materiali, nomi);
             #endregion
 
-            Application.Run(new Form1(new Mappa(materiali, nomi)));
+            Application.Run(new Form1(Mappa));
         }
     }
 

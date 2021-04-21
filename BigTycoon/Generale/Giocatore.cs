@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Linq;
+using BigTycoon;
 
 namespace BigTycoon.Generale
 {
@@ -22,17 +23,27 @@ namespace BigTycoon.Generale
 
 		private void CalcolaBilancio()
         {
-
+            double tmpBilancio = 0;
+            foreach (var edificio in Program.Mappa.CelleEdifici)
+            {
+                tmpBilancio += edificio.Bilancio;
+            }
+            portafogli.Bilancio = tmpBilancio;
         }
 
 		private void CalcolaDebito()
         {
-
+            // Ridondante??
         }
 
 		private void CalcolaFamaAziendale()
         {
-
+            int tmp = 0;
+            foreach (var edificio in Program.Mappa.CelleEdifici)
+            {
+                tmp += edificio.PuntiFelicita;
+            }
+            FamaAziendale = tmp;
         }
 
 		private void CalcolaDipendentiDisponibili()
