@@ -8,10 +8,12 @@ namespace BigTycoon.Generale
 		public double SogliaSoldi { get; set; }
 		public double Interesse { get; set; }
 		public int TurnoLimite { get; set; }
+        public double Debito { get; set; }
 
 		public Banca(int turnoLimite)
 		{
 			SoldiPrestati = 0;
+            Debito = 0;
 			//SogliaSoldi = ;
 			Interesse = 0;
 			TurnoLimite = turnoLimite;
@@ -32,7 +34,12 @@ namespace BigTycoon.Generale
 
         }
 
-		public void Update()
+        private void CalcolaDebito()
+        {
+            
+        }
+
+        public void Update()
         {
 
         }

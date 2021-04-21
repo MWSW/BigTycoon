@@ -11,7 +11,7 @@ namespace BigTycoon.Generale
 
         public Giocatore(int soldiIniziali, int famaIniziale, int dipendentiDisponibili)
 		{
-            portafogli = new Portafoglio { Soldi = soldiIniziali, Debito = 0 };
+            portafogli = new Portafoglio { Soldi = soldiIniziali};
 			FamaAziendale = famaIniziale;
 			DipendentiDisponibili = dipendentiDisponibili;
 		}
@@ -29,11 +29,6 @@ namespace BigTycoon.Generale
                 tmpBilancio += edificio.Bilancio;
             }
             portafogli.Bilancio = tmpBilancio;
-        }
-
-		private void CalcolaDebito()
-        {
-            // Ridondante??
         }
 
 		private void CalcolaFamaAziendale()
