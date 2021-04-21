@@ -38,7 +38,7 @@ namespace BigTycoon.Generale
             {
                 tmp += edificio.PuntiFelicita;
             }
-            FamaAziendale = tmp;
+            FamaAziendale = tmp / Program.Mappa.CelleEdifici.Length;
         }
 
 		private void CalcolaDipendentiDisponibili()
