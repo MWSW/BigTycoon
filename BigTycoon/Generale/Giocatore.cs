@@ -105,6 +105,7 @@ namespace BigTycoon.Generale
                 return n;
             };
 
+            //TOFIX
             bool done = false;
             int i = max / 2;
 
