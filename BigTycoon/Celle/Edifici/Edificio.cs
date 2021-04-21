@@ -65,7 +65,7 @@ namespace BigTycoon.Celle.Edifici
             int max = 200;
             int min = 50;
             int inc = (max - min) / 10;
-            int punti = 1;
+            int punti = 0;
 
             for (int i = min; i <= max; i += inc)
             {
