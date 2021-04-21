@@ -44,7 +44,7 @@ namespace BigTycoon
 
             formProduzione = new SchedaProduzione();
 
-            giocatore = new Giocatore(500, 70, 6);
+            giocatore = new Giocatore(1000, 70, 6);
 
             portafoglio_label.Text = "Portafoglio: " + giocatore.portafogli.Soldi + "$";
             immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/100";

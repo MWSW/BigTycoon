@@ -38,7 +38,7 @@ namespace BigTycoon.Generale
             int tmp = 0;
             foreach (var edificio in Program.Mappa.CelleEdifici)
             {
-                tmp += edificio.PuntiFelicita;
+                tmp += edificio.Dipendenti.Felicita;
             }
             FamaAziendale = tmp / Program.Mappa.CelleEdifici.Length;
         }

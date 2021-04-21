@@ -3,6 +3,7 @@ using BigTycoon.Generale;
 using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 using System.Linq;
+using System.Diagnostics;
 
 namespace BigTycoon.Celle.Edifici
 {
@@ -46,7 +47,7 @@ namespace BigTycoon.Celle.Edifici
         {
 
             // se non c'è un prodotto da produrre salta tutto
-            if (ProdottoCorrente == null) return;
+            if (string.IsNullOrWhiteSpace(ProdottoCorrente)) return;
 
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
 
@@ -139,6 +140,12 @@ namespace BigTycoon.Celle.Edifici
         /// </summary>
         public override void CalcolaBilancio()
         {
+            if (string.IsNullOrWhiteSpace(ProdottoCorrente))
+            {
+                Trace.WriteLine("Il ProdottoCorrente è null o vuoto");
+                return;
+            }
+
             var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
             Reddito = ogg.Valore * CalcolaProduzione();
