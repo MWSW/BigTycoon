@@ -21,6 +21,8 @@ namespace BigTycoon.Celle.Edifici
         public bool EdificioAttivo { get => IsEdificioAttivo(); protected set => edificioAttivo = value; }
         protected int ColoreEdificio { get; set; }
 
+        public int PuntiFelicita { get => Dipendenti.Felicita; }
+
         public int PuntiProduzione { get; set; }
 
         //prezzo per la costruzione dell'edificio
@@ -43,6 +45,9 @@ namespace BigTycoon.Celle.Edifici
         {
             if (!EdificioAttivo)
             {
+                Bilancio = 0;
+                Dipendenti.Felicita = 0;
+
                 Trace.WriteLine("Edificio non attivo");
                 return;
             }

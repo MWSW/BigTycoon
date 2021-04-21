@@ -3,7 +3,6 @@ using BigTycoon.Generale;
 using BigTycoon.GestioneDipendenti;
 using BigTycoon.Oggetti;
 using System.Linq;
-using System.Diagnostics;
 
 namespace BigTycoon.Celle.Edifici
 {
@@ -47,7 +46,7 @@ namespace BigTycoon.Celle.Edifici
         {
 
             // se non c'è un prodotto da produrre salta tutto
-            if (string.IsNullOrWhiteSpace(ProdottoCorrente)) return;
+            if (ProdottoCorrente == null) return;
 
             var prod = SlotProdotti.DizionarioProdotti[ProdottoCorrente]; // per accorciare le chiamate
 
@@ -140,17 +139,14 @@ namespace BigTycoon.Celle.Edifici
         /// </summary>
         public override void CalcolaBilancio()
         {
-            if (string.IsNullOrWhiteSpace(ProdottoCorrente))
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoCorrente))
             {
-                Trace.WriteLine("Il ProdottoCorrente è null o vuoto");
-                return;
+                var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
+
+                Reddito = ogg.Valore * CalcolaProduzione();
+
+                Bilancio = Reddito - Dipendenti.Stipendio;
             }
-
-            var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
-
-            Reddito = ogg.Valore * CalcolaProduzione();
-
-            Bilancio = Reddito - Dipendenti.Stipendio;
         }
 
         /// <summary>
@@ -163,8 +159,15 @@ namespace BigTycoon.Celle.Edifici
 
             if (!IsDisponibile(ProdottoCorrente)) return false;
 
-            if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoCorrente))
+            {
+                if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+                    return false;
+            }
+            else
+            {
                 return false;
+            }
 
             return true;
         }
