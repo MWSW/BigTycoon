@@ -139,11 +139,14 @@ namespace BigTycoon.Celle.Edifici
         /// </summary>
         public override void CalcolaBilancio()
         {
-            var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoCorrente))
+            {
+                var ogg = SlotProdotti.DizionarioProdotti[ProdottoCorrente];
 
-            Reddito = ogg.Valore * CalcolaProduzione();
+                Reddito = ogg.Valore * CalcolaProduzione();
 
-            Bilancio = Reddito - Dipendenti.Stipendio;
+                Bilancio = Reddito - Dipendenti.Stipendio;
+            }
         }
 
         /// <summary>
@@ -156,8 +159,15 @@ namespace BigTycoon.Celle.Edifici
 
             if (!IsDisponibile(ProdottoCorrente)) return false;
 
-            if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoCorrente))
+            {
+                if (SlotProdotti.DizionarioProdotti[ProdottoCorrente].Quantita >= ListaOggetti.DimMax)
+                    return false;
+            }
+            else
+            {
                 return false;
+            }
 
             return true;
         }

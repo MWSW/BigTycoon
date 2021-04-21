@@ -23,27 +23,76 @@ namespace BigTycoon.Generale
 			return portafogli;
         }
 
+        public void Update()
+        {
+            CalcolaBilancio();
+            CalcolaReddito();
+            CalcolaSpese();
+            CalcolaFamaAziendale();
+        }
+
 		private void CalcolaBilancio()
         {
             double tmpBilancio = 0;
             foreach (var edificio in Program.Mappa.CelleEdifici)
             {
-                tmpBilancio += edificio.Bilancio;
+                if (edificio != null)
+                {
+                    tmpBilancio += edificio.Bilancio;
+                }
             }
             portafogli.Bilancio = tmpBilancio;
         }
 
-		private void CalcolaFamaAziendale()
+        private void CalcolaReddito()
         {
-            int tmp = 0;
+            double tmpReddito = 0;
             foreach (var edificio in Program.Mappa.CelleEdifici)
             {
-                tmp += edificio.PuntiFelicita;
+                if (edificio != null)
+                {
+                    tmpReddito += edificio.Reddito;
+                }
             }
-            FamaAziendale = tmp / Program.Mappa.CelleEdifici.Length;
+
+            portafogli.Reddito = tmpReddito;
         }
 
-		private void CalcolaDipendentiDisponibili()
+        private void CalcolaSpese()
+        {
+            double tmpSpese = 0;
+            foreach (var edificio in Program.Mappa.CelleEdifici)
+            {
+                if (edificio != null)
+                {
+                    tmpSpese += edificio.Reddito - edificio.Bilancio;
+                }
+            }
+
+            portafogli.Spese = tmpSpese;
+        }
+
+        private void CalcolaFamaAziendale()
+        {
+            int tmp = 0;
+
+            int dimensione = 0;
+            foreach (var edificio in Program.Mappa.CelleEdifici)
+            {
+                if (edificio != null)
+                {
+                    tmp += edificio.PuntiFelicita;
+                    dimensione++;
+                }
+            }
+
+            if (dimensione > 0) //Per evitare la divisione per zero
+                FamaAziendale = tmp / dimensione;
+            else
+                FamaAziendale = 0;
+        }
+
+		public void CalcolaDipendentiDisponibili()
         {
             int max = 10;
             int inc = 2;

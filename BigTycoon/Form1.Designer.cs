@@ -100,10 +100,10 @@ namespace BigTycoon
             this.felicita_pics = new System.Windows.Forms.PictureBox();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.richiesteLavoro_label = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.LordoTotale = new System.Windows.Forms.Label();
+            this.GuadagnoGiornaliero = new System.Windows.Forms.Label();
             this.immagineAzienda_label = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.SpeseTotali = new System.Windows.Forms.Label();
             this.gestioneEdificio_panel = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -146,6 +146,9 @@ namespace BigTycoon
             this.dimDipendenti_bottone = new System.Windows.Forms.Button();
             this.edificioSelezionato_label = new System.Windows.Forms.Label();
             this.crea_edificio_panel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.prezzoFabbrica = new System.Windows.Forms.Label();
+            this.prezzoIndustria = new System.Windows.Forms.Label();
             this.costruisci_bottone = new System.Windows.Forms.Button();
             this.negozio_bottone = new System.Windows.Forms.PictureBox();
             this.fabbrica_bottone = new System.Windows.Forms.PictureBox();
@@ -153,9 +156,7 @@ namespace BigTycoon
             this.cellaSelezionata_label = new System.Windows.Forms.Label();
             this.portafoglio_label = new System.Windows.Forms.Label();
             this.timerEdifici = new System.Windows.Forms.Timer(this.components);
-            this.prezzoIndustria = new System.Windows.Forms.Label();
-            this.prezzoFabbrica = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.timerGiocatore = new System.Windows.Forms.Timer(this.components);
             this.griglia_flow_layout.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.attenzione1)).BeginInit();
@@ -999,10 +1000,10 @@ namespace BigTycoon
             this.panel25.Controls.Add(this.panel16);
             this.panel25.Controls.Add(this.pictureBox28);
             this.panel25.Controls.Add(this.richiesteLavoro_label);
-            this.panel25.Controls.Add(this.label27);
-            this.panel25.Controls.Add(this.label25);
+            this.panel25.Controls.Add(this.LordoTotale);
+            this.panel25.Controls.Add(this.GuadagnoGiornaliero);
             this.panel25.Controls.Add(this.immagineAzienda_label);
-            this.panel25.Controls.Add(this.label26);
+            this.panel25.Controls.Add(this.SpeseTotali);
             this.panel25.Controls.Add(this.gestioneEdificio_panel);
             this.panel25.Controls.Add(this.crea_edificio_panel);
             this.panel25.Location = new System.Drawing.Point(1094, 12);
@@ -1086,27 +1087,27 @@ namespace BigTycoon
             this.richiesteLavoro_label.TabIndex = 6;
             this.richiesteLavoro_label.Text = "Richieste lavoro: 5";
             // 
-            // label27
+            // LordoTotale
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(16, 10);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(146, 33);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Lordo: 200$";
+            this.LordoTotale.AutoSize = true;
+            this.LordoTotale.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LordoTotale.ForeColor = System.Drawing.Color.Black;
+            this.LordoTotale.Location = new System.Drawing.Point(16, 10);
+            this.LordoTotale.Name = "LordoTotale";
+            this.LordoTotale.Size = new System.Drawing.Size(146, 33);
+            this.LordoTotale.TabIndex = 4;
+            this.LordoTotale.Text = "Lordo: 200$";
             // 
-            // label25
+            // GuadagnoGiornaliero
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(12, 54);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(319, 33);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Guadagno giornaliero: 150$";
+            this.GuadagnoGiornaliero.AutoSize = true;
+            this.GuadagnoGiornaliero.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuadagnoGiornaliero.ForeColor = System.Drawing.Color.Black;
+            this.GuadagnoGiornaliero.Location = new System.Drawing.Point(12, 54);
+            this.GuadagnoGiornaliero.Name = "GuadagnoGiornaliero";
+            this.GuadagnoGiornaliero.Size = new System.Drawing.Size(319, 33);
+            this.GuadagnoGiornaliero.TabIndex = 2;
+            this.GuadagnoGiornaliero.Text = "Guadagno giornaliero: 150$";
             // 
             // immagineAzienda_label
             // 
@@ -1119,16 +1120,16 @@ namespace BigTycoon
             this.immagineAzienda_label.TabIndex = 5;
             this.immagineAzienda_label.Text = "Immagine azienda: 90/100";
             // 
-            // label26
+            // SpeseTotali
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(350, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(136, 33);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Spese: 50$";
+            this.SpeseTotali.AutoSize = true;
+            this.SpeseTotali.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpeseTotali.ForeColor = System.Drawing.Color.Black;
+            this.SpeseTotali.Location = new System.Drawing.Point(350, 10);
+            this.SpeseTotali.Name = "SpeseTotali";
+            this.SpeseTotali.Size = new System.Drawing.Size(136, 33);
+            this.SpeseTotali.TabIndex = 3;
+            this.SpeseTotali.Text = "Spese: 50$";
             // 
             // gestioneEdificio_panel
             // 
@@ -1588,6 +1589,36 @@ namespace BigTycoon
             this.crea_edificio_panel.TabIndex = 15;
             this.crea_edificio_panel.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(389, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 33);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "3000$";
+            // 
+            // prezzoFabbrica
+            // 
+            this.prezzoFabbrica.AutoSize = true;
+            this.prezzoFabbrica.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzoFabbrica.Location = new System.Drawing.Point(209, 228);
+            this.prezzoFabbrica.Name = "prezzoFabbrica";
+            this.prezzoFabbrica.Size = new System.Drawing.Size(80, 33);
+            this.prezzoFabbrica.TabIndex = 6;
+            this.prezzoFabbrica.Text = "1000$";
+            // 
+            // prezzoIndustria
+            // 
+            this.prezzoIndustria.AutoSize = true;
+            this.prezzoIndustria.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzoIndustria.Location = new System.Drawing.Point(34, 228);
+            this.prezzoIndustria.Name = "prezzoIndustria";
+            this.prezzoIndustria.Size = new System.Drawing.Size(67, 33);
+            this.prezzoIndustria.TabIndex = 5;
+            this.prezzoIndustria.Text = "500$";
+            // 
             // costruisci_bottone
             // 
             this.costruisci_bottone.BackColor = System.Drawing.Color.LightGray;
@@ -1663,35 +1694,11 @@ namespace BigTycoon
             this.timerEdifici.Interval = 3500;
             this.timerEdifici.Tick += new System.EventHandler(this.EdificiUpdate);
             // 
-            // prezzoIndustria
+            // timerGiocatore
             // 
-            this.prezzoIndustria.AutoSize = true;
-            this.prezzoIndustria.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezzoIndustria.Location = new System.Drawing.Point(34, 228);
-            this.prezzoIndustria.Name = "prezzoIndustria";
-            this.prezzoIndustria.Size = new System.Drawing.Size(67, 33);
-            this.prezzoIndustria.TabIndex = 5;
-            this.prezzoIndustria.Text = "500$";
-            // 
-            // prezzoFabbrica
-            // 
-            this.prezzoFabbrica.AutoSize = true;
-            this.prezzoFabbrica.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prezzoFabbrica.Location = new System.Drawing.Point(209, 228);
-            this.prezzoFabbrica.Name = "prezzoFabbrica";
-            this.prezzoFabbrica.Size = new System.Drawing.Size(80, 33);
-            this.prezzoFabbrica.TabIndex = 6;
-            this.prezzoFabbrica.Text = "1000$";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(389, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 33);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "3000$";
+            this.timerGiocatore.Enabled = true;
+            this.timerGiocatore.Interval = 7000;
+            this.timerGiocatore.Tick += new System.EventHandler(this.timerGiocatore_Tick);
             // 
             // Form1
             // 
@@ -1890,9 +1897,9 @@ namespace BigTycoon
         private System.Windows.Forms.Label puntiProduzione;
         private System.Windows.Forms.Label lordoEdificio;
         private System.Windows.Forms.Label guadagnoEdificio;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label LordoTotale;
+        private System.Windows.Forms.Label SpeseTotali;
+        private System.Windows.Forms.Label GuadagnoGiornaliero;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timerEdifici;
         private System.Windows.Forms.Panel panel19;
@@ -1934,6 +1941,7 @@ namespace BigTycoon
         private System.Windows.Forms.Label prezzoFabbrica;
         private System.Windows.Forms.Label prezzoIndustria;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timerGiocatore;
     }
 }
 

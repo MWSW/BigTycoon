@@ -46,8 +46,12 @@ namespace BigTycoon
 
             giocatore = new Giocatore(500, 70, 6);
 
+            LordoTotale.Text = "Lordo: " + giocatore.portafogli.Reddito + "$";
+            SpeseTotali.Text = "Spese: " + giocatore.portafogli.Spese + "$";
+            GuadagnoGiornaliero.Text = "Guadagno giornaliero: " + giocatore.portafogli.Bilancio + "$";
+
             portafoglio_label.Text = "Portafoglio: " + giocatore.portafogli.Soldi + "$";
-            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/100";
+            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
             richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
             #region InizializzazioneMappa
@@ -100,7 +104,15 @@ namespace BigTycoon
         private void EdificiUpdate(object sender, EventArgs e)
         {
             mappa.UpdateAll(giocatore);
+            giocatore.Update();
             AggiornaInfoGrafiche();
+        }
+
+        private void timerGiocatore_Tick(object sender, EventArgs e)
+        {
+            giocatore.CalcolaDipendentiDisponibili();
+
+            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
         }
         #endregion
 
@@ -139,9 +151,13 @@ namespace BigTycoon
 
         void AggiornaInfoGrafiche()
         {
+            LordoTotale.Text = "Lordo: " + giocatore.portafogli.Reddito + "$";
+            SpeseTotali.Text = "Spese: " + giocatore.portafogli.Spese + "$";
+            GuadagnoGiornaliero.Text = "Guadagno giornaliero: " + giocatore.portafogli.Bilancio + "$";
+
             portafoglio_label.Text = "Portafoglio: " + giocatore.portafogli.Soldi + "$";
 
-            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/100";
+            immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
 
             richiesteLavoro_label.Text = "Richieste lavoro: " + giocatore.DipendentiDisponibili;
 
@@ -394,7 +410,6 @@ namespace BigTycoon
                 AggiornaInfoGrafiche();
             }
         }
-
 
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {

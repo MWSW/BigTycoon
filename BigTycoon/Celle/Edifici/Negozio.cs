@@ -24,9 +24,11 @@ namespace BigTycoon.Celle.Edifici
 
         public void CambiaProdottiVendita(string nome)
         {
-            ProdottoInVendita = SlotProdotti.DizionarioProdotti.Keys
+            /*ProdottoInVendita = SlotProdotti.DizionarioProdotti.Keys
                 .Where(key => key == nome)
-                .ToString();
+                .ToString();*/
+
+            ProdottoInVendita = nome;
         }
 
         protected override void Produci()
@@ -48,11 +50,14 @@ namespace BigTycoon.Celle.Edifici
 
         public override void CalcolaBilancio()
         {
-            var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoInVendita))
+            {
+                var ogg = SlotProdotti.DizionarioProdotti[ProdottoInVendita];
 
-            Reddito = ogg.Valore;
+                Reddito = ogg.Valore;
 
-            Bilancio = Reddito - Dipendenti.Stipendio;
+                Bilancio = Reddito - Dipendenti.Stipendio;
+            }
         }
 
         public override void AggiungiOggetto(Oggetto ogg)
@@ -67,7 +72,16 @@ namespace BigTycoon.Celle.Edifici
         {
             if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;
 
-            if (SlotProdotti.DizionarioProdotti[ProdottoInVendita].Quantita < 1) return false;
+            if (SlotProdotti.DizionarioProdotti.ContainsKey(ProdottoInVendita))
+            {
+                if (SlotProdotti.DizionarioProdotti[ProdottoInVendita].Quantita < 1) 
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+
 
             return true;
         }
