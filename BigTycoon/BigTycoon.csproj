@@ -68,11 +68,11 @@
     <Compile Include="Oggetti\Oggetto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SchedaProduzione.cs">
+    <Compile Include="GestioneEdificio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SchedaProduzione.Designer.cs">
-      <DependentUpon>SchedaProduzione.cs</DependentUpon>
+    <Compile Include="GestioneEdificio.Designer.cs">
+      <DependentUpon>GestioneEdificio.cs</DependentUpon>
     </Compile>
     <Compile Include="Trasporti\GestioneTrasporti.cs" />
     <Compile Include="Trasporti\Viaggio.cs" />
@@ -89,8 +89,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SchedaProduzione.resx">
-      <DependentUpon>SchedaProduzione.cs</DependentUpon>
+    <EmbeddedResource Include="GestioneEdificio.resx">
+      <DependentUpon>GestioneEdificio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="obj\Debug\BigTycoon.csprojAssemblyReference.cache" />
     <None Include="Properties\Settings.settings">

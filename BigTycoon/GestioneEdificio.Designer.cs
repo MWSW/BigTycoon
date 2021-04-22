@@ -1,7 +1,7 @@
 ﻿
 namespace BigTycoon
 {
-    partial class SchedaProduzione
+    partial class GestioneEdificio
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@ namespace BigTycoon
             this.P_comunePrezioso = new System.Windows.Forms.PictureBox();
             this.P_raroPrezioso = new System.Windows.Forms.PictureBox();
             this.conferma_button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Titolo = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P_comune)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P_raro)).BeginInit();
@@ -145,27 +145,28 @@ namespace BigTycoon
             this.conferma_button.Visible = false;
             this.conferma_button.Click += new System.EventHandler(this.conferma_button_Click);
             // 
-            // label1
+            // Titolo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 40);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Scheda Produzione";
+            this.Titolo.AutoSize = true;
+            this.Titolo.Font = new System.Drawing.Font("Arial Narrow", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titolo.Location = new System.Drawing.Point(27, 9);
+            this.Titolo.Name = "Titolo";
+            this.Titolo.Size = new System.Drawing.Size(254, 40);
+            this.Titolo.TabIndex = 3;
+            this.Titolo.Text = "Scheda Produzione";
             // 
-            // SchedaProduzione
+            // GestioneEdificio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 553);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Titolo);
             this.Controls.Add(this.conferma_button);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "SchedaProduzione";
-            this.Text = "SchedaProduzione";
+            this.Name = "GestioneEdificio";
+            this.Text = "GestioneEdificio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnClose);
+            this.VisibleChanged += new System.EventHandler(this.OnVisible);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.P_comune)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P_raro)).EndInit();
@@ -188,6 +189,6 @@ namespace BigTycoon
         private System.Windows.Forms.PictureBox P_comuneRaro;
         private System.Windows.Forms.PictureBox P_comunePrezioso;
         private System.Windows.Forms.PictureBox P_raroPrezioso;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Titolo;
     }
 }

@@ -20,6 +20,15 @@ namespace BigTycoon.Celle.Edifici
             ProdottoInVendita = "";
 
             Prezzo = 3000;
+
+            //test
+            SlotProdotti.DizionarioProdotti["ProdottoComune"].Quantita = 10;
+            SlotProdotti.DizionarioProdotti["ProdottoRaro"].Quantita = 10;
+            SlotProdotti.DizionarioProdotti["ProdottoPrezioso"].Quantita = 10;
+
+            SlotProdotti.DizionarioProdotti["ProdottoComuneRaro"].Quantita = 10;
+            SlotProdotti.DizionarioProdotti["ProdottoComunePrezioso"].Quantita = 10;
+            SlotProdotti.DizionarioProdotti["ProdottoRaroPrezioso"].Quantita = 10;
         }
 
         public void CambiaProdottiVendita(string nome)

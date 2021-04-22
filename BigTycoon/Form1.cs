@@ -35,14 +35,14 @@ namespace BigTycoon
         Edificio edificioSelezionato;
 
         //form accessori
-        SchedaProduzione formProduzione;
+        GestioneEdificio formProduzione;
 
 
         public Form1(Mappa mappa)
         {
             InitializeComponent();
 
-            formProduzione = new SchedaProduzione();
+            formProduzione = new GestioneEdificio();
 
             giocatore = new Giocatore(500, 70, 6);
 
@@ -294,7 +294,8 @@ namespace BigTycoon
 
         private void gestione_button_Click(object sender, EventArgs e)
         {
-            if (edificioSelezionato.GetType() == typeof(Fabbrica))
+            if (edificioSelezionato.GetType() == typeof(Fabbrica) ||
+                edificioSelezionato.GetType() == typeof(Negozio))
             {
                 formProduzione.CambiaEdificio(edificioSelezionato);
                 formProduzione.Show();            
