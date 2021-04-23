@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BigTycoon.Celle.Edifici;
 using BigTycoon.Oggetti;
+using BigTycoon.Generale;
 
 namespace BigTycoon.Trasporti
 {
@@ -19,13 +20,18 @@ namespace BigTycoon.Trasporti
 			currentIndex = 0;
 		}
 
-		public void AggiungiViaggio (Edificio mittente, Edificio destinatario, Oggetto[] oggetti, int nVagoni, int rigMit, int colMit, int rigDes, int colDes)
+		public void AggiungiViaggio (Edificio mittente, Edificio destinatario, Oggetto[] merce, int nVagoni, int rigMit, int colMit, int rigDes, int colDes)
         {
 			int durata = calcolaDurataViaggio(rigMit, colMit, rigDes, colDes);										//calcola la durata del percorso
 
-			ViaggiAttivi.Add(new Viaggio(mittente, destinatario, oggetti, nVagoni, currentIndex, durata));					//inizializzazione nuovo viaggio
+			ViaggiAttivi.Add(new Viaggio(mittente, destinatario, merce, nVagoni, currentIndex, durata));			//inizializzazione nuovo viaggio
 
-			currentIndex ++;																						//incrementa l'indice corrente nel vettore dei viaggi attivi
+			foreach (Oggetto oggetto in ViaggiAttivi[currentIndex].Merce)											//rimuove la merce dal magazzino da cui viene spedita
+            {
+				ViaggiAttivi[currentIndex].Mittente.RimuoviOggetto(oggetto);
+            }
+
+			currentIndex ++;                                                                                        //incrementa l'indice corrente nel vettore dei viaggi attivi
 		}
 
 		public void RimuoviViaggio(Viaggio viaggio)
@@ -37,13 +43,18 @@ namespace BigTycoon.Trasporti
 			IndexResetter(tempIndex);								//dalla posizione del viaggio rimosso in poi tutti i viaggi decrementano il loro indice
 		}
 
-		public void UpdateAll()										//aggiorna la percentuale di completamento di ogni viaggio
+		public void UpdateAll()										//aggiorna la percentuale di completamento di ogni viaggio e svuota il treno
         {
             foreach (Viaggio v in ViaggiAttivi)
             {
 				v.Update();
-                if (v.DurataCorrente >= v.DurataTotale)
+                if (v.DurataCorrente >= v.DurataTotale)				//se il viaggio è terminato lo svuota nel magazino del destinatario e lo elimina
                 {
+                    foreach (Oggetto oggetto in v.Merce)
+                    {
+						v.Destinatario.AggiungiOggetto(oggetto);
+                    }
+
 					RimuoviViaggio(v);
                 }
             }

@@ -77,6 +77,14 @@ namespace BigTycoon.Celle.Edifici
             }
         }
 
+        public override void RimuoviOggetto(Oggetto ogg)
+        {
+            if (SlotProdotti.DizionarioProdotti.Keys.Contains(ogg.Nome))
+            {
+                SlotProdotti.DizionarioProdotti[ogg.Nome].Quantita -= ogg.Quantita;
+            }
+        }
+
         protected override bool IsEdificioAttivo()
         {
             if (Dipendenti.Quantita < Dipendenti.MinimoDipendenti) return false;

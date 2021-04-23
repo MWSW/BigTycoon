@@ -62,6 +62,7 @@ namespace BigTycoon.Celle.Edifici
 
         public abstract void CalcolaBilancio();
         public abstract void AggiungiOggetto(Oggetto ogg);
+        public abstract void RimuoviOggetto(Oggetto ogg);
         protected abstract bool IsEdificioAttivo();
         protected abstract void Produci();
 

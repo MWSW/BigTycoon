@@ -135,6 +135,23 @@ namespace BigTycoon.Celle.Edifici
         }
 
         /// <summary>
+        /// Rimuove un oggetto nel magazzino. il magazzino è rilevato automaticamente
+        /// </summary>
+        /// <param name="ogg">Oggetto da rimuovere al magazzino</param>
+        public override void RimuoviOggetto(Oggetto ogg)
+        {
+            if (SlotMateriali.DizionarioMateriali.Keys.Contains(ogg.Nome))
+            {
+                SlotMateriali.DizionarioMateriali[ogg.Nome].Quantita -= ogg.Quantita;
+            }
+            else
+            if (SlotProdotti.DizionarioProdotti.Keys.Contains(ogg.Nome))
+            {
+                SlotProdotti.DizionarioProdotti[ogg.Nome].Quantita -= ogg.Quantita;
+            }
+        }
+
+        /// <summary>
         /// Calcola il bilancio con lo stipendio e il valore dei prodotti
         /// </summary>
         public override void CalcolaBilancio()
