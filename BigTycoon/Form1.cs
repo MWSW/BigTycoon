@@ -128,7 +128,7 @@ namespace BigTycoon
 
         private void timerGiocatore_Tick(object sender, EventArgs e)
         {
-            //giocatore.CalcolaDipendentiDisponibili();
+            giocatore.CalcolaDipendentiDisponibili();
 
             immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
         }

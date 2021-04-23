@@ -94,30 +94,35 @@ namespace BigTycoon.Generale
 
 		public void CalcolaDipendentiDisponibili()
         {
-            int max = 10;
-            int inc = 2;
-
-            Func<int, int> op = n => {
-                if (FamaAziendale < 5) n -= inc;
-                else
-                if (FamaAziendale >= 5) n += inc;
-
-                return n;
-            };
-
-            //TOFIX
-            bool done = false;
-            int i = max / 2;
-
-            while (!done)
+            // tanti if else per ogni tier
+            if (FamaAziendale >= 5 && FamaAziendale < 6)
             {
-                if (FamaAziendale > i && FamaAziendale <= i + 2)
-                {
-                    DipendentiDisponibili += i / 2;
-                    done = true;
-                }
-
-                i = op(i);
+                DipendentiDisponibili += 1;
+            }
+            else
+            if (FamaAziendale >= 6 && FamaAziendale < 8)
+            {
+                FamaAziendale += 2;
+            }
+            else
+            if (FamaAziendale >= 6)
+            {
+                FamaAziendale += 3;
+            }
+            else
+            if (FamaAziendale < 5 && FamaAziendale > 4)
+            {
+                DipendentiDisponibili -= 1;
+            }
+            else
+            if (FamaAziendale <= 4 && FamaAziendale > 2)
+            {
+                FamaAziendale -= 2;
+            }
+            else
+            if (FamaAziendale <= 2)
+            {
+                FamaAziendale -= 3;
             }
         }
 	}
