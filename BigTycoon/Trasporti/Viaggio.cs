@@ -13,7 +13,8 @@ namespace BigTycoon.Trasporti
 		public int CostoVagone { get; set; }			//costo fisso per l'aggiunta di un vagone al treno
 		public int Costo { get; set; }					//costo totale del viaggio
 		public float DurataTotale { get; set; }			//durata del viaggio
-		public float DurataCorrente { get; set; }		//percentuale di completamento del viaggio
+		public float DurataCorrentePerc { get; set; }   //percentuale di completamento del viaggio
+		public int DurataCorrente { get; set; }
 		public bool Visible { get; set; }
 		public int Indice { get; set; }					//indice nel vettore di viaggi attivi
 
@@ -30,7 +31,7 @@ namespace BigTycoon.Trasporti
 			unitaPercentuale = DurataTotale / 100;
 			CapacitaVagone = 10;
 			CostoVagone = 50;
-			DurataCorrente = 0;
+			DurataCorrentePerc = 0;
 			Costo = 100 + nVagoni * CostoVagone;
 		}
 
@@ -39,14 +40,10 @@ namespace BigTycoon.Trasporti
 
         }
 
-		private void CalcolaCosto()
-        {
-
-        }
-
 		public void Update()									//aggiorna la percentuale di completamento dei ogni viaggio
 		{
-			DurataCorrente += unitaPercentuale;
+			DurataCorrentePerc += unitaPercentuale;
+			DurataCorrente ++;
 		}
 	}
 }

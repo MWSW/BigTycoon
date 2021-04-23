@@ -127,6 +127,9 @@
   <data name="comuni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comuni1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="diminuisci" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diminuisci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +147,9 @@
   </data>
   <data name="treno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\treno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="centro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\centro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="incrementa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\incrementa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +175,8 @@
   <data name="negozio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\negozio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="attenzione" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attenzione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="industria_rari" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria_preziosi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,7 +196,7 @@
   <data name="industria_preziosi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\industria_rari.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="attenzione" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\attenzione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sfondo_trasporti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sfondo_trasporti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

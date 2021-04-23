@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BigTycoon.Trasporti;
 
 namespace BigTycoon
 {
@@ -28,6 +29,7 @@ namespace BigTycoon
 
         //crea edificio
         int r_selezionato, c_selezionato; //coordinate nella griglia
+        int prec_r_selezionato, prec_c_selezionato; //serve alla creazione viaggi
         int tipo;
         Image iconaSelezionata;
 
@@ -38,11 +40,27 @@ namespace BigTycoon
         GestioneEdificio formProduzione;
 
 
+        //non so, si definisce da solo ^^
+        GestioneTrasporti gestioneTrasporti;
+
+        //form trasporti
+        FormTrasporti formTrasporti;
+
+        //form avvio viaggio
+        CreazioneViaggio menuViaggio;
+
+
         public Form1(Mappa mappa)
         {
             InitializeComponent();
 
             formProduzione = new GestioneEdificio();
+
+            gestioneTrasporti = new GestioneTrasporti();
+
+            formTrasporti = new FormTrasporti();
+
+            menuViaggio = new CreazioneViaggio(gestioneTrasporti);
 
             giocatore = new Giocatore(500, 70, 6);
 
@@ -114,9 +132,21 @@ namespace BigTycoon
 
             immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
         }
+
+        private void timerViaggi_Tick(object sender, EventArgs e)
+        {
+            gestioneTrasporti.UpdateAll();
+        }
         #endregion
 
         #region MetodiVari
+        private void cella_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            if (me.Button == System.Windows.Forms.MouseButtons.Left) { SelezionaCella(sender, e); }
+            if (me.Button == System.Windows.Forms.MouseButtons.Right) { AvvioViaggio(sender, e); }
+        }
+
         bool CellaVuota(PictureBox immagine)
         {
             //estraggo il numero della cella
@@ -131,7 +161,7 @@ namespace BigTycoon
             int c = indice % mappa.Colon;
             int r = (indice - c) / mappa.Colon;
 
-            return mappa.CelleEdifici[r,c] == null;
+            return mappa.CelleEdifici[r, c] == null;
         }
 
         void Reset()
@@ -196,12 +226,12 @@ namespace BigTycoon
                         prodotti_rariPreziosi.Text = "--";
 
                         //BottoneProduzione
-                        if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeComune")
-                           gestione_button.BackgroundImage = Properties.Resources.comuni;
-                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeRaro")
-                           gestione_button.BackgroundImage = Properties.Resources.rari;
-                        else if(((Industria)edificioSelezionato).RisorsaTerreno == "MaterialePrezioso")
-                           gestione_button.BackgroundImage = Properties.Resources.preziosi;
+                        if (((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeComune")
+                            gestione_button.BackgroundImage = Properties.Resources.comuni;
+                        else if (((Industria)edificioSelezionato).RisorsaTerreno == "MaterialeRaro")
+                            gestione_button.BackgroundImage = Properties.Resources.rari;
+                        else if (((Industria)edificioSelezionato).RisorsaTerreno == "MaterialePrezioso")
+                            gestione_button.BackgroundImage = Properties.Resources.preziosi;
 
                     }
                     else if (edificioSelezionato.GetType() == typeof(Fabbrica))
@@ -238,13 +268,13 @@ namespace BigTycoon
             }
 
             //Punti esclamativi 
-            for(int r = 0; r < mappa.Righe; r++)
+            for (int r = 0; r < mappa.Righe; r++)
             {
-                for(int c = 0; c < mappa.Colon; c++)
+                for (int c = 0; c < mappa.Colon; c++)
                 {
-                    if(mappa.CelleEdifici[r,c] != null)
+                    if (mappa.CelleEdifici[r, c] != null)
                     {
-                        if(!mappa.CelleEdifici[r, c].EdificioAttivo)
+                        if (!mappa.CelleEdifici[r, c].EdificioAttivo)
                             attenzione[r, c].Visible = true;
                         else
                             attenzione[r, c].Visible = false;
@@ -298,7 +328,7 @@ namespace BigTycoon
                 edificioSelezionato.GetType() == typeof(Negozio))
             {
                 formProduzione.CambiaEdificio(edificioSelezionato);
-                formProduzione.Show();            
+                formProduzione.Show();
             }
         }
         #endregion
@@ -376,6 +406,9 @@ namespace BigTycoon
             c_selezionato = indice % mappa.Colon;
             r_selezionato = (indice - c_selezionato) / mappa.Colon;
 
+            prec_c_selezionato = c_selezionato;
+            prec_r_selezionato = r_selezionato;
+
             if (CellaVuota(cellaSelezionata))
             {
                 //rendi visibile il pannello
@@ -412,6 +445,8 @@ namespace BigTycoon
             }
         }
 
+
+
         private void costruisci_bottone_Click(object sender, EventArgs e)
         {
             if (mappa.AggiungiEdificio(r_selezionato, c_selezionato, tipo, giocatore))
@@ -443,6 +478,44 @@ namespace BigTycoon
                 Reset();
             }
         }
+
+        #endregion
+
+        #region Trasporti
+
+        private void Trasporti_pics_Click(object sender, EventArgs e)
+        {
+            formTrasporti.Show();
+        }
+
+        private void AvvioViaggio(object sender, EventArgs e)
+        {
+            PictureBox cellaSelezionata = (PictureBox)sender;
+
+            //estraggo il numero della cella
+            int indice = int.Parse(cellaSelezionata.Name.Substring(4));
+            indice--; //perchè i nomi sono conteggiati partendo da 1
+
+            //calcolo le coordinate
+            int c_sel = indice % mappa.Colon;
+            int r_sel = (indice - c_selezionato) / mappa.Colon;
+
+            Edificio destinatario = mappa.CelleEdifici[r_sel, c_sel];
+
+            if (destinatario == null)
+            {
+                return;
+            }
+            if (edificioSelezionato.GetType() == typeof(Industria) && destinatario.GetType() == typeof(Fabbrica) || edificioSelezionato.GetType() == typeof(Fabbrica) && destinatario.GetType() == typeof(Negozio))
+            {
+                menuViaggio.UpdateDirezione(luoghi[prec_r_selezionato, prec_c_selezionato].Text, luoghi[r_sel, c_sel].Text);
+                menuViaggio.Mittente = edificioSelezionato;
+                menuViaggio.Destinatario = destinatario;
+                menuViaggio.Show();
+            }
+        }
+
+        #endregion
+
     }
-    #endregion
 }

@@ -53,11 +53,23 @@
     <Compile Include="Celle\Magazzino\MagazzinoMateriali.cs" />
     <Compile Include="Celle\Magazzino\MagazzinoProdotti.cs" />
     <Compile Include="Celle\Mappa.cs" />
+    <Compile Include="CreazioneViaggio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreazioneViaggio.Designer.cs">
+      <DependentUpon>CreazioneViaggio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTrasporti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTrasporti.Designer.cs">
+      <DependentUpon>FormTrasporti.cs</DependentUpon>
     </Compile>
     <Compile Include="Generale\Banca.cs" />
     <Compile Include="Generale\Giocatore.cs" />
@@ -76,8 +88,14 @@
     </Compile>
     <Compile Include="Trasporti\GestioneTrasporti.cs" />
     <Compile Include="Trasporti\Viaggio.cs" />
+    <EmbeddedResource Include="CreazioneViaggio.resx">
+      <DependentUpon>CreazioneViaggio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTrasporti.resx">
+      <DependentUpon>FormTrasporti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,6 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\attenzione.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\centro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sfondo_trasporti.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -56,6 +56,11 @@ namespace BigTycoon.Trasporti
                     }
 
 					RimuoviViaggio(v);
+
+                    if (ViaggiAttivi.Count == 0)
+                    {
+						return;
+                    }
                 }
             }
         }
