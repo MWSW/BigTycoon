@@ -88,26 +88,26 @@ namespace BigTycoon.Generale
 
             if (dimensione > 0) //Per evitare la divisione per zero
                 FamaAziendale = tmp / dimensione;
-            else
-                FamaAziendale = 0;
         }
 
 		public void CalcolaDipendentiDisponibili()
         {
             // tanti if else per ogni tier
-            if (FamaAziendale >= 5 && FamaAziendale < 6)
+            
+            //Se e' uguale a 5 non cambia nulla
+            if (FamaAziendale > 5 && FamaAziendale < 6)
             {
                 DipendentiDisponibili += 1;
             }
             else
             if (FamaAziendale >= 6 && FamaAziendale < 8)
             {
-                FamaAziendale += 2;
+                DipendentiDisponibili += 2;
             }
             else
             if (FamaAziendale >= 6)
             {
-                FamaAziendale += 3;
+                DipendentiDisponibili += 3;
             }
             else
             if (FamaAziendale < 5 && FamaAziendale > 4)
@@ -117,12 +117,21 @@ namespace BigTycoon.Generale
             else
             if (FamaAziendale <= 4 && FamaAziendale > 2)
             {
-                FamaAziendale -= 2;
+                DipendentiDisponibili -= 2;
             }
             else
             if (FamaAziendale <= 2)
             {
-                FamaAziendale -= 3;
+                DipendentiDisponibili -= 3;
+            }
+
+            if(DipendentiDisponibili < 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Hai...");
+                System.Windows.Forms.MessageBox.Show("ROTTO!");
+                System.Windows.Forms.MessageBox.Show("TUTTOOOOOO!!!!!!");
+                System.Windows.Forms.MessageBox.Show("La societa' ti odia :<");
+                Environment.Exit(-1);
             }
         }
 	}

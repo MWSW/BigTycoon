@@ -69,7 +69,7 @@ namespace BigTycoon.Celle.Edifici
         public void CalcolaFelicita()
         {
             int max = 200;
-            int min = 50;
+            int min = 0;
             int inc = (max - min) / 10;
             int punti = 0;
 

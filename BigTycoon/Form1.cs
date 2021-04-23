@@ -62,7 +62,7 @@ namespace BigTycoon
 
             menuViaggio = new CreazioneViaggio(gestioneTrasporti);
 
-            giocatore = new Giocatore(500, 70, 6);
+            giocatore = new Giocatore(500, 5, 10);
 
             LordoTotale.Text = "Lordo: " + giocatore.portafogli.Reddito + "$";
             SpeseTotali.Text = "Spese: " + giocatore.portafogli.Spese + "$";
@@ -124,11 +124,34 @@ namespace BigTycoon
             mappa.UpdateAll(giocatore);
             giocatore.Update();
             AggiornaInfoGrafiche();
+
+            if (giocatore.portafogli.Soldi >= 1000000)
+            {
+
+                //NOI LO SAPEVAMO... (E Iuri ha detto NOOOOOOOO!!!!)
+                timerEdifici.Stop();
+                timerGiocatore.Enabled = false;
+                timerViaggi.Stop();
+
+                if (giocatore.DipendentiDisponibili < 0)
+                {
+                    MessageBox.Show("Sei sfuggito al tribunale!");
+                    MessageBox.Show("Hai vinto, ma a quale prezzo...");
+                }
+                else
+                {
+                    MessageBox.Show("Compliementi hai vinto!");
+                    MessageBox.Show("E il premio sara'...");
+                }
+
+                Environment.Exit(0);
+            }
         }
 
         private void timerGiocatore_Tick(object sender, EventArgs e)
         {
-            giocatore.CalcolaDipendentiDisponibili();
+            if(giocatore.DipendentiDisponibili >= 0)
+                giocatore.CalcolaDipendentiDisponibili();
 
             immagineAzienda_label.Text = "Immagine azienda: " + giocatore.FamaAziendale + "/10";
         }
